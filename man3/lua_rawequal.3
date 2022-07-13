@@ -1,0 +1,22 @@
+.Dd $Mdocdate: July 18 2022 $
+.Dt LUA_RAWEQUAL 3
+.Os
+.Sh NAME
+.Nm lua_rawequal
+.Nd compare two values for equality without calling metamethods
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_rawequal "lua_State *L" "int index1" "int index2"
+.Sh DESCRIPTION
+.Fn lua_rawequal
+returns 1 if the two values in acceptable indices
+.Fa index1
+and
+.Fa index2
+are primitively equal (that is, without calling metamethods). Otherwise returns 0.
+Also returns 0 if any of the indices are non valid.
+.Sh HISTORY
+The
+.Fn lua_rawequal
+manual page was written by Sergey Bronnikov.

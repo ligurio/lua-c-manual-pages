@@ -1,0 +1,24 @@
+.Dd $Mdocdate: July 15 2022 $
+.Dt LUA_TOSTRING 3
+.Os
+.Sh NAME
+.Nm lua_tostring
+.Nd converts the Lua value to a C string
+.Sh SYNOPSIS
+.In lua.h
+.Ft const char *
+.Fn lua_tostring "lua_State *L" "int index"
+.Sh DESCRIPTION
+.Fn lua_tostring
+converts the Lua value at the given acceptable index to a C string.
+.Pp
+Equivalent to
+.Xr lua_tolstring 3
+with len equal to
+.Dv NULL .
+.Sh SEE ALSO
+.Xr lua_tolstring 3
+.Sh HISTORY
+The
+.Fn lua_tostring
+manual page was written by Sergey Bronnikov.

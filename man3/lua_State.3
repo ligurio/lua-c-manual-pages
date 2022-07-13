@@ -1,0 +1,24 @@
+.Dd $Mdocdate: July 14 2022 $
+.Dt LUA_STATE 3
+.Os
+.Sh NAME
+.Nm lua_State
+.Nd opaque structure that keeps the whole state of a Lua interpreter
+.Sh SYNOPSIS
+.In lua.h
+.Vt typedef struct lua_State lua_State ;
+.Sh DESCRIPTION
+.Vt lua_State
+opaque structure that keeps the whole state of a Lua interpreter.
+The Lua library is fully reentrant: it has no global variables.
+All information about a state is kept in this structure.
+A pointer to this state must be passed as the first argument to every function
+in the library, except to
+.Xr lua_newstate 3 ,
+which creates a Lua state from scratch.
+.Sh SEE ALSO
+.Xr lua_newstate 2
+.Sh HISTORY
+The
+.Vt lua_State
+manual page was written by Sergey Bronnikov.

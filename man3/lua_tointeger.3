@@ -1,0 +1,27 @@
+.Dd $Mdocdate: July 14 2022 $
+.Dt LUA_TOINTEGER 3
+.Os
+.Sh NAME
+.Nm lua_tointeger
+.Nd apply or remove an advisory lock on an open file
+.Sh SYNOPSIS
+.In lua.h
+.Ft lua_Integer
+.Fn lua_tointeger "lua_State *L" "int index"
+.Sh DESCRIPTION
+.Fn lua_tointeger
+converts the Lua value at the given acceptable index to the signed integral
+type
+.Xr lua_Integer 3 .
+.Sh RETURN VALUES
+The Lua value must be a number or a string convertible to a number; otherwise,
+.Fn lua_tointeger
+returns 0.
+.Pp
+If the number is not an integer, it is truncated in some non-specified way.
+.Sh SEE ALSO
+.Xr lua_Integer 3
+.Sh HISTORY
+The
+.Fn lua_tointeger
+manual page was written by Sergey Bronnikov.

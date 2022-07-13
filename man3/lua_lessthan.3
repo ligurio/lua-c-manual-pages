@@ -1,0 +1,25 @@
+.Dd $Mdocdate: July 15 2022 $
+.Dt LUA_LESSTHAN 3
+.Os
+.Sh NAME
+.Nm lua_lessthan
+.Nd compares two values
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_lessthan "lua_State *L" "int index1" "int index2"
+.Sh DESCRIPTION
+.Fn lua_lessthan
+.Sh RETURN VALUES
+Returns 1 if the value at acceptable index
+.Fa index1
+is smaller than the value at acceptable index
+.Fa index2
+, following the semantics of the Lua < operator (that is, may call
+metamethods).
+Otherwise returns 0.
+Also returns 0 if any of the indices is non valid.
+.Sh HISTORY
+The
+.Fn lua_lessthan
+manual page was written by Sergey Bronnikov.

@@ -1,0 +1,20 @@
+.Dd $Mdocdate: July 14 2022 $
+.Dt LUA_CHECKSTACK 3
+.Os
+.Sh NAME
+.Nm lua_checkstack
+.Nd ensures that there are at least extra free stack slots in the stack
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_checkstack "lua_State *L" "int extra"
+.Sh DESCRIPTION
+.Fn lua_checkstack
+ensures that there are at least extra free stack slots in the stack.
+It returns false if it cannot grow the stack to that size.
+This function never shrinks the stack; if the stack is already larger than the
+new size, it is left unchanged.
+.Sh HISTORY
+The
+.Fn lua_checkstack
+manual page was written by Sergey Bronnikov.

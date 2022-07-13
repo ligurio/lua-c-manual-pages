@@ -1,0 +1,31 @@
+.Dd $Mdocdate: July 13 2022 $
+.Dt LUA_SETLOCAL 3
+.Os
+.Sh NAME
+.Nm lua_setlocal
+.Nd sets the value of a local variable of a given activation record
+.Sh SYNOPSIS
+.In lua.h
+.Ft const char *
+.Fn lua_setlocal "lua_State  *L" "lua_Debug *ar" "int n"
+.Sh DESCRIPTION
+.Fn lua_setlocal
+sets the value of a local variable of a given activation record.
+Parameters
+.Fa ar
+and
+.Fa n
+are as in
+.Xr lua_getlocal 2 .
+.Fn lua_setlocal
+assigns the value at the top of the stack to the variable and returns its name.
+It also pops the value from the stack.
+.Sh RETURN VALUES
+Returns
+.Dv NULL
+.Pq and pops nothing
+when the index is greater than the number of active local variables.
+.Sh HISTORY
+The
+.Fn lua_setlocal
+manual page was written by Sergey Bronnikov.

@@ -1,0 +1,30 @@
+.Dd $Mdocdate: July 14 2022 $
+.Dt LUA_CONCAT 3
+.Os
+.Sh NAME
+.Nm lua_concat
+.Nd concatenates the values at the top of the stack, pops them, and leaves the
+result at the top
+.Sh SYNOPSIS
+.In lua.h
+.Ft void
+.Fn lua_concat "lua_State *L" "int n"
+.Sh DESCRIPTION
+.Fn lua_concat
+concatenates the
+.Fa n
+values at the top of the stack, pops them, and leaves the
+result at the top.
+Concatenation is performed following the
+usual semantics of Lua.
+.Sh RETURN VALUES
+If
+.Fa n
+is 1, the result is the single value on the stack (that
+is, the function does nothing); if
+.Fa n
+is 0, the result is the empty string.
+.Sh HISTORY
+The
+.Fn lua_concat
+manual page was written by Sergey Bronnikov.

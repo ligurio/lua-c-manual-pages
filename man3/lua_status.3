@@ -1,0 +1,22 @@
+.Dd $Mdocdate: July 14 2022 $
+.Dt LUA_STATUS 3
+.Os
+.Sh NAME
+.Nm lua_status
+.Nd returns the status of the thread L
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_status "lua_State *L"
+.Sh DESCRIPTION
+.Fn lua_status
+returns the status of the thread L.
+.Sh RETURN VALUES
+The status can be 0 for a normal thread, an error code if the thread finished
+its execution with an error, or
+.Dv LUA_YIELD
+if the thread is suspended.
+.Sh HISTORY
+The
+.Fn lua_status
+manual page was written by Sergey Bronnikov.

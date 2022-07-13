@@ -1,0 +1,20 @@
+.Dd $Mdocdate: July 15 2022 $
+.Dt LUA_NUMBER 3
+.Os
+.Sh NAME
+.Nm lua_Number
+.Nd type of numbers in Lua
+.Sh SYNOPSIS
+.In lua.h
+.Vt typedef double lua_Number ;
+.Sh DESCRIPTION
+The type of numbers in Lua.
+By default, it is double, but that can be changed in
+.In luaconf.h .
+.Pp
+Through the configuration file you can change Lua to operate with another type
+for numbers (e.g., float or long).
+.Sh HISTORY
+The
+.Vt lua_Number
+manual page was written by Sergey Bronnikov.

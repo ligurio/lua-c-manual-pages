@@ -1,0 +1,47 @@
+.Dd $Mdocdate: July 18 2022 $
+.Dt LUA_SETHOOK 3
+.Os
+.Sh NAME
+.Nm lua_sethook
+.Nd sets the debugging hook function
+.Sh SYNOPSIS
+.In fcntl.h
+.Ft int
+.Fn lua_sethook "lua_State *L" "lua_Hook f" "int mask" "int count"
+.Sh DESCRIPTION
+.Fn lua_sethook
+sets the debugging hook function.
+.Pp
+Argument f is the hook function. mask specifies on which events the hook will
+be called: it is formed by a bitwise or of the constants
+.Dv LUA_MASKCALL ,
+.Dv LUA_MASKRET ,
+.Dv LUA_MASKLINE ,
+and
+.Dv LUA_MASKCOUNT .
+The count argument is only meaningful when the mask includes
+.Dv LUA_MASKCOUNT .
+For each event, the hook is called as explained below:
+.Bl -tag -width "The return hook:"
+.It Sy The call hook:
+is called when the interpreter calls a function.
+The hook is called just after Lua enters the new function, before the function
+gets its arguments.
+.It Sy The return hook:
+is called when the interpreter returns from a function.
+The hook is called just before Lua leaves the function.
+You have no access to the values to be returned by the function.
+.It Sy The line hook:
+is called when the interpreter is about to start the execution of a new line of
+code, or when it jumps back in the code (even to the same line).
+(This event only happens while Lua is executing a Lua function).
+.It Sy The count hook:
+is called after the interpreter executes every count instructions.
+(This event only happens while Lua is executing a Lua function).
+.El
+.Pp
+A hook is disabled by setting mask to zero.
+.Sh HISTORY
+The
+.Fn lua_sethook
+manual page was written by Sergey Bronnikov.

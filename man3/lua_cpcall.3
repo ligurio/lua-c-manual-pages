@@ -1,0 +1,32 @@
+.Dd $Mdocdate: July 14 2022 $
+.Dt LUA_CPCALL 3
+.Os
+.Sh NAME
+.Nm lua_cpcall
+.Nd calls the C function in protected mode
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_cpcall "lua_State *L" "lua_CFunction func" "void *ud"
+.Sh DESCRIPTION
+.Fn lua_cpcall
+calls the C function
+.Fa func
+in protected mode.
+.Fa func
+starts with only one element in its stack, a light userdata containing
+.Fa ud .
+.Sh RETURN VALUES
+In case of errors,
+.Fn lua_cpcall
+returns the same error codes as
+.Xr lua_pcall 3 ,
+plus the error object on the top of the stack; otherwise, it returns zero, and
+does not change the stack.
+All values returned by
+.Fa func
+are discarded.
+.Sh HISTORY
+The
+.Fn lua_cpcall
+manual page was written by Sergey Bronnikov.

@@ -1,0 +1,19 @@
+.Dd $Mdocdate: July 13 2022 $
+.Dt LUA_GETHOOK 3
+.Os
+.Sh NAME
+.Nm lua_gethook
+.Nd returns the current hook function
+.Sh SYNOPSIS
+.In lua.h
+.Ft lua_Hook
+.Fn lua_gethook "lua_State *L"
+.Sh DESCRIPTION
+.Fn lua_gethook
+returns the current hook function.
+.Sh RETURN VALUES
+Returns the current hook function.
+.Sh HISTORY
+The
+.Fn lua_gethook
+manual page was written by Sergey Bronnikov.

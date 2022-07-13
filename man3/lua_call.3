@@ -1,0 +1,61 @@
+.Dd $Mdocdate: July 19 2022 $
+.Dt LUA_CALL 3
+.Os
+.Sh NAME
+.Nm lua_call
+.Nd calls a function
+.Sh SYNOPSIS
+.In lua.h
+.Ft void
+.Fn lua_call "lua_State *L" "int nargs" "int nresults"
+.Sh DESCRIPTION
+.Fn lua_call
+calls a function.
+.Pp
+To call a function you must use the following protocol: first, the function to
+be called is pushed onto the stack; then, the arguments to the function are
+pushed in direct order; that is, the first argument is pushed first.
+Finally you call
+.Nm lua_call ;
+.Fa nargs
+is the number of arguments that you pushed onto the stack.
+All arguments and the function value are popped from the stack when the
+function is called.
+The function results are pushed onto the stack when the function returns.
+The number of results is adjusted to nresults, unless nresults is
+.Dv LUA_MULTRET .
+In this case, all results from the function are pushed.
+Lua takes care that the returned values fit into the stack space.
+The function results are pushed onto the stack in direct order (the first
+result is pushed first), so that after the call the last result is on the top
+of the stack.
+.Pp
+Any error inside the called function is propagated upwards (with a longjmp).
+.Pp
+The following example shows how the host program can do the equivalent to this
+Lua code:
+.Pp
+.Bd -literal -offset indent -compact
+a = f("how", t.x, 14)
+.Ed
+.Pp
+Here it is in C:
+.Pp
+.Bd -literal -offset indent -compact
+lua_getfield(L, LUA_GLOBALSINDEX, "f"); /* function to be called */
+lua_pushstring(L, "how");                        /* 1st argument */
+lua_getfield(L, LUA_GLOBALSINDEX, "t");   /* table to be indexed */
+lua_getfield(L, -1, "x");        /* push result of t.x (2nd arg) */
+lua_remove(L, -2);                  /* remove 't' from the stack */
+lua_pushinteger(L, 14);                          /* 3rd argument */
+lua_call(L, 3, 1);     /* call 'f' with 3 arguments and 1 result */
+lua_setfield(L, LUA_GLOBALSINDEX, "a");        /* set global 'a' */
+.Ed
+.Pp
+Note that the code above is "balanced": at its end, the stack is back to its
+original configuration.
+This is considered good programming practice.
+.Sh HISTORY
+The
+.Fn lua_call
+manual page was written by Sergey Bronnikov.

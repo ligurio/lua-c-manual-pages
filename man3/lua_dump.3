@@ -1,0 +1,31 @@
+.Dd $Mdocdate: July 14 2022 $
+.Dt LUA_DUMP 3
+.Os
+.Sh NAME
+.Nm lua_dump
+.Nd dumps a function as a binary chunk
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_dump "lua_State *L" "lua_Writer writer" "void *data"
+.Sh DESCRIPTION
+.Fn lua_dump
+dumps a function as a binary chunk.
+Receives a Lua function on the top of the stack and produces a binary chunk
+that, if loaded again, results in a function equivalent to the one dumped.
+As it produces parts of the chunk,
+.Fn lua_dump
+calls function writer (see
+.Xr lua_Writer 2 )
+with the given data to write them.
+.Pp
+This function does not pop the Lua function from the stack.
+.Sh RETURN VALUES
+The value returned is the error code returned by the last call to the writer; 0
+means no errors.
+.Sh SEE ALSO
+.Xr lua_Writer 3
+.Sh HISTORY
+The
+.Fn lua_dump
+manual page was written by Sergey Bronnikov.

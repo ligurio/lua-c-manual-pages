@@ -1,0 +1,44 @@
+.Dd $Mdocdate: July 14 2022 $
+.Dt LUA_TOLSTRING 3
+.Os
+.Sh NAME
+.Nm lua_tolstring
+.Nd converts the Lua value to a C string
+.Sh SYNOPSIS
+.In lua.h
+.Ft const char *
+.Fn lua_tolstring "lua_State *L" "int index" "size_t *len"
+.Sh DESCRIPTION
+.Fn lua_tolstring
+converts the Lua value at the given acceptable index to a C string.
+If
+.Fa len
+is not
+.Dv NULL ,
+it also sets
+.Fa *len
+with the string length.
+The Lua value must be a string or a number; otherwise, the function returns
+.Dv NULL .
+If the value is a number, then
+.Fn lua_tolstring
+also changes the actual value in the stack to a string.
+(This change confuses
+.Xr lua_next 3
+when
+.Fn lua_tolstring
+is applied to keys during a table traversal.)
+.Sh RETURN VALUES
+.Fn lua_tolstring
+returns a fully aligned pointer to a string inside the Lua state.
+This string always has a zero ('\\0') after its last character
+.Pq as in C ,
+but can contain other zeros in its body.
+Because Lua has garbage collection, there is no guarantee that the pointer
+returned by
+.Fn lua_tolstring
+will be valid after the corresponding value is removed from the stack.
+.Sh HISTORY
+The
+.Fn lua_tolstring
+manual page was written by Sergey Bronnikov.

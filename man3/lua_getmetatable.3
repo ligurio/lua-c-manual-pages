@@ -1,0 +1,22 @@
+.Dd $Mdocdate: July 14 2022 $
+.Dt LUA_GETMETATABLE 3
+.Os
+.Sh NAME
+.Nm lua_getmetatable
+.Nd pushes onto the stack the metatable of the value at the given acceptable index
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_getmetatable "lua_State *L" "int index"
+.Sh DESCRIPTION
+.Fn lua_getmetatable
+pushes onto the stack the metatable of the value at the given acceptable index.
+.Sh RETURN VALUES
+If the
+.Fa index
+is not valid, or if the value does not have a metatable, the function returns 0
+and pushes nothing on the stack.
+.Sh HISTORY
+The
+.Fn lua_getmetatable
+manual page was written by Sergey Bronnikov.

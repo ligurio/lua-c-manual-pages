@@ -1,0 +1,21 @@
+.Dd $Mdocdate: July 15 2022 $
+.Dt LUA_ISUSERDATA 3
+.Os
+.Sh NAME
+.Nm lua_isuserdata
+.Nd check whether a value is a userdata
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_isuserdata "lua_State *L" "int index"
+.Sh DESCRIPTION
+.Fn lua_isuserdata
+returns 1 if the value at the given acceptable index is a userdata (either full
+or light), and 0 otherwise.
+.Sh RETURN VALUES
+Returns 1 if the value at the given acceptable index is a userdata (either full
+or light), and 0 otherwise.
+.Sh HISTORY
+The
+.Fn lua_isuserdata
+manual page was written by Sergey Bronnikov.

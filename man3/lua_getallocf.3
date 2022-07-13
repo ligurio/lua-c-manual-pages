@@ -1,0 +1,28 @@
+.Dd $Mdocdate: July 14 2022 $
+.Dt LUA_GETALLOCF 3
+.Os
+.Sh NAME
+.Nm lua_getallocf
+.Nd returns the memory-allocation function of a given state
+.Sh SYNOPSIS
+.In lua.h
+.Ft lua_Alloc
+.Fn lua_getallocf "lua_State *L" "void **ud"
+.Sh DESCRIPTION
+.Fn lua_getallocf
+returns the memory-allocation function of a given state.
+.Sh RETURN VALUES
+If
+.Fa ud
+is not
+.Dv NULL ,
+Lua stores in
+.Fa *ud
+the opaque pointer passed to
+.Xr lua_newstate 3 .
+.Sh SEE ALSO
+.Xr lua_newstate 3
+.Sh HISTORY
+The
+.Fn lua_getallocf
+manual page was written by Sergey Bronnikov.

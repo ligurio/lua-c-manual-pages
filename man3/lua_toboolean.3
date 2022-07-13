@@ -1,0 +1,32 @@
+.Dd $Mdocdate: July 14 2022 $
+.Dt LUA_TOBOOLEAN 3
+.Os
+.Sh NAME
+.Nm lua_toboolean
+.Nd converts the Lua value to a C boolean value
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_toboolean "lua_State *L" "int index"
+.Sh DESCRIPTION
+.Fn lua_toboolean
+converts the Lua value at the given acceptable index to a C boolean value (0 or
+1).
+.Sh RETURN VALUES
+Like all tests in Lua,
+.Fn lua_toboolean
+returns 1 for any Lua value different from
+.Sy false
+and
+.Sy nil ;
+otherwise it returns 0.
+It also returns 0 when called with a non-valid index.
+(If you want to accept only actual boolean values, use
+.Xr lua_isboolean 3
+to test the value's type.)
+.Sh SEE ALSO
+.Xr lua_isboolean 3
+.Sh HISTORY
+The
+.Fn lua_toboolean
+manual page was written by Sergey Bronnikov.

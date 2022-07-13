@@ -1,0 +1,30 @@
+.Dd $Mdocdate: July 15 2022 $
+.Dt LUA_NEWUSERDATA 3
+.Os
+.Sh NAME
+.Nm lua_newuserdata
+.Nd allocates a new block of memory with the given size
+.Sh SYNOPSIS
+.In lua.h
+.Ft void *
+.Fn lua_newuserdata "lua_State *L" "size_t size"
+.Sh DESCRIPTION
+.Fn lua_newuserdata
+allocates a new block of memory with the given size, pushes onto the stack a
+new full userdata with the block address, and returns this address.
+.Pp
+Userdata represent C values in Lua.
+A
+.Em full
+userdata represents a block of memory.
+It is an object (like a table): you must create it, it can have its own
+metatable, and you can detect when it is being collected.
+A full userdata is only equal to itself (under raw equality).
+.Pp
+When Lua collects a full userdata with a gc metamethod, Lua calls the
+metamethod and marks the userdata as finalized.
+When this userdata is collected again then Lua frees its corresponding memory.
+.Sh HISTORY
+The
+.Fn lua_newuserdata
+manual page was written by Sergey Bronnikov.

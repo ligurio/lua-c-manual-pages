@@ -1,0 +1,31 @@
+.Dd $Mdocdate: July 18 2022 $
+.Dt LUA_YIELD 3
+.Os
+.Sh NAME
+.Nm lua_yield
+.Nd yields a coroutine
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_yield "lua_State *L" "int nresults"
+.Sh DESCRIPTION
+.Fn lua_yield
+yields a coroutine.
+This function should only be called as the return expression of a C function,
+as follows:
+.Pp
+.Bd -literal -offset indent -compact
+return lua_yield (L, nresults);
+.Ed
+.Pp
+When a C function calls
+.Nm lua_yield
+in that way, the running coroutine suspends its execution, and the call to
+lua_resume that started this coroutine returns.
+The parameter nresults is the number of values from the stack that are passed
+as results to
+.Xr lua_resume 3 .
+.Sh HISTORY
+The
+.Fn lua_yield
+manual page was written by Sergey Bronnikov.

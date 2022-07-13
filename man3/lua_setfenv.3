@@ -1,0 +1,24 @@
+.Dd $Mdocdate: July 15 2022 $
+.Dt LUA_SETFENV 3
+.Os
+.Sh NAME
+.Nm lua_setfenv
+.Nd pops a table from the stack and sets it as the new environment for the value
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_setfenv "lua_State *L" "int index"
+.Sh DESCRIPTION
+.Fn lua_setfenv
+pops a table from the stack and sets it as the new environment for the value at
+the given index.
+.Sh RETURN VALUES
+If the value at the given index is neither a function nor a thread nor a
+userdata,
+.Fn lua_setfenv
+returns 0.
+Otherwise it returns 1.
+.Sh HISTORY
+The
+.Fn lua_setfenv
+manual page was written by Sergey Bronnikov.

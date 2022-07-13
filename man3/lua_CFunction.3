@@ -1,0 +1,54 @@
+.Dd $Mdocdate: July 19 2022 $
+.Dt LUA_CFUNCTION 3
+.Os
+.Sh NAME
+.Nm lua_CFunction
+.Nd type for C functions
+.Sh SYNOPSIS
+.In lua.h
+.Vt typedef int (*lua_CFunction) (lua_State *L) ;
+.Sh DESCRIPTION
+.Fn lua_CFunction
+type for C functions.
+.Pp
+In order to communicate properly with Lua, a C function must use the following
+protocol, which defines the way parameters and results are passed: a C function
+receives its arguments from Lua in its stack in direct order
+.Pq the first argument is pushed first .
+So, when the function starts, lua_gettop(L) returns the number of arguments
+received by the function.
+The first argument
+.Pq if any
+is at index 1 and its last argument is at index lua_gettop(L).
+To return values to Lua, a C function just pushes them onto the stack, in
+direct order
+.Pq the first result is pushed first ,
+and returns the number of results.
+Any other value in the stack below the results will be properly discarded by
+Lua.
+Like a Lua function, a C function called by Lua can also return many results.
+.Pp
+As an example, the following function receives a variable number of numerical
+arguments and returns their average and sum:
+.Pp
+.Bd -literal -offset indent -compact
+static int foo (lua_State *L) {
+  int n = lua_gettop(L);    /* number of arguments */
+  lua_Number sum = 0;
+  int i;
+  for (i = 1; i <= n; i++) {
+    if (!lua_isnumber(L, i)) {
+      lua_pushstring(L, "incorrect argument");
+      lua_error(L);
+    }
+    sum += lua_tonumber(L, i);
+  }
+  lua_pushnumber(L, sum/n);        /* first result */
+  lua_pushnumber(L, sum);         /* second result */
+  return 2;                   /* number of results */
+}
+.Ed
+.Sh HISTORY
+The
+.Fn lua_CFunction
+manual page was written by Sergey Bronnikov.

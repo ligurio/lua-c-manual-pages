@@ -1,0 +1,70 @@
+.Dd $Mdocdate: July 20 2022 $
+.Dt LUA_PCALL 3
+.Os
+.Sh NAME
+.Nm lua_pcall
+.Nd calls a function in protected mode
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_pcall "lua_State *L" "int nargs" "int nresults" "int errfunc"
+.Sh DESCRIPTION
+.Fn lua_pcall
+calls a function in protected mode.
+.Pp
+Both
+.Fa nargs
+and
+.Fa nresults
+have the same meaning as in
+.Xr lua_call 3 .
+If there are no errors during the call,
+.Nm lua_pcall
+behaves exactly like
+.Xr lua_call 3 .
+However, if there is any error,
+.Nm lua_pcall
+catches it, pushes a single value on the stack (the error message), and returns
+an error code.
+Like
+.Xr lua_call 3 ,
+.Nm lua_pcall
+always removes the function and its arguments from the stack.
+.Pp
+If
+.Fa errfunc
+is 0, then the error message returned on the stack is exactly the original
+error message.
+Otherwise,
+.Fa errfunc
+is the stack index of an
+.Em error handler function .
+(In the current implementation, this index cannot be a pseudo-index).
+In case of runtime errors, this function will be called with the error message
+and its return value will be the message returned on the stack by
+.Nm lua_pcall .
+.Pp
+Typically, the error handler function is used to add more debug information to
+the error message, such as a stack traceback.
+Such information cannot be gathered after the return of
+.Nm lua_pcall ,
+since by then the stack has unwound.
+.Sh RETURN VALUES
+The
+.Nm lua_pcall
+function returns 0 in case of success or one of the following error codes
+.Pq defined in In lua.h :
+.Pp
+.Bl -tag -width LUA_ERRRUN: -offset indent -compact
+.It Dv LUA_ERRRUN :
+a runtime error.
+.It Dv LUA_ERRMEM :
+memory allocation error.
+For such errors, Lua does not call the error handler function.
+.It Dv LUA_ERRERR :
+error while running the error handler function.
+.El
+.Sh HISTORY
+The
+.Fn lua_pcall
+manual page was written by Sergey Bronnikov.

@@ -1,0 +1,31 @@
+.Dd $Mdocdate: July 20 2022 $
+.Dt LUA_PUSHCFUNCTION 3
+.Os
+.Sh NAME
+.Nm lua_pushcfunction
+.Nd pushes a C function onto the stack
+.Sh SYNOPSIS
+.In lua.h
+.Ft void
+.Fn lua_pushcfunction "lua_State *L" "lua_CFunction f"
+.Sh DESCRIPTION
+.Fn lua_pushcfunction
+pushes a C function onto the stack.
+This function receives a pointer to a C function and pushes onto the stack a
+Lua value of type function that, when called, invokes the corresponding C
+function.
+.Pp
+Any function to be registered in Lua must follow the correct protocol to
+receive its parameters and return its results
+.Pq see Xr lua_CFunction 3 .
+.Pp
+.Nm lua_pushcfunction
+is defined as a macro:
+.Pp
+.Bd -literal -offset indent -compact
+#define lua_pushcfunction(L,f)  lua_pushcclosure(L,f,0)
+.Ed
+.Sh HISTORY
+The
+.Fn lua_pushcfunction
+manual page was written by Sergey Bronnikov.

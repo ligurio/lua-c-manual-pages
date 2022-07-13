@@ -1,0 +1,23 @@
+.Dd $Mdocdate: July 15 2022 $
+.Dt LUA_SETTABLE 3
+.Os
+.Sh NAME
+.Nm lua_settable
+.Nd pops both the key and the value from the stack
+.Sh SYNOPSIS
+.In lua.h
+.Ft void
+.Fn lua_settable "lua_State *L" "int index"
+.Sh DESCRIPTION
+.Fn lua_settable
+does the equivalent to t[k] = v, where t is the value at the given valid index,
+v is the value at the top of the stack, and k is the value just below the top.
+.Pp
+This function pops both the key and the value from the stack.
+As in Lua, this function may trigger a metamethod for the
+.Qq newindex
+event.
+.Sh HISTORY
+The
+.Fn lua_settable
+manual page was written by Sergey Bronnikov.

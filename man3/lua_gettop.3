@@ -1,0 +1,21 @@
+.Dd $Mdocdate: July 14 2022 $
+.Dt LUA_GETTOP 3
+.Os
+.Sh NAME
+.Nm lua_gettop
+.Nd returns the index of the top element in the stack
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_gettop "lua_State *L"
+.Sh DESCRIPTION
+.Fn lua_gettop
+returns the index of the top element in the stack.
+Because indices start at 1, this result is equal to the number of elements in
+the stack (and so 0 means an empty stack).
+.Sh RETURN VALUES
+Returns the index of the top element in the stack.
+.Sh HISTORY
+The
+.Fn lua_gettop
+manual page was written by Sergey Bronnikov.

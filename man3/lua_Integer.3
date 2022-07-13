@@ -1,0 +1,20 @@
+.Dd $Mdocdate: July 18 2022 $
+.Dt LUA_INTEGER 3
+.Os
+.Sh NAME
+.Nm lua_Integer
+.Nd type to represent integral values
+.Sh SYNOPSIS
+.In lua.h
+.Vt typedef ptrdiff_t lua_Integer ;
+.Sh DESCRIPTION
+.Vt lua_Integer
+the type used by the Lua API to represent integral values.
+By default it is a
+.Dv ptrdiff_t ,
+which is usually the largest signed integral type the machine handles
+.Qq comfortably .
+.Sh HISTORY
+The
+.Fn lua_Integer
+manual page was written by Sergey Bronnikov.

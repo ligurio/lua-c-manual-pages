@@ -1,0 +1,93 @@
+.Dd $Mdocdate: July 13 2022 $
+.Dt LUA_ALLOC 3
+.Os
+.Sh NAME
+.Nm lua_Alloc
+.Nd the type of the memory-allocation function used by Lua states
+.Sh SYNOPSIS
+.In lua.h
+.Ft typedef void *
+.Fn (*lua_Alloc) "void *ud" "void *ptr" "size_t osize" "size_t nsize"
+.Sh DESCRIPTION
+The type of the memory-allocation function used by Lua states.
+The allocator function must provide a functionality similar to
+.Xr realloc 3 ,
+but not exactly the same.
+Its arguments are
+.Fa ud ,
+an opaque pointer passed to
+.Xr lua_newstate 2 ;
+.Fa ptr ,
+a pointer to the block being allocated/reallocated/freed;
+.Fa osize ,
+the original size of the block;
+.Fa nsize ,
+the new size of the block.
+.Fa ptr
+is
+.Dv NULL
+if and only if
+.Fa osize
+is zero.
+When
+.Fa nsize
+is not zero and
+.Fa osize
+is zero, the allocator should behave like
+.Xr malloc 3 .
+When
+.Fa nsize
+and
+.Fa osize
+are not zero, the allocator behaves like
+.Xr realloc 3 .
+Lua assumes that the allocator never fails when
+.Fa osize
+>=
+.Fa nsize .
+.Pp
+Here is a simple implementation for the allocator function.
+It is used in the auxiliary library by
+.Xr luaL_newstate 2 .
+.Pp
+.Bd -literal -offset indent -compact
+static void *l_alloc (void *ud, void *ptr, size_t osize,
+                                           size_t nsize) {
+  (void)ud;  (void)osize;  /* not used */
+  if (nsize == 0) {
+    free(ptr);
+    return NULL;
+  }
+  else
+    return realloc(ptr, nsize);
+}
+.Ed
+.Pp
+This code assumes that
+.Em free(NULL)
+has no effect and that
+.Em realloc(NULL, size)
+is equivalent to
+.Em malloc(size) .
+ANSI C ensures both behaviors.
+.Sh RETURN VALUES
+When
+.Fa nsize
+is zero, the allocator must return
+.Dv NULL ;
+if
+.Fa osize
+is not zero, it should free the block pointed to by
+.Fa ptr .
+When
+.Fa nsize
+is not zero, the allocator returns
+.Dv NULL
+if and only if it cannot fill the request.
+.Sh SEE ALSO
+.Xr lua_newstate 2 ,
+.Xr luaL_newstate 2
+.Sh HISTORY
+The
+.Fn lua_Alloc
+manual page was written by Sergey Bronnikov.

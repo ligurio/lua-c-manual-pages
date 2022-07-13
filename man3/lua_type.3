@@ -1,0 +1,35 @@
+.Dd $Mdocdate: July 18 2022 $
+.Dt LUA_TYPE 3
+.Os
+.Sh NAME
+.Nm lua_type
+.Nd returns the type of the value
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_type "lua_State *L" "int index"
+.Sh DESCRIPTION
+.Fn lua_type
+returns the type of the value in the given acceptable index, or
+.Dv LUA_TNONE
+for a non-valid index (that is, an index to an
+"empty"
+stack position).
+The types returned by
+.Nm lua_type
+are coded by the following constants defined in
+.In lua.h :
+.Dv LUA_TNIL ,
+.Dv LUA_TNUMBER,
+.Dv LUA_TBOOLEAN ,
+.Dv LUA_TSTRING ,
+.Dv LUA_TTABLE ,
+.Dv LUA_TFUNCTION ,
+.Dv LUA_TUSERDATA ,
+.Dv LUA_TTHREAD ,
+and
+.Dv LUA_TLIGHTUSERDATA .
+.Sh HISTORY
+The
+.Fn lua_type
+manual page was written by Sergey Bronnikov.

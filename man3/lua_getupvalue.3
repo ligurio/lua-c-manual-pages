@@ -1,0 +1,35 @@
+.Dd $Mdocdate: July 13 2022 $
+.Dt LUA_GETUPVALUE 3
+.Os
+.Sh NAME
+.Nm lua_getupvalue
+.Nd gets information about a closure's upvalue
+.Sh SYNOPSIS
+.In lua.h
+.Ft const char *
+.Fn lua_getupvalue "lua_State *L" "int funcindex" "int n"
+.Sh DESCRIPTION
+.Fn lua_getupvalue
+gets information about a closure's upvalue.
+(For Lua functions, upvalues are the external local variables that the function
+uses, and that are consequently included in its closure.)
+.Fn lua_getupvalue
+gets the index
+.Fa n
+of an upvalue, pushes the upvalue's value onto the stack, and returns its name.
+.Fa funcindex
+points to the closure in the stack.
+(Upvalues have no particular order, as they are active through the whole
+function.
+So, they are numbered in an arbitrary order.)
+.Sh RETURN VALUES
+Returns
+.Dv NULL
+.Pq and pushes nothing
+when the index is greater than the number of upvalues.
+For C functions, this function uses the empty string "" as a name for all
+upvalues.
+.Sh HISTORY
+The
+.Fn lua_getupvalue
+manual page was written by Sergey Bronnikov.

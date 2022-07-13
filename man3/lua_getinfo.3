@@ -1,0 +1,61 @@
+.Dd $Mdocdate: July 19 2022 $
+.Dt LUA_GETINFO 3
+.Os
+.Sh NAME
+.Nm lua_getinfo
+.Nd returns information about a specific function or function invocation
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_getinfo "lua_State *L" "const char *what" "lua_Debug *ar"
+.Sh DESCRIPTION
+.Fn lua_getinfo
+returns information about a specific function or function invocation.
+.Pp
+To get information about a function invocation, the parameter ar must be a
+valid activation record that was filled by a previous call to lua_getstack or
+given as argument to a hook
+.Pq see Xr lua_Hook 3 .
+.Pp
+To get information about a function you push it onto the stack and start the
+what string with the character '>'.
+(In that case,
+.Nm lua_getinfo
+pops the function in the top of the stack).
+For instance, to know in which line a function
+.Fa f
+was defined, you can write the following code:
+.Pp
+.Bd -literal -offset indent -compact
+lua_Debug ar;
+lua_getfield(L, LUA_GLOBALSINDEX, "f");  /* get global 'f' */
+lua_getinfo(L, ">S", &ar);
+printf("%d\n", ar.linedefined);
+.Ed
+.Pp
+Each character in the string what selects some fields of the structure ar to be
+filled or a value to be pushed on the stack:
+.Pp
+.Bl -tag -width 'L' -compact
+.It Sy 'n'
+fills in the field name and namewhat;
+.It Sy 'S'
+fills in the fields source, short_src, linedefined, lastlinedefined, and what;
+.It Sy 'l'
+fills in the field currentline;
+.It Sy 'u'
+fills in the field nups;
+.It Sy 'f'
+pushes onto the stack the function that is running at the given level;
+.It Sy 'L'
+pushes onto the stack a table whose indices are the numbers of the lines that
+are valid on the function.
+(A valid line is a line with some associated code, that is, a line where you
+can put a break point.
+Non-valid lines include empty lines and comments.)
+This function returns 0 on error (for instance, an invalid option in what).
+.El
+.Sh HISTORY
+The
+.Fn lua_getinfo
+manual page was written by Sergey Bronnikov.
