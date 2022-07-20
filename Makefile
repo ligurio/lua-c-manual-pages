@@ -37,4 +37,7 @@ uninstall: ${MANPAGE_FILES}
 		rm ${PREFIX_MAN}/man3/$$(basename $$m); \
 	done
 
-.PHONY: all check install uninstall html
+clean:
+	rm -f ${HTML_FILES}
+
+.PHONY: all check install uninstall html clean
