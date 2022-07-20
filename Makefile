@@ -14,10 +14,10 @@ HTML_FILES := $(patsubst %.3,%.3.html,$(MANPAGE_FILES))
 
 all: check
 
-man3/%.3.html:
+man3/%.3.html: style.css
 
 .3.3.html:
-	mandoc -Thtml $< > $@
+	mandoc -Thtml -Ostyle=style.css $< > $@
 
 html: ${HTML_FILES}
 
