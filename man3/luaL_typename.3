@@ -1,0 +1,17 @@
+.Dd $Mdocdate: July 21 2022 $
+.Dt LUAL_TYPENAME 3
+.Os
+.Sh NAME
+.Nm luaL_typename
+.Nd returns the name of the type of the value
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft const char *
+.Fn luaL_typename "lua_State *L" "int index"
+.Sh DESCRIPTION
+.Fn luaL_typename
+returns the name of the type of the value at the given index.
+.Sh HISTORY
+The
+.Fn luaL_typename
+manual page was written by Sergey Bronnikov.
