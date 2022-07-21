@@ -1,0 +1,42 @@
+.Dd $Mdocdate: July 21 2022 $
+.Dt LUAL_REF 3
+.Os
+.Sh NAME
+.Nm luaL_ref
+.Nd creates and returns a reference for the object at the top of the stack and
+pops the object
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft int
+.Fn luaL_ref "lua_State *L" "int t"
+.Sh DESCRIPTION
+.Fn luaL_ref
+creates and returns a
+.Em reference ,
+in the table at index
+.Fa t ,
+for the object at the top of the stack (and pops the object).
+.Pp
+A reference is a unique integer key.
+As long as you do not manually add integer keys into table
+.Fa t ,
+.Nm luaL_ref
+ensures the uniqueness of the key it returns.
+You can retrieve an object referred by reference r by calling
+.Em lua_rawgeti(L, t, r) .
+Function
+.Xr luaL_unref 3
+frees a reference and its associated object.
+.Sh RETURN VALUES
+If the object at the top of the stack is
+.Dv nil ,
+.Nm luaL_ref returns the constant
+.Dv LUA_REFNIL .
+The constant
+.Dv LUA_NOREF
+is guaranteed to be different from any reference returned by
+.Nm luaL_ref .
+.Sh HISTORY
+The
+.Fn luaL_ref
+manual page was written by Sergey Bronnikov.
