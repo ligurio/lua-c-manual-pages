@@ -1,0 +1,44 @@
+.Dd $Mdocdate: July 21 2022 $
+.Dt LUAL_REGISTER 3
+.Os
+.Sh NAME
+.Nm luaL_register
+.Nd opens a library
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft void
+.Fn luaL_register "lua_State *L" "const char *libname" "const luaL_Reg *l"
+.Sh DESCRIPTION
+.Fn luaL_register
+opens a library.
+.Pp
+When called with
+.Fa libname
+equal to
+.Dv NULL ,
+it simply registers all functions in
+the list
+.Fa l
+.Pq see Xr luaL_Reg 3
+into the table on the top of the stack.
+.Pp
+When called with a non-null
+.Fa libname ,
+.Nm luaL_register 3
+creates a new table t, sets it as the value of the global variable
+.Fa libname ,
+sets it as the value of
+.Em package.loaded[libname] ,
+and registers on it all functions in the list
+.Fa l .
+If there is a table in
+.Em package.loaded[libname]
+or in variable
+.Fa libname ,
+reuses this table instead of creating a new one.
+.Pp
+In any case the function leaves the table on the top of the stack.
+.Sh HISTORY
+The
+.Fn luaL_register
+manual page was written by Sergey Bronnikov.
