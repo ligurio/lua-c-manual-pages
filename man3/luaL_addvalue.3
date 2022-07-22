@@ -1,0 +1,23 @@
+.Dd $Mdocdate: July 22 2022 $
+.Dt LUAL_ADDVALUE 3
+.Os
+.Sh NAME
+.Nm luaL_addvalue
+.Nd adds the value at the top of the stack to the buffer
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft void
+.Fn luaL_addvalue "luaL_Buffer *B"
+.Sh DESCRIPTION
+.Fn luaL_addvalue
+adds the value at the top of the stack to the buffer
+.Fa B
+.Pq see Xr luaL_Buffer 3 .
+Pops the value.
+.Pp
+This is the only function on string buffers that can (and must) be called with
+an extra element on the stack, which is the value to be added to the buffer.
+.Sh HISTORY
+The
+.Fn luaL_addvalue
+manual page was written by Sergey Bronnikov.
