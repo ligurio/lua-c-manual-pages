@@ -1,5 +1,12 @@
 ## Lua C API manual pages
 
+is a set of manual pages that covers Lua 5.1 C API described in Lua 5.1
+Reference Manual. It includes:
+
+- [3.7 – Functions and Types](http://www.lua.org/manual/5.1/manual.html#3.7)
+- [3.8 – The Debug Interface](http://www.lua.org/manual/5.1/manual.html#3.8)
+- [4.1 – Functions and Types](http://www.lua.org/manual/5.1/manual.html#4.1)
+
 ### Installation
 
 ```sh
@@ -8,13 +15,6 @@ $ make check
 $ make install
 $ makewhatis
 ```
-
-### References
-
-- [Lua 5.1 Reference Manual: 3.7 – Functions and Types](http://www.lua.org/manual/5.1/manual.html#3.7)
-- [Lua 5.1 Reference Manual: 3.8 – The Debug Interface](http://www.lua.org/manual/5.1/manual.html#3.8)
-- [Lua 5.1 Reference Manual: 4.1 – Functions and Types](http://www.lua.org/manual/5.1/manual.html#4.1)
-- [Lua 5.1 Reference Manual – errata](https://www.lua.org/manual/5.1/errata.html)
 
 ### See also
 
