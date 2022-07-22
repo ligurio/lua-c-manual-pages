@@ -20,7 +20,8 @@ This call returns when the coroutine suspends or finishes its execution.
 When it returns, the stack contains all values passed to
 .Xr lua_yield 3 ,
 or all values returned by the body function.
-In case of errors, the stack is not unwound, so you can use the debug API over it.
+In case of errors, the stack is not unwound,
+so you can use the debug API over it.
 The error message is on the top of the stack.
 To restart a coroutine, you put on its stack only the values to be passed as
 results from yield, and then call lua_resume.
