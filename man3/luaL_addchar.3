@@ -1,0 +1,21 @@
+.Dd $Mdocdate: July 22 2022 $
+.Dt LUAL_ADDCHAR 3
+.Os
+.Sh NAME
+.Nm luaL_addchar
+.Nd adds the character to the buffer
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft void
+.Fn luaL_addchar "luaL_Buffer *B" "char c"
+.Sh DESCRIPTION
+.Fn luaL_addchar
+adds the character
+.Fa c
+to the buffer
+.Fa B
+.Pq see Xr luaL_Buffer 3 .
+.Sh HISTORY
+The
+.Fn luaL_addchar
+manual page was written by Sergey Bronnikov.
