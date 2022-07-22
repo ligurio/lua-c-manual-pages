@@ -23,26 +23,26 @@ The fields of
 .Nm lua_Debug
 have the following meaning:
 .Pp
-.Bl -tag -width lastlinedefined -offset indent -compact
-.It Sy source:
+.Bl -tag -width lastlinedefined: -offset indent -compact
+.It Sy source :
 If the function was defined in a string, then source is that string.
 If the function was defined in a file, then source starts with a '@' followed
 by the file name.
-.It Sy short_src:
+.It Sy short_src :
 a "printable" version of source, to be used in error messages.
-.It Sy linedefined:
+.It Sy linedefined :
 the line number where the definition of the function starts.
-.It Sy lastlinedefined:
+.It Sy lastlinedefined :
 the line number where the definition of the function ends.
-.It Sy what:
+.It Sy what :
 the string "Lua" if the function is a Lua function, "C" if it is a C function,
 "main" if it is the main part of a chunk, and "tail" if it was a function that
 did a tail call.
 In the latter case, Lua has no other information about the function.
-.It Sy currentline:
+.It Sy currentline :
 the current line where the given function is executing.
 When no line information is available, currentline is set to -1.
-.It Sy name:
+.It Sy name :
 a reasonable name for the given function.
 Because functions in Lua are first-class values, they do not have a fixed name:
 some functions can be the value of multiple global variables, while others can
@@ -52,12 +52,12 @@ The
 function checks how the function was called to find a suitable name.
 If it cannot find a name, then name is set to
 .Dv NULL .
-.It Sy namewhat:
+.It Sy namewhat :
 explains the name field.
 The value of namewhat can be "global", "local", "method", "field", "upvalue",
 or "" (the empty string), according to how the function was called. (Lua uses
 the empty string when no other option seems to apply).
-.It Sy nups:
+.It Sy nups :
 the number of upvalues of the function.
 .El
 .Sh HISTORY

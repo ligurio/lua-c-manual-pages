@@ -16,7 +16,7 @@ but not exactly the same.
 Its arguments are
 .Fa ud ,
 an opaque pointer passed to
-.Xr lua_newstate 2 ;
+.Xr lua_newstate 3 ;
 .Fa ptr ,
 a pointer to the block being allocated/reallocated/freed;
 .Fa osize ,
@@ -48,7 +48,7 @@ Lua assumes that the allocator never fails when
 .Pp
 Here is a simple implementation for the allocator function.
 It is used in the auxiliary library by
-.Xr luaL_newstate 2 .
+.Xr luaL_newstate 3 .
 .Pp
 .Bd -literal -offset indent -compact
 static void *l_alloc (void *ud, void *ptr, size_t osize,
@@ -85,8 +85,8 @@ is not zero, the allocator returns
 .Dv NULL
 if and only if it cannot fill the request.
 .Sh SEE ALSO
-.Xr lua_newstate 2 ,
-.Xr luaL_newstate 2
+.Xr lua_newstate 3 ,
+.Xr luaL_newstate 3
 .Sh HISTORY
 The
 .Fn lua_Alloc

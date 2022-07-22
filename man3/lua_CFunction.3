@@ -6,7 +6,8 @@
 .Nd type for C functions
 .Sh SYNOPSIS
 .In lua.h
-.Vt typedef int (*lua_CFunction) (lua_State *L) ;
+.Ft typedef int *
+.Fn lua_CFunction "lua_State *L"
 .Sh DESCRIPTION
 .Fn lua_CFunction
 type for C functions.

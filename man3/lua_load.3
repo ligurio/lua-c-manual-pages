@@ -7,7 +7,7 @@
 .Sh SYNOPSIS
 .In lua.h
 .Ft int
-.Fn lua_load "lua_State *L" "lua_Reader reader" "void *data" "const char *chunkname)"
+.Fn lua_load "lua_State *L" "lua_Reader reader" "void *data" "const char *chunkname"
 .Sh DESCRIPTION
 .Fn lua_load
 loads a Lua chunk.
@@ -21,7 +21,7 @@ This function only loads a chunk; it does not run it.
 .Fn lua_load
 automatically detects whether the chunk is text or binary, and loads it
 accordingly, see
-.Xr luac 2 .
+.Xr luac 1 .
 .Pp
 The
 .Fn lua_load
