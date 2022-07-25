@@ -1,0 +1,20 @@
+.Dd $Mdocdate: July 24 2022 $
+.Dt LUAL_GETMETATABLE 3
+.Os
+.Sh NAME
+.Nm luaL_getmetatable
+.Nd pushes onto the stack the metatable associated with name in the registry
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft void
+.Fn luaL_getmetatable "lua_State *L" "const char *tname"
+.Sh DESCRIPTION
+.Fn luaL_getmetatable
+pushes onto the stack the metatable associated with name
+.Fa tname
+in the registry
+.Pq see Xr luaL_newmetatable 3 .
+.Sh HISTORY
+The
+.Fn luaL_getmetatable
+manual page was written by Sergey Bronnikov.
