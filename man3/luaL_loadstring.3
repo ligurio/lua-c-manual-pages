@@ -1,0 +1,28 @@
+.Dd $Mdocdate: July 24 2022 $
+.Dt LUAL_LOADSTRING 3
+.Os
+.Sh NAME
+.Nm luaL_loadstring
+.Nd loads a string as a Lua chunk
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft int
+.Fn luaL_loadstring "lua_State *L" "const char *s"
+.Sh DESCRIPTION
+.Fn luaL_loadstring
+loads a string as a Lua chunk.
+This function uses
+.Xr lua_load 3
+to load the chunk in the zero-terminated string
+.Fa s .
+.Pp
+This function returns the same results as
+.Xr lua_load 3 .
+.Pp
+Also as
+.Xr lua_load 3 ,
+this function only loads the chunk; it does not run it.
+.Sh HISTORY
+The
+.Fn luaL_loadstring
+manual page was written by Sergey Bronnikov.
