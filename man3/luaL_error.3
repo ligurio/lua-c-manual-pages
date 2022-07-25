@@ -1,0 +1,27 @@
+.Dd $Mdocdate: July 24 2022 $
+.Dt LUAL_ERROR 3
+.Os
+.Sh NAME
+.Nm luaL_error
+.Nd raises an error
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft int
+.Fn luaL_error "lua_State *L" "const char *fmt" "..."
+.Sh DESCRIPTION
+.Fn luaL_error
+raises an error.
+The error message format is given by
+.Fa fmt
+plus any extra arguments, following the same rules of
+.Xr lua_pushfstring 3 .
+It also adds at the beginning of the message the file name and the line number
+where the error occurred, if this information is available.
+.Pp
+This function never returns, but it is an idiom to use it in C functions as
+return
+.Em luaL_error(args) .
+.Sh HISTORY
+The
+.Fn luaL_error
+manual page was written by Sergey Bronnikov.
