@@ -1,0 +1,23 @@
+.Dd $Mdocdate: July 24 2022 $
+.Dt LUAL_ARGCHECK 3
+.Os
+.Sh NAME
+.Nm luaL_argcheck
+.Nd checks whether cond is true
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft void
+.Fn luaL_argcheck "lua_State *L" "int cond" "int narg" "const char *extramsg"
+.Sh DESCRIPTION
+.Fn luaL_argcheck
+checks whether cond is true.
+If not, raises an error with the following message, where func is retrieved
+from the call stack:
+.Pp
+.Bd -literal -offset indent -compact
+bad argument #<narg> to <func> (<extramsg>)
+.Ed
+.Sh HISTORY
+The
+.Fn luaL_argcheck
+manual page was written by Sergey Bronnikov.
