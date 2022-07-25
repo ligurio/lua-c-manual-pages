@@ -1,0 +1,24 @@
+.Dd $Mdocdate: July 24 2022 $
+.Dt LUAL_GSUB 3
+.Os
+.Sh NAME
+.Nm luaL_gsub
+.Nd creates a copy of string A by replacing any occurrence of the string B with
+the string C
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft const char *
+.Fn luaL_gsub "lua_State *L" "const char *s" "const char *p" "const char *r"
+.Sh DESCRIPTION
+.Fn luaL_gsub
+creates a copy of string
+.Fa s
+by replacing any occurrence of the string
+.Fa p
+with the string
+.Fa r .
+Pushes the resulting string on the stack and returns it.
+.Sh HISTORY
+The
+.Fn luaL_gsub
+manual page was written by Sergey Bronnikov.
