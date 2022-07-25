@@ -1,0 +1,28 @@
+.Dd $Mdocdate: July 24 2022 $
+.Dt LUAL_CHECKLSTRING 3
+.Os
+.Sh NAME
+.Nm luaL_checklstring
+.Nd checks whether the function argument is a string
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft const char *
+.Fn luaL_checklstring "lua_State *L" "int narg" "size_t *l"
+.Sh DESCRIPTION
+.Fn luaL_checklstring
+checks whether the function argument
+.Fa narg
+is a string and returns this string;
+if l is not
+.Dv NULL
+fills
+.Fa *l
+with the string's length.
+.Pp
+This function uses
+.Xr lua_tolstring 3
+to get its result, so all conversions and caveats of that function apply here.
+.Sh HISTORY
+The
+.Fn luaL_checklstring
+manual page was written by Sergey Bronnikov.
