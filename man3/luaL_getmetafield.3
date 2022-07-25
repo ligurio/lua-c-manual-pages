@@ -1,0 +1,23 @@
+.Dd $Mdocdate: July 24 2022 $
+.Dt LUAL_GETMETAFIELD 3
+.Os
+.Sh NAME
+.Nm luaL_getmetafield
+.Nd pushes onto the stack the field from the metatable of the object at the
+specified index
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft int
+.Fn luaL_getmetafield "lua_State *L" "int obj" "const char *e"
+.Sh DESCRIPTION
+.Fn luaL_getmetafield
+pushes onto the stack the field
+.Fa e
+from the metatable of the object at index
+.Fa obj .
+If the object does not have a metatable, or if the metatable does not have
+this field, returns 0 and pushes nothing.
+.Sh HISTORY
+The
+.Fn luaL_getmetafield
+manual page was written by Sergey Bronnikov.
