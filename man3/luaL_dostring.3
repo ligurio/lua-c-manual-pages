@@ -1,0 +1,24 @@
+.Dd $Mdocdate: July 24 2022 $
+.Dt LUAL_DOSTRING 3
+.Os
+.Sh NAME
+.Nm luaL_dostring
+.Nd loads and runs the given string
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft int
+.Fn luaL_dostring "lua_State *L" "const char *str"
+.Sh DESCRIPTION
+.Fn luaL_dostring
+loads and runs the given string.
+It is defined as the following macro:
+.Pp
+.Bd -literal -offset indent -compact
+(luaL_loadstring(L, str) || lua_pcall(L, 0, LUA_MULTRET, 0))
+.Ed
+.Sh RETURN VALUES
+It returns 0 if there are no errors or 1 in case of errors.
+.Sh HISTORY
+The
+.Fn luaL_dostring
+manual page was written by Sergey Bronnikov.
