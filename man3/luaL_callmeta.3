@@ -1,0 +1,25 @@
+.Dd $Mdocdate: July 26 2022 $
+.Dt LUAL_CALLMETA 3
+.Os
+.Sh NAME
+.Nm luaL_callmeta
+.Nd calls a metamethod
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft int
+.Fn luaL_callmeta "lua_State *L" "int obj" "const char *e"
+.Sh DESCRIPTION
+.Fn luaL_callmeta
+calls a metamethod.
+.Sh RETURN VALUES
+If the object at index obj has a metatable and this metatable has a field
+.Fa e ,
+this function calls this field and passes the object as its only argument.
+In this case this function returns 1 and pushes onto the stack the value
+returned by the call.
+If there is no metatable or no metamethod, this function returns 0 (without
+pushing any value on the stack).
+.Sh HISTORY
+The
+.Fn luaL_callmeta
+manual page was written by Sergey Bronnikov.
