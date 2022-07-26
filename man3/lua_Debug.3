@@ -19,6 +19,25 @@ To fill the other fields of
 with useful information, call
 .Xr lua_getinfo 3 .
 .Pp
+.Vt lua_Debug
+is defined as:
+.Bd -literal
+typedef struct lua_Debug {
+        int event;
+        const char *name;           /* (n) */
+        const char *namewhat;       /* (n) */
+        const char *what;           /* (S) */
+        const char *source;         /* (S) */
+        int currentline;            /* (l) */
+        int nups;                   /* (u) number of upvalues */
+        int linedefined;            /* (S) */
+        int lastlinedefined;        /* (S) */
+        char short_src[LUA_IDSIZE]; /* (S) */
+        /* private part */
+        other fields
+} lua_Debug;
+.Ed
+.Pp
 The fields of
 .Nm lua_Debug
 have the following meaning:
