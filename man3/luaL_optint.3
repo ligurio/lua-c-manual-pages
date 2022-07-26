@@ -1,0 +1,24 @@
+.Dd $Mdocdate: July 26 2022 $
+.Dt LUAL_OPTINT 3
+.Os
+.Sh NAME
+.Nm luaL_optint
+.Nd casts a number to an int
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft int
+.Fn luaL_optint "lua_State *L" "int narg" "int d"
+.Sh DESCRIPTION
+.Fn luaL_optint
+if the function argument
+.Fa narg
+is a number, returns this number cast to an int.
+If this argument is absent or is
+.Dv nil ,
+returns
+.Fa d .
+Otherwise, raises an error.
+.Sh HISTORY
+The
+.Fn luaL_optint
+manual page was written by Sergey Bronnikov.
