@@ -1,0 +1,25 @@
+.Dd $Mdocdate: July 26 2022 $
+.Dt LUAL_PREPBUFFER 3
+.Os
+.Sh NAME
+.Nm luaL_prepbuffer
+.Nd prepares a buffer luaL_Buffer
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft char *
+.Fn luaL_prepbuffer "luaL_Buffer *B"
+.Sh DESCRIPTION
+.Fn luaL_prepbuffer
+returns an address to a space of size
+.Dv LUAL_BUFFERSIZE
+where you can copy a
+string to be added to buffer
+.Fa B
+.Pq see Xr luaL_Buffer 3 .
+After copying the string into this space you must call
+.Xr luaL_addsize 3
+with the size of the string to actually add it to the buffer.
+.Sh HISTORY
+The
+.Fn luaL_prepbuffer
+manual page was written by Sergey Bronnikov.
