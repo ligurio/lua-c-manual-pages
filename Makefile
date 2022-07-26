@@ -23,7 +23,7 @@ html: ${HTML_FILES}
 
 check: ${MANPAGE_FILES}
 	@for m in ${MANPAGE_FILES}; do \
-		mandoc -Tlint $$m -W error,style,unsupp,warning,stop; \
+		mandoc -Tlint $$m -W style; \
 	done
 
 install: ${MANPAGE_FILES}
