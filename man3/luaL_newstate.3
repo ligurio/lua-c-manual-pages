@@ -1,0 +1,29 @@
+.Dd $Mdocdate: July 26 2022 $
+.Dt LUAL_NEWSTATE 3
+.Os
+.Sh NAME
+.Nm luaL_newstate
+.Nd creates a new Lua state
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft lua_State *
+.Fn luaL_newstate "void"
+.Sh DESCRIPTION
+.Fn luaL_newstate
+creates a new Lua state.
+It calls
+.Xr lua_newstate 3
+with an allocator based on the standard C
+.Xr realloc 3
+function and then sets a panic function
+.Pq see Xr lua_atpanic 3
+that prints an error message to the standard error output in case of fatal
+errors.
+.Sh RETURN VALUES
+Returns the new state, or
+.Dv NULL
+if there is a memory allocation error.
+.Sh HISTORY
+The
+.Fn luaL_newstate
+manual page was written by Sergey Bronnikov.
