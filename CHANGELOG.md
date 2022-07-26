@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Add a set of manual pages based on "Lua 5.1 Reference Manual 4.1 – Functions
+  and Types".
+
 ### Changed
 
 - Set a minimum level to be reported by mandoc to "style".
