@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Set a minimum level to be reported by mandoc to "style".
+- Add missing description of `lua_Debug` structure in `lua_Debug.3`.
 
 ### Fixed
 
