@@ -25,6 +25,14 @@ is defined as a macro:
 .Bd -literal -offset indent -compact
 #define lua_pushcfunction(L,f)  lua_pushcclosure(L,f,0)
 .Ed
+.Sh SEE ALSO
+.Xr lua_CFunction 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
 .Sh HISTORY
 The
 .Fn lua_pushcfunction

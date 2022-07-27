@@ -14,6 +14,13 @@ pops a value from the stack and sets it as the new value of global name.
 It is defined as a macro:
 .Pp
 .Fd #define lua_setglobal(L,s)   lua_setfield(L, LUA_GLOBALSINDEX, s)
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
 .Sh HISTORY
 The
 .Fn lua_setglobal
