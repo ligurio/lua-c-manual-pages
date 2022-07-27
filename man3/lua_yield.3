@@ -22,9 +22,17 @@ When a C function calls
 .Nm lua_yield
 in that way, the running coroutine suspends its execution, and the call to
 lua_resume that started this coroutine returns.
-The parameter nresults is the number of values from the stack that are passed
-as results to
+The parameter
+.Fa nresults
+is the number of values from the stack that are passed as results to
 .Xr lua_resume 3 .
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
 .Sh HISTORY
 The
 .Fn lua_yield

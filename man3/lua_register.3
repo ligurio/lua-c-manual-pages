@@ -18,6 +18,13 @@ It is defined as a macro:
 .Bd -literal -offset indent -compact
 #define lua_register(L,n,f) (lua_pushcfunction(L, f), lua_setglobal(L, n))
 .Ed
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
 .Sh HISTORY
 The
 .Fn lua_register

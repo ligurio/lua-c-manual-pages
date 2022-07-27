@@ -25,6 +25,14 @@ To signal the end of the chunk, the reader must return
 .Dv NULL
 or set size to zero.
 The reader function may return pieces of any size greater than zero.
+.Sh SEE ALSO
+.Xr lua_load 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
 .Sh HISTORY
 The
 .Fn lua_Reader
