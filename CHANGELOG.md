@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Add SEE ALSO sections with a reference to Lua 5.1 Reference Manual and cross
+  references to another manual pages.
+
 ### Changed
 
 ### Fixed

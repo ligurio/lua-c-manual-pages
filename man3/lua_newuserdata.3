@@ -24,6 +24,13 @@ A full userdata is only equal to itself (under raw equality).
 When Lua collects a full userdata with a gc metamethod, Lua calls the
 metamethod and marks the userdata as finalized.
 When this userdata is collected again then Lua frees its corresponding memory.
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
 .Sh HISTORY
 The
 .Fn lua_newuserdata
