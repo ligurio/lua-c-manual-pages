@@ -35,6 +35,14 @@ call; in this case, it is useless to call
 While Lua is running a hook, it disables other calls to hooks.
 Therefore, if a hook calls back Lua to execute a function or a chunk, this
 execution occurs without any calls to hooks.
+.Sh SEE ALSO
+.Xr lua_getinfo 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
 .Sh HISTORY
 The
 .Fn lua_Hook
