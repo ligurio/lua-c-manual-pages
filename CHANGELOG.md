@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+### Changed
+
+### Fixed
+
+[Unreleased]: https://github.com/ligurio/luac-manual-pages/compare/0.1.1...master
+
+## [0.1.1]
+
+### Added
+
 - Add a set of manual pages based on "Lua 5.1 Reference Manual 4.1 – Functions
   and Types".
 
@@ -21,7 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fix style warnings produced by mandoc.
 
-[Unreleased]: https://github.com/ligurio/luac-manual-pages/compare/0.1.0...master
+[0.1.1]: https://github.com/ligurio/luac-manual-pages/compare/0.1.0...0.1.1
 
 ## [0.1.0] - 2022-07-20
 
