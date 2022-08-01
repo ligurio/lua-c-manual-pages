@@ -9,16 +9,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+### Changed
+
+### Fixed
+
+[Unreleased]: https://github.com/ligurio/luac-manual-pages/compare/0.1.2...master
+
+## [0.1.2]
+
+### Added
+
 - Add SEE ALSO sections with a reference to Lua 5.1 Reference Manual and cross
   references to another manual pages.
-
-### Changed
 
 ### Fixed
 
 - Fix a short description in `lua_tointeger.3`.
 
-[Unreleased]: https://github.com/ligurio/luac-manual-pages/compare/0.1.1...master
+[0.1.2]: https://github.com/ligurio/luac-manual-pages/compare/0.1.1...0.1.2
 
 ## [0.1.1]
 
