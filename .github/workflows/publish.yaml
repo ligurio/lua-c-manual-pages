@@ -7,9 +7,6 @@ on:
     types: [opened, reopened, synchronize, labeled]
   workflow_dispatch:
 
-concurrency:
-  cancel-in-progress: true
-
 jobs:
   publish-api-doc:
     if: |
