@@ -1,0 +1,38 @@
+name: Publish HTML pages
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    types: [opened, reopened, synchronize, labeled]
+  workflow_dispatch:
+
+concurrency:
+  cancel-in-progress: true
+
+jobs:
+  publish-api-doc:
+    if: |
+      github.event_name == 'push' ||
+      github.event_name == 'pull_request' &&
+      github.event.pull_request.head.repo.full_name != github.repository
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: tarantool/actions/cleanup@master
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup mandoc
+        run: sudo apt install -y mandoc
+
+      - name: Build HTML pages
+        run: make html
+
+      - name: Publish HTML pages to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4.4.0
+        with:
+          folder: man3/
+        if: github.ref == 'refs/heads/master' &&
+            github.event_name != 'pull_request'
