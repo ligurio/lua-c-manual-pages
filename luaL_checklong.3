@@ -1,0 +1,26 @@
+.Dd $Mdocdate: July 24 2022 $
+.Dt LUAL_CHECKLONG 3
+.Os
+.Sh NAME
+.Nm luaL_checklong
+.Nd checks whether the function argument is a number
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft long
+.Fn luaL_checklong "lua_State *L" "int narg"
+.Sh DESCRIPTION
+.Fn luaL_checklong
+checks whether the function argument
+.Fa narg
+is a number and returns this number cast to a long.
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_checklong
+manual page was written by Sergey Bronnikov.

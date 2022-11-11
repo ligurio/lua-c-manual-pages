@@ -1,0 +1,24 @@
+.Dd $Mdocdate: July 26 2022 $
+.Dt LUAL_OPENLIBS 3
+.Os
+.Sh NAME
+.Nm luaL_openlibs
+.Nd opens all standard Lua libraries into the given state
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft void
+.Fn luaL_openlibs "lua_State *L"
+.Sh DESCRIPTION
+.Fn luaL_openlibs
+opens all standard Lua libraries into the given state.
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_openlibs
+manual page was written by Sergey Bronnikov.

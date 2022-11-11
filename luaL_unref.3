@@ -1,0 +1,39 @@
+.Dd $Mdocdate: July 21 2022 $
+.Dt LUAL_UNREF 3
+.Os
+.Sh NAME
+.Nm luaL_unref
+.Nd releases reference from the table
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft void
+.Fn luaL_unref "lua_State *L" "int t" "int ref"
+.Sh DESCRIPTION
+.Fn luaL_unref
+releases reference
+.Fa ref
+from the table at index
+.Fa t
+.Pq see Xr luaL_ref 3 .
+The entry is removed from the table, so that the referred object can be
+collected.
+The reference ref is also freed to be used again.
+.Pp
+If ref is
+.Dv LUA_NOREF
+or
+.Dv LUA_REFNIL ,
+.Nm luaL_unref
+does nothing.
+.Sh SEE ALSO
+.Xr luaL_ref 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_unref
+manual page was written by Sergey Bronnikov.

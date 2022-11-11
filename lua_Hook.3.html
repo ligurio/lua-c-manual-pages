@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
+  <title>LUA_HOOK(3)</title>
+</head>
+<body>
+<table class="head">
+  <tr>
+    <td class="head-ltitle">LUA_HOOK(3)</td>
+    <td class="head-vol">Library Functions Manual</td>
+    <td class="head-rtitle">LUA_HOOK(3)</td>
+  </tr>
+</table>
+<div class="manual-text">
+<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<code class="Nm" title="Nm">lua_Hook</code> &#x2014;
+<div class="Nd" title="Nd">type for debugging hook functions</div>
+<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<code class="In" title="In">#include
+  &lt;<a class="In" title="In">lua.h</a>&gt;</code>
+<div class="Pp"></div>
+<var class="Ft" title="Ft">typedef void *</var>
+<br/>
+<code class="Fn" title="Fn">lua_Hook</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
+  *L</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">lua_Debug
+  *ar</var>);
+<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<code class="Fn" title="Fn">lua_Hook</code>() type for debugging hook functions.
+<div class="Pp"></div>
+Whenever a hook is called, its ar argument has its field event set to the
+  specific event that triggered the hook. Lua identifies these events with the
+  following constants: <code class="Dv" title="Dv">LUA_HOOKCALL</code>,
+  <code class="Dv" title="Dv">LUA_HOOKRET</code>,
+  <code class="Dv" title="Dv">LUA_HOOKTAILRET</code>,
+  <code class="Dv" title="Dv">LUA_HOOKLINE</code>, and
+  <code class="Dv" title="Dv">LUA_HOOKCOUNT</code>. Moreover, for line events,
+  the field currentline is also set. To get the value of any other field in ar,
+  the hook must call <a class="Xr" title="Xr">lua_getinfo(3)</a>. For return
+  events, event can be <code class="Dv" title="Dv">LUA_HOOKRET</code>, the
+  normal value, or <code class="Dv" title="Dv">LUA_HOOKTAILRET</code>. In the
+  latter case, Lua is simulating a return from a function that did a tail call;
+  in this case, it is useless to call
+  <a class="Xr" title="Xr">lua_getinfo(3)</a>.
+<div class="Pp"></div>
+While Lua is running a hook, it disables other calls to hooks. Therefore, if a
+  hook calls back Lua to execute a function or a chunk, this execution occurs
+  without any calls to hooks.
+<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+  ALSO</a></h1>
+<a class="Xr" title="Xr">lua_getinfo(3)</a>
+<div class="Pp"></div>
+<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+  Manual</span>.</cite>
+<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+The <code class="Fn" title="Fn">lua_Hook</code>() manual page was written by
+  Sergey Bronnikov.</div>
+<table class="foot">
+  <tr>
+    <td class="foot-date">July 18, 2022</td>
+    <td class="foot-os">Debian</td>
+  </tr>
+</table>
+</body>
+</html>

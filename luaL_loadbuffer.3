@@ -1,0 +1,37 @@
+.Dd $Mdocdate: July 24 2022 $
+.Dt LUAL_LOADBUFFER 3
+.Os
+.Sh NAME
+.Nm luaL_loadbuffer
+.Nd loads a buffer as a Lua chunk
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft int
+.Fn luaL_loadbuffer "lua_State *L" "const char *buff" "size_t sz" "const char *name"
+.Sh DESCRIPTION
+.Fn luaL_loadbuffer
+loads a buffer as a Lua chunk.
+This function uses
+.Xr lua_load 3
+to load the chunk in the buffer pointed to by
+.Fa buff
+with size
+.Fa sz .
+.Pp
+This function returns the same results as
+.Xr lua_load 3 .
+.Fa name
+is the chunk name,
+used for debug information and error messages.
+.Sh SEE ALSO
+.Xr lua_load 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_loadbuffer
+manual page was written by Sergey Bronnikov.

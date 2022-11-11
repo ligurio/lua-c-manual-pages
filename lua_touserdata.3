@@ -1,0 +1,28 @@
+.Dd $Mdocdate: July 13 2022 $
+.Dt LUA_TOUSERDATA 3
+.Os
+.Sh NAME
+.Nm lua_touserdata
+.Nd returns address to userdata
+.Sh SYNOPSIS
+.In lua.h
+.Ft void *
+.Fn lua_touserdata "lua_State *L" "int index"
+.Sh DESCRIPTION
+If the value at the given acceptable index is a full userdata, returns its
+block address.
+.Sh RETURN VALUES
+If the value is a light userdata, returns its pointer.
+Otherwise, returns
+.Dv NULL .
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn lua_touserdata
+manual page was written by Sergey Bronnikov.

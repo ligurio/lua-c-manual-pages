@@ -1,0 +1,28 @@
+.Dd $Mdocdate: July 24 2022 $
+.Dt LUAL_CHECKSTACK 3
+.Os
+.Sh NAME
+.Nm luaL_checkstack
+.Nd grows the stack size to specified size of elements
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft void
+.Fn luaL_checkstack "lua_State *L" "int sz" "const char *msg"
+.Sh DESCRIPTION
+.Fn luaL_checkstack
+grows the stack size to
+.Em top + sz
+elements, raising an error if the stack cannot grow to that size.
+.Fa msg
+is an additional text to go into the error message.
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_checkstack
+manual page was written by Sergey Bronnikov.

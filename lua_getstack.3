@@ -1,0 +1,37 @@
+.Dd $Mdocdate: July 13 2022 $
+.Dt LUA_GETSTACK 3
+.Os
+.Sh NAME
+.Nm lua_getstack
+.Nd get information about the interpreter runtime stack
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_getstack "lua_State *L" "int level" "lua_Debug *ar"
+.Sh DESCRIPTION
+.Fn lua_getstack
+get information about the interpreter runtime stack.
+.Pp
+This function fills parts of a
+.Xr lua_Debug 3
+structure with an identification of the activation record of the function
+executing at a given level.
+Level 0 is the current running function, whereas level n+1 is the function that
+has called level
+.Fa n .
+.Sh RETURN VALUES
+When there are no errors,
+.Fn lua_getstack
+returns 1; when called with a level greater than the stack depth, it returns 0.
+.Sh SEE ALSO
+.Xr lua_Debug 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn lua_getstack
+manual page was written by Sergey Bronnikov.

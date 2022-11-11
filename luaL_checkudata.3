@@ -1,0 +1,29 @@
+.Dd $Mdocdate: July 24 2022 $
+.Dt LUAL_CHECKUDATA 3
+.Os
+.Sh NAME
+.Nm luaL_checkudata
+.Nd checks whether the function argument is a userdata of a certain type
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft void *
+.Fn luaL_checkudata "lua_State *L" "int narg" "const char *tname"
+.Sh DESCRIPTION
+.Fn luaL_checkudata
+checks whether the function argument
+.Fa narg
+is a userdata of the type
+.Fa tname
+.Pq see Xr luaL_newmetatable 3 .
+.Sh SEE ALSO
+.Xr luaL_newmetatable 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_checkudata
+manual page was written by Sergey Bronnikov.

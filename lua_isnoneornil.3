@@ -1,0 +1,29 @@
+.Dd $Mdocdate: July 14 2022 $
+.Dt LUA_ISNONEORNIL 3
+.Os
+.Sh NAME
+.Nm lua_isnoneornil
+.Nd check whether a value is not valid or if the value is nil
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_isnoneornil "lua_State *L" "int index"
+.Sh DESCRIPTION
+.Fn lua_isnoneornil
+returns 1 if the given acceptable index is not valid or if the value at this
+index is nil, and 0 otherwise.
+.Sh RETURN VALUES
+Returns 1 if the given acceptable index is not valid (that is, it refers to an
+element outside the current stack) or if the value at this index is nil, and 0
+otherwise.
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn lua_isnoneornil
+manual page was written by Sergey Bronnikov.

@@ -1,0 +1,33 @@
+.Dd $Mdocdate: July 26 2022 $
+.Dt LUAL_NEWMETATABLE 3
+.Os
+.Sh NAME
+.Nm luaL_newmetatable
+.Nd creates a new table to be used as a metatable for userdata
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft int
+.Fn luaL_newmetatable "lua_State *L" "const char *tname"
+.Sh DESCRIPTION
+.Fn luaL_newmetatable
+If the registry already has the key
+.Fa tname ,
+returns 0. Otherwise, creates a new table to be used as a metatable for
+userdata, adds it to the registry with key
+.Fa tname ,
+and returns 1.
+.Pp
+In both cases pushes onto the stack the final value associated with
+.Fa tname
+in the registry.
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_newmetatable
+manual page was written by Sergey Bronnikov.

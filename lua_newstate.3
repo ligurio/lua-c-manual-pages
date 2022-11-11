@@ -1,0 +1,36 @@
+.Dd $Mdocdate: July 14 2022 $
+.Dt LUA_NEWSTATE 3
+.Os
+.Sh NAME
+.Nm lua_newstate
+.Nd creates a new, independent state
+.Sh SYNOPSIS
+.In lua.h
+.Ft lua_State *
+.Fn lua_newstate "lua_Alloc f" "void *ud"
+.Sh DESCRIPTION
+.Fn lua_newstate
+creates a new, independent state.
+The argument
+.Fa f
+is the allocator function; Lua does all memory allocation for this state
+through this function.
+The second argument,
+.Fa ud ,
+is an opaque pointer that Lua simply passes to the allocator in every call.
+.Sh RETURN VALUES
+Returns
+.Dv NULL
+if cannot create the state
+.Pq due to lack of memory .
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn lua_newstate
+manual page was written by Sergey Bronnikov.

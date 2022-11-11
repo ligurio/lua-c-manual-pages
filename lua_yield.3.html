@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
+  <title>LUA_YIELD(3)</title>
+</head>
+<body>
+<table class="head">
+  <tr>
+    <td class="head-ltitle">LUA_YIELD(3)</td>
+    <td class="head-vol">Library Functions Manual</td>
+    <td class="head-rtitle">LUA_YIELD(3)</td>
+  </tr>
+</table>
+<div class="manual-text">
+<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<code class="Nm" title="Nm">lua_yield</code> &#x2014;
+<div class="Nd" title="Nd">yields a coroutine</div>
+<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<code class="In" title="In">#include
+  &lt;<a class="In" title="In">lua.h</a>&gt;</code>
+<div class="Pp"></div>
+<var class="Ft" title="Ft">int</var>
+<br/>
+<code class="Fn" title="Fn">lua_yield</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
+  *L</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">int
+  nresults</var>);
+<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<code class="Fn" title="Fn">lua_yield</code>() yields a coroutine. This function
+  should only be called as the return expression of a C function, as follows:
+<div class="Pp"></div>
+<div class="Bd Bd-indent">
+<pre class="Li">
+return lua_yield (L, nresults);
+</pre>
+</div>
+<div class="Pp"></div>
+When a C function calls <code class="Nm" title="Nm">lua_yield</code> in that
+  way, the running coroutine suspends its execution, and the call to lua_resume
+  that started this coroutine returns. The parameter
+  <var class="Fa" title="Fa">nresults</var> is the number of values from the
+  stack that are passed as results to
+  <a class="Xr" title="Xr">lua_resume(3)</a>.
+<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+  ALSO</a></h1>
+<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+  Manual</span>.</cite>
+<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+The <code class="Fn" title="Fn">lua_yield</code>() manual page was written by
+  Sergey Bronnikov.</div>
+<table class="foot">
+  <tr>
+    <td class="foot-date">July 18, 2022</td>
+    <td class="foot-os">Debian</td>
+  </tr>
+</table>
+</body>
+</html>

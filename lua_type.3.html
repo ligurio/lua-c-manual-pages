@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
+  <title>LUA_TYPE(3)</title>
+</head>
+<body>
+<table class="head">
+  <tr>
+    <td class="head-ltitle">LUA_TYPE(3)</td>
+    <td class="head-vol">Library Functions Manual</td>
+    <td class="head-rtitle">LUA_TYPE(3)</td>
+  </tr>
+</table>
+<div class="manual-text">
+<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<code class="Nm" title="Nm">lua_type</code> &#x2014;
+<div class="Nd" title="Nd">returns the type of the value</div>
+<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<code class="In" title="In">#include
+  &lt;<a class="In" title="In">lua.h</a>&gt;</code>
+<div class="Pp"></div>
+<var class="Ft" title="Ft">int</var>
+<br/>
+<code class="Fn" title="Fn">lua_type</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
+  *L</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">int
+  index</var>);
+<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<code class="Fn" title="Fn">lua_type</code>() returns the type of the value in
+  the given acceptable index, or <code class="Dv" title="Dv">LUA_TNONE</code>
+  for a non-valid index (that is, an index to an &quot;empty&quot; stack
+  position). The types returned by <code class="Nm" title="Nm">lua_type</code>
+  are coded by the following constants defined in
+  <code class="In" title="In">&lt;<a class="In" title="In">lua.h</a>&gt;</code>:
+  <code class="Dv" title="Dv">LUA_TNIL</code>,
+  <code class="Dv" title="Dv">LUA_TNUMBER</code>,
+  <code class="Dv" title="Dv">LUA_TBOOLEAN</code>,
+  <code class="Dv" title="Dv">LUA_TSTRING</code>,
+  <code class="Dv" title="Dv">LUA_TTABLE</code>,
+  <code class="Dv" title="Dv">LUA_TFUNCTION</code>,
+  <code class="Dv" title="Dv">LUA_TUSERDATA</code>,
+  <code class="Dv" title="Dv">LUA_TTHREAD</code>, and
+  <code class="Dv" title="Dv">LUA_TLIGHTUSERDATA</code>.
+<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+  ALSO</a></h1>
+<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+  Manual</span>.</cite>
+<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+The <code class="Fn" title="Fn">lua_type</code>() manual page was written by
+  Sergey Bronnikov.</div>
+<table class="foot">
+  <tr>
+    <td class="foot-date">July 18, 2022</td>
+    <td class="foot-os">Debian</td>
+  </tr>
+</table>
+</body>
+</html>

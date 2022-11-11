@@ -1,0 +1,30 @@
+.Dd $Mdocdate: July 15 2022 $
+.Dt LUA_RAWSET 3
+.Os
+.Sh NAME
+.Nm lua_rawset
+.Nd pops both the key and the value from the stack
+.Sh SYNOPSIS
+.In lua.h
+.Ft void
+.Fn lua_rawset "lua_State *L" "int index"
+.Sh DESCRIPTION
+.Fn lua_rawset
+pops both the key and the value from the stack.
+As in Lua, this function may trigger a metamethod for the "newindex" event.
+Similar to
+.Xr lua_settable 3 ,
+but does a raw assignment
+.Pq i.e., without metamethods .
+.Sh SEE ALSO
+.Xr lua_settable 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn lua_rawset
+manual page was written by Sergey Bronnikov.

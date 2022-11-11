@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
+  <title>LUAL_DOSTRING(3)</title>
+</head>
+<body>
+<table class="head">
+  <tr>
+    <td class="head-ltitle">LUAL_DOSTRING(3)</td>
+    <td class="head-vol">Library Functions Manual</td>
+    <td class="head-rtitle">LUAL_DOSTRING(3)</td>
+  </tr>
+</table>
+<div class="manual-text">
+<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<code class="Nm" title="Nm">luaL_dostring</code> &#x2014;
+<div class="Nd" title="Nd">loads and runs the given string</div>
+<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<code class="In" title="In">#include
+  &lt;<a class="In" title="In">lauxlib.h</a>&gt;</code>
+<div class="Pp"></div>
+<var class="Ft" title="Ft">int</var>
+<br/>
+<code class="Fn" title="Fn">luaL_dostring</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
+  *L</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">const char
+  *str</var>);
+<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<code class="Fn" title="Fn">luaL_dostring</code>() loads and runs the given
+  string. It is defined as the following macro:
+<div class="Pp"></div>
+<div class="Bd Bd-indent">
+<pre class="Li">
+(luaL_loadstring(L, str) || lua_pcall(L, 0, LUA_MULTRET, 0))
+</pre>
+</div>
+<h1 class="Sh" title="Sh" id="RETURN_VALUES"><a class="permalink" href="#RETURN_VALUES">RETURN
+  VALUES</a></h1>
+It returns 0 if there are no errors or 1 in case of errors.
+<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+  ALSO</a></h1>
+<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+  Manual</span>.</cite>
+<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+The <code class="Fn" title="Fn">luaL_dostring</code>() manual page was written
+  by Sergey Bronnikov.</div>
+<table class="foot">
+  <tr>
+    <td class="foot-date">July 24, 2022</td>
+    <td class="foot-os">Debian</td>
+  </tr>
+</table>
+</body>
+</html>

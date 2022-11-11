@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
+  <title>LUA_GETMETATABLE(3)</title>
+</head>
+<body>
+<table class="head">
+  <tr>
+    <td class="head-ltitle">LUA_GETMETATABLE(3)</td>
+    <td class="head-vol">Library Functions Manual</td>
+    <td class="head-rtitle">LUA_GETMETATABLE(3)</td>
+  </tr>
+</table>
+<div class="manual-text">
+<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<code class="Nm" title="Nm">lua_getmetatable</code> &#x2014;
+<div class="Nd" title="Nd">pushes onto the stack the metatable of the value at
+  the given acceptable index</div>
+<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<code class="In" title="In">#include
+  &lt;<a class="In" title="In">lua.h</a>&gt;</code>
+<div class="Pp"></div>
+<var class="Ft" title="Ft">int</var>
+<br/>
+<code class="Fn" title="Fn">lua_getmetatable</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
+  *L</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">int
+  index</var>);
+<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<code class="Fn" title="Fn">lua_getmetatable</code>() pushes onto the stack the
+  metatable of the value at the given acceptable index.
+<h1 class="Sh" title="Sh" id="RETURN_VALUES"><a class="permalink" href="#RETURN_VALUES">RETURN
+  VALUES</a></h1>
+If the <var class="Fa" title="Fa">index</var> is not valid, or if the value does
+  not have a metatable, the function returns 0 and pushes nothing on the stack.
+<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+  ALSO</a></h1>
+<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+  Manual</span>.</cite>
+<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+The <code class="Fn" title="Fn">lua_getmetatable</code>() manual page was
+  written by Sergey Bronnikov.</div>
+<table class="foot">
+  <tr>
+    <td class="foot-date">July 14, 2022</td>
+    <td class="foot-os">Debian</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,33 @@
+.Dd $Mdocdate: July 26 2022 $
+.Dt LUAL_OPTINTEGER 3
+.Os
+.Sh NAME
+.Nm luaL_optinteger
+.Nd casts a number to a lua_Integer
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft lua_Integer
+.Fn luaL_optinteger "lua_State *L" "int narg" "lua_Integer d"
+.Sh DESCRIPTION
+.Fn luaL_optinteger
+if the function argument
+.Fa narg
+is a number, returns this number cast to a
+.Xr lua_Integer 3 .
+If this argument is absent or is
+.Dv nil ,
+returns
+.Fa d .
+Otherwise, raises an error.
+.Sh SEE ALSO
+.Xr lua_Integer 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_optinteger
+manual page was written by Sergey Bronnikov.

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
+  <title>LUAL_REF(3)</title>
+</head>
+<body>
+<table class="head">
+  <tr>
+    <td class="head-ltitle">LUAL_REF(3)</td>
+    <td class="head-vol">Library Functions Manual</td>
+    <td class="head-rtitle">LUAL_REF(3)</td>
+  </tr>
+</table>
+<div class="manual-text">
+<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<code class="Nm" title="Nm">luaL_ref</code> &#x2014;
+<div class="Nd" title="Nd">creates and returns a reference for the object at the
+  top of the stack and pops the object</div>
+<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<code class="In" title="In">#include
+  &lt;<a class="In" title="In">lauxlib.h</a>&gt;</code>
+<div class="Pp"></div>
+<var class="Ft" title="Ft">int</var>
+<br/>
+<code class="Fn" title="Fn">luaL_ref</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
+  *L</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">int
+  t</var>);
+<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<code class="Fn" title="Fn">luaL_ref</code>() creates and returns a
+  <i class="Em" title="Em">reference</i>, in the table at index
+  <var class="Fa" title="Fa">t</var>, for the object at the top of the stack
+  (and pops the object).
+<div class="Pp"></div>
+A reference is a unique integer key. As long as you do not manually add integer
+  keys into table <var class="Fa" title="Fa">t</var>,
+  <code class="Nm" title="Nm">luaL_ref</code> ensures the uniqueness of the key
+  it returns. You can retrieve an object referred by reference r by calling
+  <i class="Em" title="Em">lua_rawgeti(L, t, r)</i>. Function
+  <a class="Xr" title="Xr">luaL_unref(3)</a> frees a reference and its
+  associated object.
+<h1 class="Sh" title="Sh" id="RETURN_VALUES"><a class="permalink" href="#RETURN_VALUES">RETURN
+  VALUES</a></h1>
+If the object at the top of the stack is <code class="Dv" title="Dv">nil</code>,
+  <code class="Nm" title="Nm">luaL_ref returns the constant</code>
+  <code class="Dv" title="Dv">LUA_REFNIL</code>. The constant
+  <code class="Dv" title="Dv">LUA_NOREF</code> is guaranteed to be different
+  from any reference returned by <code class="Nm" title="Nm">luaL_ref</code>.
+<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+  ALSO</a></h1>
+<a class="Xr" title="Xr">luaL_unref(3)</a>
+<div class="Pp"></div>
+<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+  Manual</span>.</cite>
+<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+The <code class="Fn" title="Fn">luaL_ref</code>() manual page was written by
+  Sergey Bronnikov.</div>
+<table class="foot">
+  <tr>
+    <td class="foot-date">July 21, 2022</td>
+    <td class="foot-os">Debian</td>
+  </tr>
+</table>
+</body>
+</html>

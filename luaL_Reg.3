@@ -1,0 +1,46 @@
+.Dd $Mdocdate: July 26 2022 $
+.Dt LUAL_REG 3
+.Os
+.Sh NAME
+.Nm luaL_Reg
+.Nd type for arrays of functions to be registered by luaL_register
+.Sh SYNOPSIS
+.In lauxlib.h
+.Vt typedef struct luaL_Reg ;
+.Sh DESCRIPTION
+.Fn luaL_Reg
+type for arrays of functions to be registered by
+.Xr luaL_register 3 .
+.Vt luaL_Reg
+is defined as:
+.Bd -literal
+typedef struct luaL_Reg {
+        const char *name;
+        lua_CFunction func;
+} luaL_Reg;
+.Ed
+.Pp
+.Fa name
+is the function name and
+.Fa func
+is a pointer to the function.
+Any array of
+.Nm luaL_Reg
+must end with an sentinel entry in which both
+.Fa name
+and
+.Fa func
+are
+.Dv NULL .
+.Sh SEE ALSO
+.Xr luaL_register 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_Reg
+manual page was written by Sergey Bronnikov.

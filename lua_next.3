@@ -1,0 +1,52 @@
+.Dd $Mdocdate: July 20 2022 $
+.Dt LUA_NEXT 3
+.Os
+.Sh NAME
+.Nm lua_next
+.Nd pops a key from the stack, and pushes a key-value pair from the table
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_next "lua_State *L" "int index"
+.Sh DESCRIPTION
+.Fn lua_next
+pops a key from the stack, and pushes a key-value pair from the table at the
+given index (the "next" pair after the given key).
+If there are no more elements in the table, then
+.Nm lua_next
+returns 0 (and pushes nothing).
+.Pp
+A typical traversal looks like this:
+.Pp
+.Bd -literal -offset indent -compact
+/* table is in the stack at index 't' */
+lua_pushnil(L);  /* first key */
+while (lua_next(L, t) != 0) {
+  /* uses 'key' (at index -2) and 'value' (at index -1) */
+  printf("%s - %s\n",
+         lua_typename(L, lua_type(L, -2)),
+         lua_typename(L, lua_type(L, -1)));
+  /* removes 'value'; keeps 'key' for next iteration */
+  lua_pop(L, 1);
+}
+.Ed
+.Pp
+While traversing a table, do not call
+.Xr lua_tolstring 3
+directly on a key, unless you know that the key is actually a string.
+Recall that
+.Xr lua_tolstring 3
+changes the value at the given index; this confuses the next call to
+.Nm lua_next .
+.Sh SEE ALSO
+.Xr lua_tolstring 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn lua_next
+manual page was written by Sergey Bronnikov.

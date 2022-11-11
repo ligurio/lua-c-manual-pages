@@ -1,0 +1,32 @@
+.Dd $Mdocdate: July 24 2022 $
+.Dt LUAL_CHECKTYPE 3
+.Os
+.Sh NAME
+.Nm luaL_checktype
+.Nd checks whether the function argument has a certain type
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft void
+.Fn luaL_checktype "lua_State *L" "int narg" "int t"
+.Sh DESCRIPTION
+.Fn luaL_checktype
+checks whether the function argument
+.Fa narg
+has type
+.Fa t .
+See
+.Xr lua_type 3
+for the encoding of types for
+.Fa t .
+.Sh SEE ALSO
+.Xr lua_type 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_checktype
+manual page was written by Sergey Bronnikov.

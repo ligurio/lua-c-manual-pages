@@ -1,0 +1,36 @@
+.Dd $Mdocdate: July 21 2022 $
+.Dt LUAL_WHERE 3
+.Os
+.Sh NAME
+.Nm luaL_where
+.Nd pushes onto the stack a string identifying the current position of the
+control
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft void
+.Fn luaL_where "lua_State *L" "int lvl"
+.Sh DESCRIPTION
+.Fn luaL_where
+pushes onto the stack a string identifying the current position of the control
+at level
+.Fa lvl
+in the call stack.
+Typically this string has the following format:
+.Pp
+.Em chunkname:currentline :
+.Pp
+Level 0 is the running function, level 1 is the function that called the
+running function, etc.
+.Pp
+This function is used to build a prefix for error messages.
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_where
+manual page was written by Sergey Bronnikov.

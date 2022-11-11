@@ -1,0 +1,94 @@
+.Dd $Mdocdate: July 19 2022 $
+.Dt LUA_DEBUG 3
+.Os
+.Sh NAME
+.Nm lua_Debug
+.Nd structure used to carry different pieces of information about an active
+function
+.Sh SYNOPSIS
+.In lua.h
+.Vt typedef struct lua_Debug ;
+.Sh DESCRIPTION
+.Fn lua_Debug
+a structure used to carry different pieces of information about an active
+function.
+.Xr lua_getstack 3
+fills only the private part of this structure, for later use.
+To fill the other fields of
+.Nm lua_Debug
+with useful information, call
+.Xr lua_getinfo 3 .
+.Pp
+.Vt lua_Debug
+is defined as:
+.Bd -literal
+typedef struct lua_Debug {
+        int event;
+        const char *name;           /* (n) */
+        const char *namewhat;       /* (n) */
+        const char *what;           /* (S) */
+        const char *source;         /* (S) */
+        int currentline;            /* (l) */
+        int nups;                   /* (u) number of upvalues */
+        int linedefined;            /* (S) */
+        int lastlinedefined;        /* (S) */
+        char short_src[LUA_IDSIZE]; /* (S) */
+        /* private part */
+        other fields
+} lua_Debug;
+.Ed
+.Pp
+The fields of
+.Nm lua_Debug
+have the following meaning:
+.Pp
+.Bl -tag -width lastlinedefined: -offset indent -compact
+.It Sy source :
+If the function was defined in a string, then source is that string.
+If the function was defined in a file, then source starts with a '@' followed
+by the file name.
+.It Sy short_src :
+a "printable" version of source, to be used in error messages.
+.It Sy linedefined :
+the line number where the definition of the function starts.
+.It Sy lastlinedefined :
+the line number where the definition of the function ends.
+.It Sy what :
+the string "Lua" if the function is a Lua function, "C" if it is a C function,
+"main" if it is the main part of a chunk, and "tail" if it was a function that
+did a tail call.
+In the latter case, Lua has no other information about the function.
+.It Sy currentline :
+the current line where the given function is executing.
+When no line information is available, currentline is set to -1.
+.It Sy name :
+a reasonable name for the given function.
+Because functions in Lua are first-class values, they do not have a fixed name:
+some functions can be the value of multiple global variables, while others can
+be stored only in a table field.
+The
+.Xr lua_getinfo 3
+function checks how the function was called to find a suitable name.
+If it cannot find a name, then name is set to
+.Dv NULL .
+.It Sy namewhat :
+explains the name field.
+The value of namewhat can be "global", "local", "method", "field", "upvalue",
+or "" (the empty string), according to how the function was called. (Lua uses
+the empty string when no other option seems to apply.)
+.It Sy nups :
+the number of upvalues of the function.
+.El
+.Sh SEE ALSO
+.Xr lua_getinfo 3 ,
+.Xr lua_getstack 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn lua_Debug
+manual page was written by Sergey Bronnikov.

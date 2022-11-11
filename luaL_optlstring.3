@@ -1,0 +1,39 @@
+.Dd $Mdocdate: July 26 2022 $
+.Dt LUAL_OPTLSTRING 3
+.Os
+.Sh NAME
+.Nm luaL_optlstring
+.Nd if the function argument is a string, returns this string
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft const char *
+.Fn luaL_optlstring "lua_State *L" "int narg" "const char *d" "size_t *l"
+.Sh DESCRIPTION
+.Fn luaL_optlstring
+if the function argument
+.Fa narg
+is a string, returns this string.
+If this argument is absent or is
+.Dv nil ,
+returns
+.Fa d .
+Otherwise, raises an error.
+.Pp
+If
+.Fa l
+is not
+.Dv NULL ,
+fills the position
+.Fa *l
+with the results's length.
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_optlstring
+manual page was written by Sergey Bronnikov.

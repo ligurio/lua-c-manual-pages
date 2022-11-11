@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
+  <title>LUAL_PREPBUFFER(3)</title>
+</head>
+<body>
+<table class="head">
+  <tr>
+    <td class="head-ltitle">LUAL_PREPBUFFER(3)</td>
+    <td class="head-vol">Library Functions Manual</td>
+    <td class="head-rtitle">LUAL_PREPBUFFER(3)</td>
+  </tr>
+</table>
+<div class="manual-text">
+<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<code class="Nm" title="Nm">luaL_prepbuffer</code> &#x2014;
+<div class="Nd" title="Nd">prepares a buffer luaL_Buffer</div>
+<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<code class="In" title="In">#include
+  &lt;<a class="In" title="In">lauxlib.h</a>&gt;</code>
+<div class="Pp"></div>
+<var class="Ft" title="Ft">char *</var>
+<br/>
+<code class="Fn" title="Fn">luaL_prepbuffer</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">luaL_Buffer
+  *B</var>);
+<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<code class="Fn" title="Fn">luaL_prepbuffer</code>() returns an address to a
+  space of size <code class="Dv" title="Dv">LUAL_BUFFERSIZE</code> where you can
+  copy a string to be added to buffer <var class="Fa" title="Fa">B</var> (see
+  <a class="Xr" title="Xr">luaL_Buffer(3)</a>). After copying the string into
+  this space you must call <a class="Xr" title="Xr">luaL_addsize(3)</a> with the
+  size of the string to actually add it to the buffer.
+<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+  ALSO</a></h1>
+<a class="Xr" title="Xr">luaL_addsize(3)</a>,
+  <a class="Xr" title="Xr">luaL_Buffer(3)</a>
+<div class="Pp"></div>
+<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+  Manual</span>.</cite>
+<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+The <code class="Fn" title="Fn">luaL_prepbuffer</code>() manual page was written
+  by Sergey Bronnikov.</div>
+<table class="foot">
+  <tr>
+    <td class="foot-date">July 26, 2022</td>
+    <td class="foot-os">Debian</td>
+  </tr>
+</table>
+</body>
+</html>

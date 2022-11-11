@@ -1,0 +1,45 @@
+.Dd $Mdocdate: July 24 2022 $
+.Dt LUAL_CHECKOPTION 3
+.Os
+.Sh NAME
+.Nm luaL_checkoption
+.Nd checks whether the function argument is a string
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft int
+.Fn luaL_checkoption "lua_State *L" "int narg" "const char *def" "const char *const lst[]"
+.Sh DESCRIPTION
+.Fn luaL_checkoption
+checks whether the function argument
+.Fa narg
+is a string and searches for this string in the array
+.Fa lst
+(which must be
+.Dv NULL
+-terminated).
+Returns the index in the array where the string was found.
+Raises an error if the argument is not a string or if the string cannot be
+found.
+.Pp
+If
+.Fa def
+is not
+.Dv NULL ,
+the function uses def as a default value when there is no argument
+.Fa narg
+or if this argument is
+.Dv nil .
+.Pp
+This is a useful function for mapping strings to C enums. (The usual convention
+in Lua libraries is to use strings instead of numbers to select options.)
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_checkoption
+manual page was written by Sergey Bronnikov.

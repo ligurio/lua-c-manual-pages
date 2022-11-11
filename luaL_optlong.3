@@ -1,0 +1,29 @@
+.Dd $Mdocdate: July 26 2022 $
+.Dt LUAL_OPTLONG 3
+.Os
+.Sh NAME
+.Nm luaL_optlong
+.Nd casts a number to a long
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft long
+.Fn luaL_optlong "lua_State *L" "int narg" "long d"
+.Sh DESCRIPTION
+.Fn luaL_optlong
+if the function argument narg is a number, returns this number cast to a long.
+If this argument is absent or is
+.Dv nil ,
+returns
+.Fa d .
+Otherwise, raises an error.
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_optlong
+manual page was written by Sergey Bronnikov.

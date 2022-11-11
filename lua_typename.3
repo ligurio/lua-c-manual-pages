@@ -1,0 +1,29 @@
+.Dd $Mdocdate: July 13 2022 $
+.Dt LUA_TYPENAME 3
+.Os
+.Sh NAME
+.Nm lua_typename
+.Nd returns the name of the type encoded by the value
+.Sh SYNOPSIS
+.In lua.h
+.Ft const char *
+.Fn lua_typename "lua_State *L" "int tp"
+.Sh DESCRIPTION
+.Fn lua_typename
+returns the name of the type encoded by the value
+.Fa tp ,
+which must be one the values returned by
+.Xr lua_type 3 .
+.Sh RETURN VALUES
+Returns the name of the type encoded by the value.
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn lua_typename
+manual page was written by Sergey Bronnikov.

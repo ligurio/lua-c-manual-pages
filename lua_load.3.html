@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
+  <title>LUA_LOAD(3)</title>
+</head>
+<body>
+<table class="head">
+  <tr>
+    <td class="head-ltitle">LUA_LOAD(3)</td>
+    <td class="head-vol">Library Functions Manual</td>
+    <td class="head-rtitle">LUA_LOAD(3)</td>
+  </tr>
+</table>
+<div class="manual-text">
+<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<code class="Nm" title="Nm">lua_load</code> &#x2014;
+<div class="Nd" title="Nd">loads a Lua chunk</div>
+<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<code class="In" title="In">#include
+  &lt;<a class="In" title="In">lua.h</a>&gt;</code>
+<div class="Pp"></div>
+<var class="Ft" title="Ft">int</var>
+<br/>
+<code class="Fn" title="Fn">lua_load</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
+  *L</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">lua_Reader
+  reader</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">void
+  *data</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">const
+  char *chunkname</var>);
+<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<code class="Fn" title="Fn">lua_load</code>() loads a Lua chunk. If there are no
+  errors, <code class="Fn" title="Fn">lua_load</code>() pushes the compiled
+  chunk as a Lua function on top of the stack. Otherwise, it pushes an error
+  message.
+<div class="Pp"></div>
+This function only loads a chunk; it does not run it.
+<div class="Pp"></div>
+<code class="Fn" title="Fn">lua_load</code>() automatically detects whether the
+  chunk is text or binary, and loads it accordingly, see
+  <a class="Xr" title="Xr">luac(1)</a>.
+<div class="Pp"></div>
+The <code class="Fn" title="Fn">lua_load</code>() function uses a user-supplied
+  reader function to read the chunk, see
+  <a class="Xr" title="Xr">lua_Reader(3)</a>. The data argument is an opaque
+  value passed to the reader function.
+<div class="Pp"></div>
+The chunkname argument gives a name to the chunk, which is used for error
+  messages and in debug information.
+<h1 class="Sh" title="Sh" id="RETURN_VALUES"><a class="permalink" href="#RETURN_VALUES">RETURN
+  VALUES</a></h1>
+The return values of <code class="Fn" title="Fn">lua_load</code>() are:
+<div class="Pp"></div>
+<div class="Bd-indent">
+<dl class="Bl-tag Bl-compact">
+  <dt><a class="permalink" href="#0"><code class="Dv" title="Dv" id="0">0</code></a>:</dt>
+  <dd>no errors;</dd>
+  <dt><a class="permalink" href="#LUA_ERRSYNTAX"><code class="Dv" title="Dv" id="LUA_ERRSYNTAX">LUA_ERRSYNTAX</code></a>:</dt>
+  <dd>syntax error during pre-compilation;</dd>
+  <dt><a class="permalink" href="#LUA_ERRMEM"><code class="Dv" title="Dv" id="LUA_ERRMEM">LUA_ERRMEM</code></a>:</dt>
+  <dd>memory allocation error.</dd>
+</dl>
+</div>
+<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+  ALSO</a></h1>
+<a class="Xr" title="Xr">luac(1)</a>, <a class="Xr" title="Xr">lua_Reader(3)</a>
+<div class="Pp"></div>
+<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+  Manual</span>.</cite>
+<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+The <code class="Fn" title="Fn">lua_load</code>() manual page was written by
+  Sergey Bronnikov.</div>
+<table class="foot">
+  <tr>
+    <td class="foot-date">July 15, 2022</td>
+    <td class="foot-os">Debian</td>
+  </tr>
+</table>
+</body>
+</html>

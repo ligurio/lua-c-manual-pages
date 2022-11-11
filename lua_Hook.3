@@ -1,0 +1,49 @@
+.Dd $Mdocdate: July 18 2022 $
+.Dt LUA_HOOK 3
+.Os
+.Sh NAME
+.Nm lua_Hook
+.Nd type for debugging hook functions
+.Sh SYNOPSIS
+.In lua.h
+.Ft typedef void *
+.Fn lua_Hook "lua_State *L" "lua_Debug *ar"
+.Sh DESCRIPTION
+.Fn lua_Hook
+type for debugging hook functions.
+.Pp
+Whenever a hook is called, its ar argument has its field event set to the
+specific event that triggered the hook.
+Lua identifies these events with the following constants:
+.Dv LUA_HOOKCALL ,
+.Dv LUA_HOOKRET ,
+.Dv LUA_HOOKTAILRET ,
+.Dv LUA_HOOKLINE ,
+and
+.Dv LUA_HOOKCOUNT .
+Moreover, for line events, the field currentline is also set.
+To get the value of any other field in ar, the hook must call
+.Xr lua_getinfo 3 .
+For return events, event can be
+.Dv LUA_HOOKRET ,
+the normal value, or
+.Dv LUA_HOOKTAILRET .
+In the latter case, Lua is simulating a return from a function that did a tail
+call; in this case, it is useless to call
+.Xr lua_getinfo 3 .
+.Pp
+While Lua is running a hook, it disables other calls to hooks.
+Therefore, if a hook calls back Lua to execute a function or a chunk, this
+execution occurs without any calls to hooks.
+.Sh SEE ALSO
+.Xr lua_getinfo 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn lua_Hook
+manual page was written by Sergey Bronnikov.

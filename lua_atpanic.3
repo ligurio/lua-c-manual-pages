@@ -1,0 +1,33 @@
+.Dd $Mdocdate: July 14 2022 $
+.Dt LUA_ATPANIC 3
+.Os
+.Sh NAME
+.Nm lua_atpanic
+.Nd sets a new panic function and returns the old one
+.Sh SYNOPSIS
+.In lua.h
+.Ft lua_CFunction
+.Fn lua_atpanic "lua_State *L" "lua_CFunction panicf"
+.Sh DESCRIPTION
+.Fn lua_atpanic
+sets a new panic function and returns the old one.
+.Pp
+If an error happens outside any protected environment, Lua calls a panic
+function and then calls
+.Em exit(EXIT_FAILURE) ,
+thus exiting the host application.
+Your panic function can avoid this exit by never returning (e.g., doing a long
+jump).
+.Pp
+The panic function can access the error message at the top of the stack.
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn lua_atpanic
+manual page was written by Sergey Bronnikov.

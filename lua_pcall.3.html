@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
+  <title>LUA_PCALL(3)</title>
+</head>
+<body>
+<table class="head">
+  <tr>
+    <td class="head-ltitle">LUA_PCALL(3)</td>
+    <td class="head-vol">Library Functions Manual</td>
+    <td class="head-rtitle">LUA_PCALL(3)</td>
+  </tr>
+</table>
+<div class="manual-text">
+<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<code class="Nm" title="Nm">lua_pcall</code> &#x2014;
+<div class="Nd" title="Nd">calls a function in protected mode</div>
+<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<code class="In" title="In">#include
+  &lt;<a class="In" title="In">lua.h</a>&gt;</code>
+<div class="Pp"></div>
+<var class="Ft" title="Ft">int</var>
+<br/>
+<code class="Fn" title="Fn">lua_pcall</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
+  *L</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">int
+  nargs</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">int
+  nresults</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">int
+  errfunc</var>);
+<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<code class="Fn" title="Fn">lua_pcall</code>() calls a function in protected
+  mode.
+<div class="Pp"></div>
+Both <var class="Fa" title="Fa">nargs</var> and
+  <var class="Fa" title="Fa">nresults</var> have the same meaning as in
+  <a class="Xr" title="Xr">lua_call(3)</a>. If there are no errors during the
+  call, <code class="Nm" title="Nm">lua_pcall</code> behaves exactly like
+  <a class="Xr" title="Xr">lua_call(3)</a>. However, if there is any error,
+  <code class="Nm" title="Nm">lua_pcall</code> catches it, pushes a single value
+  on the stack (the error message), and returns an error code. Like
+  <a class="Xr" title="Xr">lua_call(3)</a>,
+  <code class="Nm" title="Nm">lua_pcall</code> always removes the function and
+  its arguments from the stack.
+<div class="Pp"></div>
+If <var class="Fa" title="Fa">errfunc</var> is 0, then the error message
+  returned on the stack is exactly the original error message. Otherwise,
+  <var class="Fa" title="Fa">errfunc</var> is the stack index of an
+  <i class="Em" title="Em">error handler function</i>. (In the current
+  implementation, this index cannot be a pseudo-index.) In case of runtime
+  errors, this function will be called with the error message and its return
+  value will be the message returned on the stack by
+  <code class="Nm" title="Nm">lua_pcall</code>.
+<div class="Pp"></div>
+Typically, the error handler function is used to add more debug information to
+  the error message, such as a stack traceback. Such information cannot be
+  gathered after the return of <code class="Nm" title="Nm">lua_pcall</code>,
+  since by then the stack has unwound.
+<h1 class="Sh" title="Sh" id="RETURN_VALUES"><a class="permalink" href="#RETURN_VALUES">RETURN
+  VALUES</a></h1>
+The <code class="Nm" title="Nm">lua_pcall</code> function returns 0 in case of
+  success or one of the following error codes (defined in
+  <code class="In" title="In">&lt;<a class="In" title="In">lua.h</a>&gt;</code>):
+<div class="Pp"></div>
+<div class="Bd-indent">
+<dl class="Bl-tag Bl-compact">
+  <dt><a class="permalink" href="#LUA_ERRRUN"><code class="Dv" title="Dv" id="LUA_ERRRUN">LUA_ERRRUN</code></a>:</dt>
+  <dd>a runtime error.</dd>
+  <dt><a class="permalink" href="#LUA_ERRMEM"><code class="Dv" title="Dv" id="LUA_ERRMEM">LUA_ERRMEM</code></a>:</dt>
+  <dd>memory allocation error. For such errors, Lua does not call the error
+      handler function.</dd>
+  <dt><a class="permalink" href="#LUA_ERRERR"><code class="Dv" title="Dv" id="LUA_ERRERR">LUA_ERRERR</code></a>:</dt>
+  <dd>error while running the error handler function.</dd>
+</dl>
+</div>
+<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+  ALSO</a></h1>
+<a class="Xr" title="Xr">lua_call(3)</a>
+<div class="Pp"></div>
+<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+  Manual</span>.</cite>
+<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+The <code class="Fn" title="Fn">lua_pcall</code>() manual page was written by
+  Sergey Bronnikov.</div>
+<table class="foot">
+  <tr>
+    <td class="foot-date">July 20, 2022</td>
+    <td class="foot-os">Debian</td>
+  </tr>
+</table>
+</body>
+</html>

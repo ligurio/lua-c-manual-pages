@@ -1,0 +1,29 @@
+.Dd $Mdocdate: July 24 2022 $
+.Dt LUAL_CHECKINTEGER 3
+.Os
+.Sh NAME
+.Nm luaL_checkinteger
+.Nd checks whether the function argument is a number
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft lua_Integer
+.Fn luaL_checkinteger "lua_State *L" "int narg"
+.Sh DESCRIPTION
+.Fn luaL_checkinteger
+checks whether the function argument
+.Fa narg
+is a number and returns this number
+cast to a
+.Xr lua_Integer 3 .
+.Sh SEE ALSO
+.Xr lua_Integer 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_checkinteger
+manual page was written by Sergey Bronnikov.

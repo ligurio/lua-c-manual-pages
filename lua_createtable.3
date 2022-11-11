@@ -1,0 +1,34 @@
+.Dd $Mdocdate: July 14 2022 $
+.Dt LUA_CREATETABLE 3
+.Os
+.Sh NAME
+.Nm lua_createtable
+.Nd creates a new empty table and pushes it onto the stack
+.Sh SYNOPSIS
+.In lua.h
+.Ft void
+.Fn lua_createtable "lua_State *L" "int narr" "int nrec"
+.Sh DESCRIPTION
+.Fn lua_createtable
+creates a new empty table and pushes it onto the stack.
+The new table has space pre-allocated for
+.Fa narr
+array elements and
+.Fa nrec
+non-array elements.
+This pre-allocation is useful when you know exactly how many elements the table
+will have.
+Otherwise you can use the function
+.Xr lua_newtable 3 .
+.Sh SEE ALSO
+.Xr lua_newtable 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn lua_createtable
+manual page was written by Sergey Bronnikov.

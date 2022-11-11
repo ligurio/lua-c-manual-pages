@@ -1,0 +1,29 @@
+.Dd $Mdocdate: July 22 2022 $
+.Dt LUAL_BUFFINIT 3
+.Os
+.Sh NAME
+.Nm luaL_buffinit
+.Nd initializes a buffer
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft void
+.Fn luaL_buffinit "lua_State *L" "luaL_Buffer *B"
+.Sh DESCRIPTION
+.Fn luaL_buffinit
+initializes a buffer
+.Fa B .
+This function does not allocate any space; the buffer must be declared as a
+variable
+.Pq see Xr luaL_Buffer 3 .
+.Sh SEE ALSO
+.Xr luaL_Buffer 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_buffinit
+manual page was written by Sergey Bronnikov.

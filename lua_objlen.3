@@ -1,0 +1,29 @@
+.Dd $Mdocdate: July 15 2022 $
+.Dt LUA_OBJLEN 3
+.Os
+.Sh NAME
+.Nm lua_objlen
+.Nd returns the "length" of the value
+.Sh SYNOPSIS
+.In lua.h
+.Ft size_t
+.Fn lua_objlen "lua_State *L" "int index"
+.Sh DESCRIPTION
+.Fn lua_objlen
+returns the
+.Qq length
+of the value at the given acceptable index: for strings, this is the string
+length; for tables, this is the result of the length operator ('#'); for
+userdata, this is the size of the block of memory allocated for the userdata;
+for other values, it is 0.
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn lua_objlen
+manual page was written by Sergey Bronnikov.

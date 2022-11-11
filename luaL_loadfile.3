@@ -1,0 +1,44 @@
+.Dd $Mdocdate: July 24 2022 $
+.Dt LUAL_LOADFILE 3
+.Os
+.Sh NAME
+.Nm luaL_loadfile
+.Nd loads a file as a Lua chunk
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft int
+.Fn luaL_loadfile "lua_State *L" "const char *filename"
+.Sh DESCRIPTION
+.Fn luaL_loadfile
+loads a file as a Lua chunk.
+This function uses
+.Xr lua_load 3
+to load the chunk in the file named
+.Fa filename .
+If filename is
+.Dv NULL ,
+then it loads from the standard input.
+The first line in the file is ignored if it starts with a
+.Em # .
+.Pp
+As
+.Xr lua_load 3 ,
+this function only loads the chunk; it does not run it.
+.Sh RETURN VALUES
+This function returns the same results as
+.Xr lua_load 3 ,
+but it has an extra error code
+.Dv LUA_ERRFILE
+if it cannot open/read the file.
+.Sh SEE ALSO
+.Xr lua_load 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_loadfile
+manual page was written by Sergey Bronnikov.

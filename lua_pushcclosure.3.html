@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
+  <title>LUA_PUSHCCLOSURE(3)</title>
+</head>
+<body>
+<table class="head">
+  <tr>
+    <td class="head-ltitle">LUA_PUSHCCLOSURE(3)</td>
+    <td class="head-vol">Library Functions Manual</td>
+    <td class="head-rtitle">LUA_PUSHCCLOSURE(3)</td>
+  </tr>
+</table>
+<div class="manual-text">
+<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<code class="Nm" title="Nm">lua_pushcclosure</code> &#x2014;
+<div class="Nd" title="Nd">pushes a new C closure onto the stack</div>
+<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<code class="In" title="In">#include
+  &lt;<a class="In" title="In">lua.h</a>&gt;</code>
+<div class="Pp"></div>
+<var class="Ft" title="Ft">void</var>
+<br/>
+<code class="Fn" title="Fn">lua_pushcclosure</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
+  *L</var>,
+  <var class="Fa" title="Fa" style="white-space: nowrap;">lua_CFunction
+  fn</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">int
+  n</var>);
+<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<code class="Fn" title="Fn">lua_pushcclosure</code>() pushes a new C closure
+  onto the stack.
+<div class="Pp"></div>
+When a C function is created, it is possible to associate some values with it,
+  thus creating a C closure; these values are then accessible to the function
+  whenever it is called. To associate values with a C function, first these
+  values should be pushed onto the stack (when there are multiple values, the
+  first value is pushed first). Then
+  <code class="Fn" title="Fn">lua_pushcclosure</code>() is called to create and
+  push the C function onto the stack, with the argument
+  <var class="Fa" title="Fa">n</var> telling how many values should be
+  associated with the function.
+  <code class="Fn" title="Fn">lua_pushcclosure</code>() also pops these values
+  from the stack.
+<div class="Pp"></div>
+The maximum value for <var class="Fa" title="Fa">n</var> is 255.
+<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+  ALSO</a></h1>
+<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+  Manual</span>.</cite>
+<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+The <code class="Fn" title="Fn">lua_pushcclosure</code>() manual page was
+  written by Sergey Bronnikov.</div>
+<table class="foot">
+  <tr>
+    <td class="foot-date">July 18, 2022</td>
+    <td class="foot-os">Debian</td>
+  </tr>
+</table>
+</body>
+</html>

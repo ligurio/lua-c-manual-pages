@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
+  <title>LUA_SETHOOK(3)</title>
+</head>
+<body>
+<table class="head">
+  <tr>
+    <td class="head-ltitle">LUA_SETHOOK(3)</td>
+    <td class="head-vol">Library Functions Manual</td>
+    <td class="head-rtitle">LUA_SETHOOK(3)</td>
+  </tr>
+</table>
+<div class="manual-text">
+<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<code class="Nm" title="Nm">lua_sethook</code> &#x2014;
+<div class="Nd" title="Nd">sets the debugging hook function</div>
+<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<code class="In" title="In">#include
+  &lt;<a class="In" title="In">fcntl.h</a>&gt;</code>
+<div class="Pp"></div>
+<var class="Ft" title="Ft">int</var>
+<br/>
+<code class="Fn" title="Fn">lua_sethook</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
+  *L</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">lua_Hook
+  f</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">int
+  mask</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">int
+  count</var>);
+<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<code class="Fn" title="Fn">lua_sethook</code>() sets the debugging hook
+  function.
+<div class="Pp"></div>
+Argument f is the hook function. mask specifies on which events the hook will be
+  called: it is formed by a bitwise or of the constants
+  <code class="Dv" title="Dv">LUA_MASKCALL</code>,
+  <code class="Dv" title="Dv">LUA_MASKRET</code>,
+  <code class="Dv" title="Dv">LUA_MASKLINE</code>, and
+  <code class="Dv" title="Dv">LUA_MASKCOUNT</code>. The count argument is only
+  meaningful when the mask includes
+  <code class="Dv" title="Dv">LUA_MASKCOUNT</code>. For each event, the hook is
+  called as explained below:
+<dl class="Bl-tag">
+  <dt>&#x00A0;</dt>
+  <dd>&#x00A0;</dd>
+  <dt><b class="Sy" title="Sy">The call hook:</b></dt>
+  <dd>is called when the interpreter calls a function. The hook is called just
+      after Lua enters the new function, before the function gets its
+    arguments.</dd>
+  <dt>&#x00A0;</dt>
+  <dd>&#x00A0;</dd>
+  <dt><b class="Sy" title="Sy">The return hook:</b></dt>
+  <dd>is called when the interpreter returns from a function. The hook is called
+      just before Lua leaves the function. You have no access to the values to
+      be returned by the function.</dd>
+  <dt>&#x00A0;</dt>
+  <dd>&#x00A0;</dd>
+  <dt><b class="Sy" title="Sy">The line hook:</b></dt>
+  <dd>is called when the interpreter is about to start the execution of a new
+      line of code, or when it jumps back in the code (even to the same line).
+      (This event only happens while Lua is executing a Lua function.)</dd>
+  <dt>&#x00A0;</dt>
+  <dd>&#x00A0;</dd>
+  <dt><b class="Sy" title="Sy">The count hook:</b></dt>
+  <dd>is called after the interpreter executes every count instructions. (This
+      event only happens while Lua is executing a Lua function.)</dd>
+</dl>
+<div class="Pp"></div>
+A hook is disabled by setting mask to zero.
+<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+  ALSO</a></h1>
+<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+  Manual</span>.</cite>
+<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+The <code class="Fn" title="Fn">lua_sethook</code>() manual page was written by
+  Sergey Bronnikov.</div>
+<table class="foot">
+  <tr>
+    <td class="foot-date">July 18, 2022</td>
+    <td class="foot-os">Debian</td>
+  </tr>
+</table>
+</body>
+</html>

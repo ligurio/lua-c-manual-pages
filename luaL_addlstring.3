@@ -1,0 +1,32 @@
+.Dd $Mdocdate: July 22 2022 $
+.Dt LUAL_ADDLSTRING 3
+.Os
+.Sh NAME
+.Nm luaL_addlstring
+.Nd adds the string to the buffer
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft void
+.Fn luaL_addlstring "luaL_Buffer *B" "const char *s" "size_t l"
+.Sh DESCRIPTION
+.Fn luaL_addlstring
+adds the string pointed to by
+.Fa s
+with length
+.Fa l
+to the buffer
+.Fa B
+.Pq see Xr luaL_Buffer 3 .
+The string may contain embedded zeros.
+.Sh SEE ALSO
+.Xr luaL_Buffer 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_addlstring
+manual page was written by Sergey Bronnikov.

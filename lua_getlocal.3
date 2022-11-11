@@ -1,0 +1,45 @@
+.Dd $Mdocdate: July 13 2022 $
+.Dt LUA_GETLOCAL 3
+.Os
+.Sh NAME
+.Nm lua_getlocal
+.Nd gets information about a local variable of a given activation record
+.Sh SYNOPSIS
+.In lua.h
+.Ft const char *
+.Fn lua_getlocal "lua_State *L" "lua_Debug *ar" "int n"
+.Sh DESCRIPTION
+.Fn lua_getlocal
+gets information about a local variable of a given activation record.
+The parameter
+.Fa ar
+must be a valid activation record that was filled by a previous call to
+.Fn lua_getstack
+or given as argument to a hook (see
+.Xr lua_Hook 3 ).
+The index
+.Fa n
+selects which local variable to inspect (1 is the first parameter or active
+local variable, and so on, until the last active local variable).
+.Fn lua_getlocal
+pushes the variable's value onto the stack and returns its name.
+.Pp
+Variable names starting with '(' (open parentheses) represent internal
+variables (loop control variables, temporaries, and C function locals).
+.Sh RETURN VALUES
+Returns
+.Dv NULL
+.Pq and pushes nothing
+when the index is greater than the number of active local variables.
+.Sh SEE ALSO
+.Xr lua_Hook 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn lua_getlocal
+manual page was written by Sergey Bronnikov.

@@ -1,0 +1,28 @@
+.Dd $Mdocdate: July 24 2022 $
+.Dt LUAL_CHECKANY 3
+.Os
+.Sh NAME
+.Nm luaL_checkany
+.Nd checks whether the function has an argument of any type
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft void
+.Fn luaL_checkany "lua_State *L" "int narg"
+.Sh DESCRIPTION
+.Fn luaL_checkany
+checks whether the function has an argument of any type
+.Pq including Em nil
+at
+position
+.Fa narg .
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_checkany
+manual page was written by Sergey Bronnikov.

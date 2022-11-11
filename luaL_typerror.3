@@ -1,0 +1,38 @@
+.Dd $Mdocdate: July 21 2022 $
+.Dt LUAL_TYPERROR 3
+.Os
+.Sh NAME
+.Nm luaL_typerror
+.Nd generates an error with a message
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft int
+.Fn luaL_typerror "lua_State *L" "int narg" "const char *tname"
+.Sh DESCRIPTION
+.Fn luaL_typerror
+generates an error with a message like the following:
+.Pp
+.Em location :
+bad argument
+.Fa narg to
+.Em 'func'
+(
+.Fa tname
+expected, got rt)
+.Pp
+where location is produced by
+.Xr luaL_where 3 ,
+func is the name of the current function, and rt is the type name of the actual
+argument.
+.Sh SEE ALSO
+.Xr luaL_where 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_typerror
+manual page was written by Sergey Bronnikov.

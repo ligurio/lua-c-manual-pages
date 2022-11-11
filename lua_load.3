@@ -1,0 +1,59 @@
+.Dd $Mdocdate: July 15 2022 $
+.Dt LUA_LOAD 3
+.Os
+.Sh NAME
+.Nm lua_load
+.Nd loads a Lua chunk
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_load "lua_State *L" "lua_Reader reader" "void *data" "const char *chunkname"
+.Sh DESCRIPTION
+.Fn lua_load
+loads a Lua chunk.
+If there are no errors,
+.Fn lua_load
+pushes the compiled chunk as a Lua function on top of the stack.
+Otherwise, it pushes an error message.
+.Pp
+This function only loads a chunk; it does not run it.
+.Pp
+.Fn lua_load
+automatically detects whether the chunk is text or binary, and loads it
+accordingly, see
+.Xr luac 1 .
+.Pp
+The
+.Fn lua_load
+function uses a user-supplied reader function to read the chunk, see
+.Xr lua_Reader 3 .
+The data argument is an opaque value passed to the reader function.
+.Pp
+The chunkname argument gives a name to the chunk, which is used for error
+messages and in debug information.
+.Sh RETURN VALUES
+The return values of
+.Fn lua_load
+are:
+.Pp
+.Bl -tag -width LUA_ERRSYNTAX: -offset indent -compact
+.It Dv 0 :
+no errors;
+.It Dv LUA_ERRSYNTAX :
+syntax error during pre-compilation;
+.It Dv LUA_ERRMEM :
+memory allocation error.
+.El
+.Sh SEE ALSO
+.Xr luac 1 ,
+.Xr lua_Reader 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn lua_load
+manual page was written by Sergey Bronnikov.

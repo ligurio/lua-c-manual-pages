@@ -1,0 +1,28 @@
+.Dd $Mdocdate: July 14 2022 $
+.Dt LUA_ISBOOLEAN 3
+.Os
+.Sh NAME
+.Nm lua_isboolean
+.Nd check whether a value is a boolean
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_isboolean "lua_State *L" "int index"
+.Sh DESCRIPTION
+.Fn lua_isboolean
+returns 1 if the value at the given acceptable index has type boolean, and 0
+otherwise.
+.Sh RETURN VALUES
+Returns 1 if the value at the given acceptable index has type boolean, and 0
+otherwise.
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn lua_isboolean
+manual page was written by Sergey Bronnikov.

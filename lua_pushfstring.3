@@ -1,0 +1,51 @@
+.Dd $Mdocdate: July 20 2022 $
+.Dt LUA_PUSHFSTRING 3
+.Os
+.Sh NAME
+.Nm lua_pushfstring
+.Nd pushes onto the stack a formatted string and returns a pointer to this string
+.Sh SYNOPSIS
+.In lua.h
+.Ft const char *
+.Fn lua_pushfstring "lua_State *L" "const char *fmt" "..."
+.Sh DESCRIPTION
+.Fn lua_pushfstring
+pushes onto the stack a formatted string and returns a pointer to this string.
+It is similar to the C function
+.Xr sprintf 3 ,
+but has some important differences:
+.Bl -hyphen
+.It
+You do not have to allocate space for the result: the result is a Lua string
+and Lua takes care of memory allocation (and deallocation, through garbage
+collection).
+.It
+The conversion specifiers are quite restricted.
+There are no flags, widths, or precisions.
+The conversion specifiers can only be
+.Sq %%
+.Pq inserts a '%' in the string ,
+.Sq %s
+.Pq inserts a zero-terminated string, with no size restrictions ,
+.Sq %f
+.Pq inserts a Xr lua_Number 3 ,
+.Sq %p
+.Pq inserts a pointer as a hexadecimal numeral ,
+.Sq %d
+.Pq inserts an int ,
+and
+.Sq %c
+.Pq inserts an int as a character .
+.El
+.Sh SEE ALSO
+.Xr lua_Number 3
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn lua_pushfstring
+manual page was written by Sergey Bronnikov.

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
+  <title>LUAL_BUFFER(3)</title>
+</head>
+<body>
+<table class="head">
+  <tr>
+    <td class="head-ltitle">LUAL_BUFFER(3)</td>
+    <td class="head-vol">Library Functions Manual</td>
+    <td class="head-rtitle">LUAL_BUFFER(3)</td>
+  </tr>
+</table>
+<div class="manual-text">
+<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<code class="Nm" title="Nm">luaL_Buffer</code> &#x2014;
+<div class="Nd" title="Nd">type for a string buffer</div>
+<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<code class="In" title="In">#include
+  &lt;<a class="In" title="In">lauxlib.h</a>&gt;</code>
+<div class="Pp"></div>
+<var class="Vt" title="Vt">typedef struct luaL_Buffer luaL_Buffer</var>;
+<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<code class="Fn" title="Fn">luaL_Buffer</code>() type for a
+  <i class="Em" title="Em">string buffer</i>.
+<div class="Pp"></div>
+A string buffer allows C code to build Lua strings piecemeal. Its pattern of use
+  is as follows:
+<div class="Pp"></div>
+<ul class="Bl-bullet Bl-compact">
+  <li>First you declare a variable b of type
+      <code class="Nm" title="Nm">luaL_Buffer</code>.</li>
+  <li>Then you initialize it with a call
+      <i class="Em" title="Em">luaL_buffinit(L, &amp;b)</i>.</li>
+  <li>Then you add string pieces to the buffer calling any of the
+      <i class="Em" title="Em">luaL_add*</i> functions.</li>
+  <li>You finish by calling
+      <i class="Em" title="Em">luaL_pushresult(&amp;b)</i>. This call leaves the
+      final string on the top of the stack.</li>
+</ul>
+<div class="Pp"></div>
+During its normal operation, a string buffer uses a variable number of stack
+  slots. So, while using a buffer, you cannot assume that you know where the top
+  of the stack is. You can use the stack between successive calls to buffer
+  operations as long as that use is balanced; that is, when you call a buffer
+  operation, the stack is at the same level it was immediately after the
+  previous buffer operation. (The only exception to this rule is
+  <i class="Em" title="Em">luaL_addvalue</i>). After calling
+  <a class="Xr" title="Xr">luaL_pushresult(3)</a> the stack is back to its level
+  when the buffer was initialized, plus the final string on its top.
+<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+  ALSO</a></h1>
+<a class="Xr" title="Xr">luaL_pushresult(3)</a>
+<div class="Pp"></div>
+<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+  Manual</span>.</cite>
+<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+The <code class="Fn" title="Fn">luaL_Buffer</code>() manual page was written by
+  Sergey Bronnikov.</div>
+<table class="foot">
+  <tr>
+    <td class="foot-date">July 26, 2022</td>
+    <td class="foot-os">Debian</td>
+  </tr>
+</table>
+</body>
+</html>

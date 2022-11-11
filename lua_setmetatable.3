@@ -1,0 +1,25 @@
+.Dd $Mdocdate: July 15 2022 $
+.Dt LUA_SETMETATABLE 3
+.Os
+.Sh NAME
+.Nm lua_setmetatable
+.Nd pops a table from the stack and sets it as the new metatable for the value
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_setmetatable "lua_State *L" "int index"
+.Sh DESCRIPTION
+.Fn lua_setmetatable
+pops a table from the stack and sets it as the new metatable for the value at
+the given acceptable index.
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn lua_setmetatable
+manual page was written by Sergey Bronnikov.

@@ -1,0 +1,26 @@
+.Dd $Mdocdate: July 22 2022 $
+.Dt LUAL_PUSHRESULT 3
+.Os
+.Sh NAME
+.Nm luaL_pushresult
+.Nd finishes the use of buffer
+.Sh SYNOPSIS
+.In luaxlib.h
+.Ft void
+.Fn luaL_pushresult "luaL_Buffer *B"
+.Sh DESCRIPTION
+.Fn luaL_pushresult
+finishes the use of buffer
+.Fa B
+leaving the final string on the top of the stack.
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_pushresult
+manual page was written by Sergey Bronnikov.

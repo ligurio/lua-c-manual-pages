@@ -1,0 +1,28 @@
+.Dd $Mdocdate: July 14 2022 $
+.Dt LUA_ISLIGHTUSERDATA 3
+.Os
+.Sh NAME
+.Nm lua_islightuserdata
+.Nd check whether a value is a light userdata
+.Sh SYNOPSIS
+.In lua.h
+.Ft int
+.Fn lua_islightuserdata "lua_State *L" "int index"
+.Sh DESCRIPTION
+.Fn lua_islightuserdata
+returns 1 if the value at the given acceptable index is a light userdata, and 0
+otherwise.
+.Sh RETURN VALUES
+Returns 1 if the value at the given acceptable index is a light userdata, and 0
+otherwise.
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn lua_islightuserdata
+manual page was written by Sergey Bronnikov.

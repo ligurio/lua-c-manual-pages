@@ -1,0 +1,27 @@
+.Dd $Mdocdate: July 24 2022 $
+.Dt LUAL_CHECKNUMBER 3
+.Os
+.Sh NAME
+.Nm luaL_checknumber
+.Nd checks whether the function argument narg is a number and returns this
+number
+.Sh SYNOPSIS
+.In lauxlib.h
+.Ft lua_Number
+.Fn luaL_checknumber "lua_State *L" "int narg"
+.Sh DESCRIPTION
+.Fn luaL_checknumber
+checks whether the function argument
+.Fa narg
+is a number and returns this number.
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn luaL_checknumber
+manual page was written by Sergey Bronnikov.

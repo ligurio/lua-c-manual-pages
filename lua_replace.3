@@ -1,0 +1,25 @@
+.Dd $Mdocdate: July 15 2022 $
+.Dt LUA_REPLACE 3
+.Os
+.Sh NAME
+.Nm lua_replace
+.Nd moves the top element into the given position
+.Sh SYNOPSIS
+.In lua.h
+.Ft void
+.Fn lua_replace "lua_State *L" "int index"
+.Sh DESCRIPTION
+.Fn lua_replace
+moves the top element into the given position (and pops it), without shifting
+any element (therefore replacing the value at the given position).
+.Sh SEE ALSO
+.Rs
+.%A Roberto Ierusalimschy
+.%A Luiz Henrique de Figueiredo
+.%A Waldemar Celes
+.%T Lua 5.1 Reference Manual
+.Re
+.Sh HISTORY
+The
+.Fn lua_replace
+manual page was written by Sergey Bronnikov.
