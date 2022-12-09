@@ -19,4 +19,6 @@ jobs:
       - name: Setup mandoc
         run: sudo apt install -y mandoc
 
+      - run: sudo make install
+
       - run: make check
