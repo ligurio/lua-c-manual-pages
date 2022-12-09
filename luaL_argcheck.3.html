@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
   <title>LUAL_ARGCHECK(3)</title>
 </head>
@@ -14,39 +15,47 @@
   </tr>
 </table>
 <div class="manual-text">
-<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
-<code class="Nm" title="Nm">luaL_argcheck</code> &#x2014;
-<div class="Nd" title="Nd">checks whether cond is true</div>
-<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
-<code class="In" title="In">#include
-  &lt;<a class="In" title="In">lauxlib.h</a>&gt;</code>
-<div class="Pp"></div>
-<var class="Ft" title="Ft">void</var>
-<br/>
-<code class="Fn" title="Fn">luaL_argcheck</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
-  *L</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">int
-  cond</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">int
-  narg</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">const char
-  *extramsg</var>);
-<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
-<code class="Fn" title="Fn">luaL_argcheck</code>() checks whether cond is true.
-  If not, raises an error with the following message, where func is retrieved
-  from the call stack:
-<div class="Pp"></div>
-<div class="Bd Bd-indent">
-<pre class="Li">
-bad argument #&lt;narg&gt; to &lt;func&gt; (&lt;extramsg&gt;)
-</pre>
+<section class="Sh">
+<h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<p class="Pp"><code class="Nm">luaL_argcheck</code> &#x2014;
+    <span class="Nd">checks whether cond is true</span></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<p class="Pp"><code class="In">#include
+    &lt;<a class="In">lauxlib.h</a>&gt;</code></p>
+<p class="Pp"><var class="Ft">void</var>
+  <br/>
+  <code class="Fn">luaL_argcheck</code>(<var class="Fa" style="white-space: nowrap;">lua_State
+    *L</var>, <var class="Fa" style="white-space: nowrap;">int cond</var>,
+    <var class="Fa" style="white-space: nowrap;">int narg</var>,
+    <var class="Fa" style="white-space: nowrap;">const char
+  *extramsg</var>);</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<p class="Pp"><a class="permalink" href="#luaL_argcheck"><code class="Fn" id="luaL_argcheck">luaL_argcheck</code></a>()
+    checks whether cond is true. If not, raises an error with the following
+    message, where func is retrieved from the call stack:</p>
+<p class="Pp"></p>
+<div class="Bd Bd-indent Li">
+<pre>bad argument #&lt;narg&gt; to &lt;func&gt; (&lt;extramsg&gt;)</pre>
 </div>
-<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
   ALSO</a></h1>
-<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
-  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
-  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
-  Manual</span>.</cite>
-<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
-The <code class="Fn" title="Fn">luaL_argcheck</code>() manual page was written
-  by Sergey Bronnikov.</div>
+<p class="Pp"><cite class="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+    <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+    <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+    Manual</span>.</cite></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+<p class="Pp">The <code class="Fn">luaL_argcheck</code>() manual page was
+    written by Sergey Bronnikov.</p>
+</section>
+</div>
 <table class="foot">
   <tr>
     <td class="foot-date">July 24, 2022</td>

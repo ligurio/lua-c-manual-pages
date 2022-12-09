@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
   <title>LUA_NEWUSERDATA(3)</title>
 </head>
@@ -14,41 +15,51 @@
   </tr>
 </table>
 <div class="manual-text">
-<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
-<code class="Nm" title="Nm">lua_newuserdata</code> &#x2014;
-<div class="Nd" title="Nd">allocates a new block of memory with the given
-  size</div>
-<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
-<code class="In" title="In">#include
-  &lt;<a class="In" title="In">lua.h</a>&gt;</code>
-<div class="Pp"></div>
-<var class="Ft" title="Ft">void *</var>
-<br/>
-<code class="Fn" title="Fn">lua_newuserdata</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
-  *L</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">size_t
-  size</var>);
-<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
-<code class="Fn" title="Fn">lua_newuserdata</code>() allocates a new block of
-  memory with the given size, pushes onto the stack a new full userdata with the
-  block address, and returns this address.
-<div class="Pp"></div>
-Userdata represent C values in Lua. A <i class="Em" title="Em">full</i> userdata
-  represents a block of memory. It is an object (like a table): you must create
-  it, it can have its own metatable, and you can detect when it is being
-  collected. A full userdata is only equal to itself (under raw equality).
-<div class="Pp"></div>
-When Lua collects a full userdata with a gc metamethod, Lua calls the metamethod
-  and marks the userdata as finalized. When this userdata is collected again
-  then Lua frees its corresponding memory.
-<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+<section class="Sh">
+<h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<p class="Pp"><code class="Nm">lua_newuserdata</code> &#x2014;
+    <span class="Nd">allocates a new block of memory with the given
+  size</span></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<p class="Pp"><code class="In">#include
+  &lt;<a class="In">lua.h</a>&gt;</code></p>
+<p class="Pp"><var class="Ft">void *</var>
+  <br/>
+  <code class="Fn">lua_newuserdata</code>(<var class="Fa" style="white-space: nowrap;">lua_State
+    *L</var>, <var class="Fa" style="white-space: nowrap;">size_t
+  size</var>);</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<p class="Pp"><a class="permalink" href="#lua_newuserdata"><code class="Fn" id="lua_newuserdata">lua_newuserdata</code></a>()
+    allocates a new block of memory with the given size, pushes onto the stack a
+    new full userdata with the block address, and returns this address.</p>
+<p class="Pp" id="full">Userdata represent C values in Lua. A
+    <a class="permalink" href="#full"><i class="Em">full</i></a> userdata
+    represents a block of memory. It is an object (like a table): you must
+    create it, it can have its own metatable, and you can detect when it is
+    being collected. A full userdata is only equal to itself (under raw
+    equality).</p>
+<p class="Pp">When Lua collects a full userdata with a gc metamethod, Lua calls
+    the metamethod and marks the userdata as finalized. When this userdata is
+    collected again then Lua frees its corresponding memory.</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
   ALSO</a></h1>
-<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
-  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
-  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
-  Manual</span>.</cite>
-<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
-The <code class="Fn" title="Fn">lua_newuserdata</code>() manual page was written
-  by Sergey Bronnikov.</div>
+<p class="Pp"><cite class="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+    <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+    <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+    Manual</span>.</cite></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+<p class="Pp">The <code class="Fn">lua_newuserdata</code>() manual page was
+    written by Sergey Bronnikov.</p>
+</section>
+</div>
 <table class="foot">
   <tr>
     <td class="foot-date">July 15, 2022</td>

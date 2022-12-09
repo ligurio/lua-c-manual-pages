@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
   <title>LUA_ATPANIC(3)</title>
 </head>
@@ -14,39 +15,47 @@
   </tr>
 </table>
 <div class="manual-text">
-<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
-<code class="Nm" title="Nm">lua_atpanic</code> &#x2014;
-<div class="Nd" title="Nd">sets a new panic function and returns the old
-  one</div>
-<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
-<code class="In" title="In">#include
-  &lt;<a class="In" title="In">lua.h</a>&gt;</code>
-<div class="Pp"></div>
-<var class="Ft" title="Ft">lua_CFunction</var>
-<br/>
-<code class="Fn" title="Fn">lua_atpanic</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
-  *L</var>,
-  <var class="Fa" title="Fa" style="white-space: nowrap;">lua_CFunction
-  panicf</var>);
-<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
-<code class="Fn" title="Fn">lua_atpanic</code>() sets a new panic function and
-  returns the old one.
-<div class="Pp"></div>
-If an error happens outside any protected environment, Lua calls a panic
-  function and then calls <i class="Em" title="Em">exit(EXIT_FAILURE)</i>, thus
-  exiting the host application. Your panic function can avoid this exit by never
-  returning (e.g., doing a long jump).
-<div class="Pp"></div>
-The panic function can access the error message at the top of the stack.
-<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+<section class="Sh">
+<h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<p class="Pp"><code class="Nm">lua_atpanic</code> &#x2014; <span class="Nd">sets
+    a new panic function and returns the old one</span></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<p class="Pp"><code class="In">#include
+  &lt;<a class="In">lua.h</a>&gt;</code></p>
+<p class="Pp"><var class="Ft">lua_CFunction</var>
+  <br/>
+  <code class="Fn">lua_atpanic</code>(<var class="Fa" style="white-space: nowrap;">lua_State
+    *L</var>, <var class="Fa" style="white-space: nowrap;">lua_CFunction
+    panicf</var>);</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<p class="Pp"><a class="permalink" href="#lua_atpanic"><code class="Fn" id="lua_atpanic">lua_atpanic</code></a>()
+    sets a new panic function and returns the old one.</p>
+<p class="Pp" id="exit(EXIT_FAILURE)">If an error happens outside any protected
+    environment, Lua calls a panic function and then calls
+    <a class="permalink" href="#exit(EXIT_FAILURE)"><i class="Em">exit(EXIT_FAILURE)</i></a>,
+    thus exiting the host application. Your panic function can avoid this exit
+    by never returning (e.g., doing a long jump).</p>
+<p class="Pp">The panic function can access the error message at the top of the
+    stack.</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
   ALSO</a></h1>
-<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
-  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
-  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
-  Manual</span>.</cite>
-<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
-The <code class="Fn" title="Fn">lua_atpanic</code>() manual page was written by
-  Sergey Bronnikov.</div>
+<p class="Pp"><cite class="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+    <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+    <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+    Manual</span>.</cite></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+<p class="Pp">The <code class="Fn">lua_atpanic</code>() manual page was written
+    by Sergey Bronnikov.</p>
+</section>
+</div>
 <table class="foot">
   <tr>
     <td class="foot-date">July 14, 2022</td>

@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
   <title>LUA_GC(3)</title>
 </head>
@@ -14,61 +15,70 @@
   </tr>
 </table>
 <div class="manual-text">
-<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
-<code class="Nm" title="Nm">lua_gc</code> &#x2014;
-<div class="Nd" title="Nd">controls the garbage collector</div>
-<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
-<code class="In" title="In">#include
-  &lt;<a class="In" title="In">lua.h</a>&gt;</code>
-<div class="Pp"></div>
-<var class="Ft" title="Ft">int</var>
-<br/>
-<code class="Fn" title="Fn">lua_gc</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
-  *L</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">int
-  what</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">int
-  data</var>);
-<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
-<code class="Fn" title="Fn">lua_gc</code>() controls the garbage collector.
-<div class="Pp"></div>
-This function performs several tasks, according to the value of the parameter
-  what:
-<div class="Pp"></div>
+<section class="Sh">
+<h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<p class="Pp"><code class="Nm">lua_gc</code> &#x2014; <span class="Nd">controls
+    the garbage collector</span></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<p class="Pp"><code class="In">#include
+  &lt;<a class="In">lua.h</a>&gt;</code></p>
+<p class="Pp"><var class="Ft">int</var>
+  <br/>
+  <code class="Fn">lua_gc</code>(<var class="Fa" style="white-space: nowrap;">lua_State
+    *L</var>, <var class="Fa" style="white-space: nowrap;">int what</var>,
+    <var class="Fa" style="white-space: nowrap;">int data</var>);</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<p class="Pp"><a class="permalink" href="#lua_gc"><code class="Fn" id="lua_gc">lua_gc</code></a>()
+    controls the garbage collector.</p>
+<p class="Pp">This function performs several tasks, according to the value of
+    the parameter what:</p>
+<p class="Pp"></p>
 <div class="Bd-indent">
 <dl class="Bl-tag Bl-compact">
-  <dt><a class="permalink" href="#LUA_GCSTOP"><code class="Dv" title="Dv" id="LUA_GCSTOP">LUA_GCSTOP</code></a>:</dt>
+  <dt id="LUA_GCSTOP"><a class="permalink" href="#LUA_GCSTOP"><code class="Dv">LUA_GCSTOP</code></a>:</dt>
   <dd>stops the garbage collector.</dd>
-  <dt><a class="permalink" href="#LUA_GCRESTART"><code class="Dv" title="Dv" id="LUA_GCRESTART">LUA_GCRESTART</code></a>:</dt>
+  <dt id="LUA_GCRESTART"><a class="permalink" href="#LUA_GCRESTART"><code class="Dv">LUA_GCRESTART</code></a>:</dt>
   <dd>restarts the garbage collector.</dd>
-  <dt><a class="permalink" href="#LUA_GCCOLLECT"><code class="Dv" title="Dv" id="LUA_GCCOLLECT">LUA_GCCOLLECT</code></a>:</dt>
+  <dt id="LUA_GCCOLLECT"><a class="permalink" href="#LUA_GCCOLLECT"><code class="Dv">LUA_GCCOLLECT</code></a>:</dt>
   <dd>performs a full garbage-collection cycle.</dd>
-  <dt><a class="permalink" href="#LUA_GCCOUNT"><code class="Dv" title="Dv" id="LUA_GCCOUNT">LUA_GCCOUNT</code></a>:</dt>
+  <dt id="LUA_GCCOUNT"><a class="permalink" href="#LUA_GCCOUNT"><code class="Dv">LUA_GCCOUNT</code></a>:</dt>
   <dd>returns the current amount of memory (in Kbytes) in use by Lua.</dd>
-  <dt><a class="permalink" href="#LUA_GCCOUNTB"><code class="Dv" title="Dv" id="LUA_GCCOUNTB">LUA_GCCOUNTB</code></a>:</dt>
+  <dt id="LUA_GCCOUNTB"><a class="permalink" href="#LUA_GCCOUNTB"><code class="Dv">LUA_GCCOUNTB</code></a>:</dt>
   <dd>returns the remainder of dividing the current amount of bytes of memory in
       use by Lua by 1024.</dd>
-  <dt><a class="permalink" href="#LUA_GCSTEP"><code class="Dv" title="Dv" id="LUA_GCSTEP">LUA_GCSTEP</code></a>:</dt>
+  <dt id="LUA_GCSTEP"><a class="permalink" href="#LUA_GCSTEP"><code class="Dv">LUA_GCSTEP</code></a>:</dt>
   <dd>performs an incremental step of garbage collection. The step
       &quot;size&quot; is controlled by data (larger values mean more steps) in
       a non-specified way. If you want to control the step size you must
       experimentally tune the value of data. The function returns 1 if the step
       finished a garbage-collection cycle.</dd>
-  <dt><a class="permalink" href="#LUA_GCSETPAUSE"><code class="Dv" title="Dv" id="LUA_GCSETPAUSE">LUA_GCSETPAUSE</code></a>:</dt>
+  <dt id="LUA_GCSETPAUSE"><a class="permalink" href="#LUA_GCSETPAUSE"><code class="Dv">LUA_GCSETPAUSE</code></a>:</dt>
   <dd>sets data as the new value for the pause of the collector. The function
       returns the previous value of the pause.</dd>
-  <dt><a class="permalink" href="#LUA_GCSETSTEPMUL"><code class="Dv" title="Dv" id="LUA_GCSETSTEPMUL">LUA_GCSETSTEPMUL</code></a>:</dt>
+  <dt id="LUA_GCSETSTEPMUL"><a class="permalink" href="#LUA_GCSETSTEPMUL"><code class="Dv">LUA_GCSETSTEPMUL</code></a>:</dt>
   <dd>sets data as the new value for the step multiplier of the collector. The
       function returns the previous value of the step multiplier.</dd>
 </dl>
 </div>
-<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
   ALSO</a></h1>
-<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
-  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
-  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
-  Manual</span>.</cite>
-<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
-The <code class="Fn" title="Fn">lua_gc</code>() manual page was written by
-  Sergey Bronnikov.</div>
+<p class="Pp"><cite class="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+    <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+    <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+    Manual</span>.</cite></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+<p class="Pp">The <code class="Fn">lua_gc</code>() manual page was written by
+    Sergey Bronnikov.</p>
+</section>
+</div>
 <table class="foot">
   <tr>
     <td class="foot-date">July 18, 2022</td>

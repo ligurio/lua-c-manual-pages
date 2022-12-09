@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
   <title>LUAL_REG(3)</title>
 </head>
@@ -14,46 +15,50 @@
   </tr>
 </table>
 <div class="manual-text">
-<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
-<code class="Nm" title="Nm">luaL_Reg</code> &#x2014;
-<div class="Nd" title="Nd">type for arrays of functions to be registered by
-  luaL_register</div>
-<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
-<code class="In" title="In">#include
-  &lt;<a class="In" title="In">lauxlib.h</a>&gt;</code>
-<div class="Pp"></div>
-<var class="Vt" title="Vt">typedef struct luaL_Reg</var>;
-<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
-<code class="Fn" title="Fn">luaL_Reg</code>() type for arrays of functions to be
-  registered by <a class="Xr" title="Xr">luaL_register(3)</a>.
-  <var class="Vt" title="Vt">luaL_Reg</var> is defined as:
-<div class="Pp"></div>
-<div class="Bd">
-<pre class="Li">
-typedef struct luaL_Reg { 
-        const char *name; 
-        lua_CFunction func; 
-} luaL_Reg;
-</pre>
+<section class="Sh">
+<h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<p class="Pp"><code class="Nm">luaL_Reg</code> &#x2014; <span class="Nd">type
+    for arrays of functions to be registered by luaL_register</span></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<p class="Pp"><code class="In">#include
+    &lt;<a class="In">lauxlib.h</a>&gt;</code></p>
+<p class="Pp"><var class="Vt">typedef struct luaL_Reg</var>;</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<p class="Pp"><a class="permalink" href="#luaL_Reg"><code class="Fn" id="luaL_Reg">luaL_Reg</code></a>()
+    type for arrays of functions to be registered by
+    <a class="Xr">luaL_register(3)</a>. <var class="Vt">luaL_Reg</var> is
+    defined as:</p>
+<div class="Bd Pp Li">
+<pre>typedef struct luaL_Reg {
+        const char *name;
+        lua_CFunction func;
+} luaL_Reg;</pre>
 </div>
-<div class="Pp"></div>
-<var class="Fa" title="Fa">name</var> is the function name and
-  <var class="Fa" title="Fa">func</var> is a pointer to the function. Any array
-  of <code class="Nm" title="Nm">luaL_Reg</code> must end with an sentinel entry
-  in which both <var class="Fa" title="Fa">name</var> and
-  <var class="Fa" title="Fa">func</var> are
-  <code class="Dv" title="Dv">NULL</code>.
-<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+<p class="Pp"><var class="Fa">name</var> is the function name and
+    <var class="Fa">func</var> is a pointer to the function. Any array of
+    <code class="Nm">luaL_Reg</code> must end with an sentinel entry in which
+    both <var class="Fa">name</var> and <var class="Fa">func</var> are
+    <code class="Dv">NULL</code>.</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
   ALSO</a></h1>
-<a class="Xr" title="Xr">luaL_register(3)</a>
-<div class="Pp"></div>
-<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
-  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
-  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
-  Manual</span>.</cite>
-<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
-The <code class="Fn" title="Fn">luaL_Reg</code>() manual page was written by
-  Sergey Bronnikov.</div>
+<p class="Pp"><a class="Xr">luaL_register(3)</a></p>
+<p class="Pp"><cite class="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+    <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+    <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+    Manual</span>.</cite></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+<p class="Pp">The <code class="Fn">luaL_Reg</code>() manual page was written by
+    Sergey Bronnikov.</p>
+</section>
+</div>
 <table class="foot">
   <tr>
     <td class="foot-date">July 26, 2022</td>

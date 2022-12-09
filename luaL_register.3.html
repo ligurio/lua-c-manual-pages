@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
   <title>LUAL_REGISTER(3)</title>
 </head>
@@ -14,50 +15,56 @@
   </tr>
 </table>
 <div class="manual-text">
-<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
-<code class="Nm" title="Nm">luaL_register</code> &#x2014;
-<div class="Nd" title="Nd">opens a library</div>
-<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
-<code class="In" title="In">#include
-  &lt;<a class="In" title="In">lauxlib.h</a>&gt;</code>
-<div class="Pp"></div>
-<var class="Ft" title="Ft">void</var>
-<br/>
-<code class="Fn" title="Fn">luaL_register</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
-  *L</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">const char
-  *libname</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">const
-  luaL_Reg *l</var>);
-<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
-<code class="Fn" title="Fn">luaL_register</code>() opens a library.
-<div class="Pp"></div>
-When called with <var class="Fa" title="Fa">libname</var> equal to
-  <code class="Dv" title="Dv">NULL</code>, it simply registers all functions in
-  the list <var class="Fa" title="Fa">l</var> (see
-  <a class="Xr" title="Xr">luaL_Reg(3)</a>) into the table on the top of the
-  stack.
-<div class="Pp"></div>
-When called with a non-null <var class="Fa" title="Fa">libname</var>,
-  <code class="Nm" title="Nm">luaL_register 3</code> creates a new table t, sets
-  it as the value of the global variable
-  <var class="Fa" title="Fa">libname</var>, sets it as the value of
-  <i class="Em" title="Em">package.loaded[libname]</i>, and registers on it all
-  functions in the list <var class="Fa" title="Fa">l</var>. If there is a table
-  in <i class="Em" title="Em">package.loaded[libname]</i> or in variable
-  <var class="Fa" title="Fa">libname</var>, reuses this table instead of
-  creating a new one.
-<div class="Pp"></div>
-In any case the function leaves the table on the top of the stack.
-<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+<section class="Sh">
+<h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<p class="Pp"><code class="Nm">luaL_register</code> &#x2014;
+    <span class="Nd">opens a library</span></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<p class="Pp"><code class="In">#include
+    &lt;<a class="In">lauxlib.h</a>&gt;</code></p>
+<p class="Pp"><var class="Ft">void</var>
+  <br/>
+  <code class="Fn">luaL_register</code>(<var class="Fa" style="white-space: nowrap;">lua_State
+    *L</var>, <var class="Fa" style="white-space: nowrap;">const char
+    *libname</var>, <var class="Fa" style="white-space: nowrap;">const luaL_Reg
+    *l</var>);</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<p class="Pp"><a class="permalink" href="#luaL_register"><code class="Fn" id="luaL_register">luaL_register</code></a>()
+    opens a library.</p>
+<p class="Pp">When called with <var class="Fa">libname</var> equal to
+    <code class="Dv">NULL</code>, it simply registers all functions in the list
+    <var class="Fa">l</var> (see <a class="Xr">luaL_Reg(3)</a>) into the table
+    on the top of the stack.</p>
+<p class="Pp">When called with a non-null <var class="Fa">libname</var>,
+    <code class="Nm">luaL_register 3</code> creates a new table t, sets it as
+    the value of the global variable <var class="Fa">libname</var>, sets it as
+    the value of <i class="Em">package.loaded[libname]</i>, and registers on it
+    all functions in the list <var class="Fa">l</var>. If there is a table in
+    <i class="Em">package.loaded[libname]</i> or in variable
+    <var class="Fa">libname</var>, reuses this table instead of creating a new
+    one.</p>
+<p class="Pp">In any case the function leaves the table on the top of the
+  stack.</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
   ALSO</a></h1>
-<a class="Xr" title="Xr">luaL_Reg(3)</a>
-<div class="Pp"></div>
-<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
-  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
-  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
-  Manual</span>.</cite>
-<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
-The <code class="Fn" title="Fn">luaL_register</code>() manual page was written
-  by Sergey Bronnikov.</div>
+<p class="Pp"><a class="Xr">luaL_Reg(3)</a></p>
+<p class="Pp"><cite class="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+    <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+    <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+    Manual</span>.</cite></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+<p class="Pp">The <code class="Fn">luaL_register</code>() manual page was
+    written by Sergey Bronnikov.</p>
+</section>
+</div>
 <table class="foot">
   <tr>
     <td class="foot-date">July 21, 2022</td>

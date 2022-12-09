@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
   <title>LUA_PCALL(3)</title>
 </head>
@@ -14,76 +15,82 @@
   </tr>
 </table>
 <div class="manual-text">
-<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
-<code class="Nm" title="Nm">lua_pcall</code> &#x2014;
-<div class="Nd" title="Nd">calls a function in protected mode</div>
-<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
-<code class="In" title="In">#include
-  &lt;<a class="In" title="In">lua.h</a>&gt;</code>
-<div class="Pp"></div>
-<var class="Ft" title="Ft">int</var>
-<br/>
-<code class="Fn" title="Fn">lua_pcall</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
-  *L</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">int
-  nargs</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">int
-  nresults</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">int
-  errfunc</var>);
-<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
-<code class="Fn" title="Fn">lua_pcall</code>() calls a function in protected
-  mode.
-<div class="Pp"></div>
-Both <var class="Fa" title="Fa">nargs</var> and
-  <var class="Fa" title="Fa">nresults</var> have the same meaning as in
-  <a class="Xr" title="Xr">lua_call(3)</a>. If there are no errors during the
-  call, <code class="Nm" title="Nm">lua_pcall</code> behaves exactly like
-  <a class="Xr" title="Xr">lua_call(3)</a>. However, if there is any error,
-  <code class="Nm" title="Nm">lua_pcall</code> catches it, pushes a single value
-  on the stack (the error message), and returns an error code. Like
-  <a class="Xr" title="Xr">lua_call(3)</a>,
-  <code class="Nm" title="Nm">lua_pcall</code> always removes the function and
-  its arguments from the stack.
-<div class="Pp"></div>
-If <var class="Fa" title="Fa">errfunc</var> is 0, then the error message
-  returned on the stack is exactly the original error message. Otherwise,
-  <var class="Fa" title="Fa">errfunc</var> is the stack index of an
-  <i class="Em" title="Em">error handler function</i>. (In the current
-  implementation, this index cannot be a pseudo-index.) In case of runtime
-  errors, this function will be called with the error message and its return
-  value will be the message returned on the stack by
-  <code class="Nm" title="Nm">lua_pcall</code>.
-<div class="Pp"></div>
-Typically, the error handler function is used to add more debug information to
-  the error message, such as a stack traceback. Such information cannot be
-  gathered after the return of <code class="Nm" title="Nm">lua_pcall</code>,
-  since by then the stack has unwound.
-<h1 class="Sh" title="Sh" id="RETURN_VALUES"><a class="permalink" href="#RETURN_VALUES">RETURN
+<section class="Sh">
+<h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<p class="Pp"><code class="Nm">lua_pcall</code> &#x2014; <span class="Nd">calls
+    a function in protected mode</span></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<p class="Pp"><code class="In">#include
+  &lt;<a class="In">lua.h</a>&gt;</code></p>
+<p class="Pp"><var class="Ft">int</var>
+  <br/>
+  <code class="Fn">lua_pcall</code>(<var class="Fa" style="white-space: nowrap;">lua_State
+    *L</var>, <var class="Fa" style="white-space: nowrap;">int nargs</var>,
+    <var class="Fa" style="white-space: nowrap;">int nresults</var>,
+    <var class="Fa" style="white-space: nowrap;">int errfunc</var>);</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<p class="Pp"><a class="permalink" href="#lua_pcall"><code class="Fn" id="lua_pcall">lua_pcall</code></a>()
+    calls a function in protected mode.</p>
+<p class="Pp">Both <var class="Fa">nargs</var> and
+    <var class="Fa">nresults</var> have the same meaning as in
+    <a class="Xr">lua_call(3)</a>. If there are no errors during the call,
+    <code class="Nm">lua_pcall</code> behaves exactly like
+    <a class="Xr">lua_call(3)</a>. However, if there is any error,
+    <code class="Nm">lua_pcall</code> catches it, pushes a single value on the
+    stack (the error message), and returns an error code. Like
+    <a class="Xr">lua_call(3)</a>, <code class="Nm">lua_pcall</code> always
+    removes the function and its arguments from the stack.</p>
+<p class="Pp" id="error">If <var class="Fa">errfunc</var> is 0, then the error
+    message returned on the stack is exactly the original error message.
+    Otherwise, <var class="Fa">errfunc</var> is the stack index of an
+    <a class="permalink" href="#error"><i class="Em">error handler
+    function</i></a>. (In the current implementation, this index cannot be a
+    pseudo-index.) In case of runtime errors, this function will be called with
+    the error message and its return value will be the message returned on the
+    stack by <code class="Nm">lua_pcall</code>.</p>
+<p class="Pp">Typically, the error handler function is used to add more debug
+    information to the error message, such as a stack traceback. Such
+    information cannot be gathered after the return of
+    <code class="Nm">lua_pcall</code>, since by then the stack has unwound.</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="RETURN_VALUES"><a class="permalink" href="#RETURN_VALUES">RETURN
   VALUES</a></h1>
-The <code class="Nm" title="Nm">lua_pcall</code> function returns 0 in case of
-  success or one of the following error codes (defined in
-  <code class="In" title="In">&lt;<a class="In" title="In">lua.h</a>&gt;</code>):
-<div class="Pp"></div>
+<p class="Pp">The <code class="Nm">lua_pcall</code> function returns 0 in case
+    of success or one of the following error codes (defined in
+    <code class="In">&lt;<a class="In">lua.h</a>&gt;</code>):</p>
+<p class="Pp"></p>
 <div class="Bd-indent">
 <dl class="Bl-tag Bl-compact">
-  <dt><a class="permalink" href="#LUA_ERRRUN"><code class="Dv" title="Dv" id="LUA_ERRRUN">LUA_ERRRUN</code></a>:</dt>
+  <dt id="LUA_ERRRUN"><a class="permalink" href="#LUA_ERRRUN"><code class="Dv">LUA_ERRRUN</code></a>:</dt>
   <dd>a runtime error.</dd>
-  <dt><a class="permalink" href="#LUA_ERRMEM"><code class="Dv" title="Dv" id="LUA_ERRMEM">LUA_ERRMEM</code></a>:</dt>
+  <dt id="LUA_ERRMEM"><a class="permalink" href="#LUA_ERRMEM"><code class="Dv">LUA_ERRMEM</code></a>:</dt>
   <dd>memory allocation error. For such errors, Lua does not call the error
       handler function.</dd>
-  <dt><a class="permalink" href="#LUA_ERRERR"><code class="Dv" title="Dv" id="LUA_ERRERR">LUA_ERRERR</code></a>:</dt>
+  <dt id="LUA_ERRERR"><a class="permalink" href="#LUA_ERRERR"><code class="Dv">LUA_ERRERR</code></a>:</dt>
   <dd>error while running the error handler function.</dd>
 </dl>
 </div>
-<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
   ALSO</a></h1>
-<a class="Xr" title="Xr">lua_call(3)</a>
-<div class="Pp"></div>
-<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
-  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
-  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
-  Manual</span>.</cite>
-<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
-The <code class="Fn" title="Fn">lua_pcall</code>() manual page was written by
-  Sergey Bronnikov.</div>
+<p class="Pp"><a class="Xr">lua_call(3)</a></p>
+<p class="Pp"><cite class="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+    <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+    <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+    Manual</span>.</cite></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+<p class="Pp">The <code class="Fn">lua_pcall</code>() manual page was written by
+    Sergey Bronnikov.</p>
+</section>
+</div>
 <table class="foot">
   <tr>
     <td class="foot-date">July 20, 2022</td>

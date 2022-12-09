@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
   <title>LUA_PUSHCFUNCTION(3)</title>
 </head>
@@ -14,47 +15,52 @@
   </tr>
 </table>
 <div class="manual-text">
-<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
-<code class="Nm" title="Nm">lua_pushcfunction</code> &#x2014;
-<div class="Nd" title="Nd">pushes a C function onto the stack</div>
-<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
-<code class="In" title="In">#include
-  &lt;<a class="In" title="In">lua.h</a>&gt;</code>
-<div class="Pp"></div>
-<var class="Ft" title="Ft">void</var>
-<br/>
-<code class="Fn" title="Fn">lua_pushcfunction</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
-  *L</var>,
-  <var class="Fa" title="Fa" style="white-space: nowrap;">lua_CFunction
-  f</var>);
-<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
-<code class="Fn" title="Fn">lua_pushcfunction</code>() pushes a C function onto
-  the stack. This function receives a pointer to a C function and pushes onto
-  the stack a Lua value of type function that, when called, invokes the
-  corresponding C function.
-<div class="Pp"></div>
-Any function to be registered in Lua must follow the correct protocol to receive
-  its parameters and return its results (see
-  <a class="Xr" title="Xr">lua_CFunction(3)</a>).
-<div class="Pp"></div>
-<code class="Nm" title="Nm">lua_pushcfunction</code> is defined as a macro:
-<div class="Pp"></div>
-<div class="Bd Bd-indent">
-<pre class="Li">
-#define lua_pushcfunction(L,f)  lua_pushcclosure(L,f,0)
-</pre>
+<section class="Sh">
+<h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<p class="Pp"><code class="Nm">lua_pushcfunction</code> &#x2014;
+    <span class="Nd">pushes a C function onto the stack</span></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<p class="Pp"><code class="In">#include
+  &lt;<a class="In">lua.h</a>&gt;</code></p>
+<p class="Pp"><var class="Ft">void</var>
+  <br/>
+  <code class="Fn">lua_pushcfunction</code>(<var class="Fa" style="white-space: nowrap;">lua_State
+    *L</var>, <var class="Fa" style="white-space: nowrap;">lua_CFunction
+    f</var>);</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<p class="Pp"><a class="permalink" href="#lua_pushcfunction"><code class="Fn" id="lua_pushcfunction">lua_pushcfunction</code></a>()
+    pushes a C function onto the stack. This function receives a pointer to a C
+    function and pushes onto the stack a Lua value of type function that, when
+    called, invokes the corresponding C function.</p>
+<p class="Pp">Any function to be registered in Lua must follow the correct
+    protocol to receive its parameters and return its results (see
+    <a class="Xr">lua_CFunction(3)</a>).</p>
+<p class="Pp"><code class="Nm">lua_pushcfunction</code> is defined as a
+  macro:</p>
+<p class="Pp"></p>
+<div class="Bd Bd-indent Li">
+<pre>#define lua_pushcfunction(L,f)  lua_pushcclosure(L,f,0)</pre>
 </div>
-<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
   ALSO</a></h1>
-<a class="Xr" title="Xr">lua_CFunction(3)</a>
-<div class="Pp"></div>
-<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
-  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
-  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
-  Manual</span>.</cite>
-<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
-The <code class="Fn" title="Fn">lua_pushcfunction</code>() manual page was
-  written by Sergey Bronnikov.</div>
+<p class="Pp"><a class="Xr">lua_CFunction(3)</a></p>
+<p class="Pp"><cite class="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+    <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+    <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+    Manual</span>.</cite></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+<p class="Pp">The <code class="Fn">lua_pushcfunction</code>() manual page was
+    written by Sergey Bronnikov.</p>
+</section>
+</div>
 <table class="foot">
   <tr>
     <td class="foot-date">July 20, 2022</td>

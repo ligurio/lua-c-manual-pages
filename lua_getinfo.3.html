@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
   <title>LUA_GETINFO(3)</title>
 </head>
@@ -14,78 +15,82 @@
   </tr>
 </table>
 <div class="manual-text">
-<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
-<code class="Nm" title="Nm">lua_getinfo</code> &#x2014;
-<div class="Nd" title="Nd">returns information about a specific function or
-  function invocation</div>
-<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
-<code class="In" title="In">#include
-  &lt;<a class="In" title="In">lua.h</a>&gt;</code>
-<div class="Pp"></div>
-<var class="Ft" title="Ft">int</var>
-<br/>
-<code class="Fn" title="Fn">lua_getinfo</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
-  *L</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">const char
-  *what</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">lua_Debug
-  *ar</var>);
-<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
-<code class="Fn" title="Fn">lua_getinfo</code>() returns information about a
-  specific function or function invocation.
-<div class="Pp"></div>
-To get information about a function invocation, the parameter ar must be a valid
-  activation record that was filled by a previous call to lua_getstack or given
-  as argument to a hook (see <a class="Xr" title="Xr">lua_Hook(3)</a>).
-<div class="Pp"></div>
-To get information about a function you push it onto the stack and start the
-  what string with the character '&gt;'. (In that case,
-  <code class="Nm" title="Nm">lua_getinfo</code> pops the function in the top of
-  the stack.) For instance, to know in which line a function
-  <var class="Fa" title="Fa">f</var> was defined, you can write the following
-  code:
-<div class="Pp"></div>
-<div class="Bd Bd-indent">
-<pre class="Li">
-lua_Debug ar; 
-lua_getfield(L, LUA_GLOBALSINDEX, &quot;f&quot;);  /* get global 'f' */ 
-lua_getinfo(L, &quot;&gt;S&quot;, &amp;ar); 
-printf(&quot;%d0, ar.linedefined);
-</pre>
+<section class="Sh">
+<h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<p class="Pp"><code class="Nm">lua_getinfo</code> &#x2014;
+    <span class="Nd">returns information about a specific function or function
+    invocation</span></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<p class="Pp"><code class="In">#include
+  &lt;<a class="In">lua.h</a>&gt;</code></p>
+<p class="Pp"><var class="Ft">int</var>
+  <br/>
+  <code class="Fn">lua_getinfo</code>(<var class="Fa" style="white-space: nowrap;">lua_State
+    *L</var>, <var class="Fa" style="white-space: nowrap;">const char
+    *what</var>, <var class="Fa" style="white-space: nowrap;">lua_Debug
+    *ar</var>);</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<p class="Pp"><a class="permalink" href="#lua_getinfo"><code class="Fn" id="lua_getinfo">lua_getinfo</code></a>()
+    returns information about a specific function or function invocation.</p>
+<p class="Pp">To get information about a function invocation, the parameter ar
+    must be a valid activation record that was filled by a previous call to
+    lua_getstack or given as argument to a hook (see
+    <a class="Xr">lua_Hook(3)</a>).</p>
+<p class="Pp">To get information about a function you push it onto the stack and
+    start the what string with the character '&gt;'. (In that case,
+    <code class="Nm">lua_getinfo</code> pops the function in the top of the
+    stack.) For instance, to know in which line a function
+    <var class="Fa">f</var> was defined, you can write the following code:</p>
+<p class="Pp"></p>
+<div class="Bd Bd-indent Li">
+<pre>lua_Debug ar;
+lua_getfield(L, LUA_GLOBALSINDEX, &quot;f&quot;);  /* get global 'f' */
+lua_getinfo(L, &quot;&gt;S&quot;, &amp;ar);
+printf(&quot;%d0, ar.linedefined);</pre>
 </div>
-<div class="Pp"></div>
-Each character in the string what selects some fields of the structure ar to be
-  filled or a value to be pushed on the stack:
-<div class="Pp"></div>
+<p class="Pp">Each character in the string what selects some fields of the
+    structure ar to be filled or a value to be pushed on the stack:</p>
+<p class="Pp"></p>
 <dl class="Bl-tag Bl-compact">
-  <dt><b class="Sy" title="Sy">'n'</b></dt>
+  <dt id="'n'"><a class="permalink" href="#'n'"><b class="Sy">'n'</b></a></dt>
   <dd>fills in the field name and namewhat;</dd>
-  <dt><b class="Sy" title="Sy">'S'</b></dt>
+  <dt id="'S'"><a class="permalink" href="#'S'"><b class="Sy">'S'</b></a></dt>
   <dd>fills in the fields source, short_src, linedefined, lastlinedefined, and
       what;</dd>
-  <dt><b class="Sy" title="Sy">'l'</b></dt>
+  <dt id="'l'"><a class="permalink" href="#'l'"><b class="Sy">'l'</b></a></dt>
   <dd>fills in the field currentline;</dd>
-  <dt><b class="Sy" title="Sy">'u'</b></dt>
+  <dt id="'u'"><a class="permalink" href="#'u'"><b class="Sy">'u'</b></a></dt>
   <dd>fills in the field nups;</dd>
-  <dt><b class="Sy" title="Sy">'f'</b></dt>
+  <dt id="'f'"><a class="permalink" href="#'f'"><b class="Sy">'f'</b></a></dt>
   <dd>pushes onto the stack the function that is running at the given
     level;</dd>
-  <dt><b class="Sy" title="Sy">'L'</b></dt>
+  <dt id="'L'"><a class="permalink" href="#'L'"><b class="Sy">'L'</b></a></dt>
   <dd>pushes onto the stack a table whose indices are the numbers of the lines
       that are valid on the function. (A valid line is a line with some
       associated code, that is, a line where you can put a break point.
       Non-valid lines include empty lines and comments.) This function returns 0
       on error (for instance, an invalid option in what).</dd>
 </dl>
-<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
   ALSO</a></h1>
-<a class="Xr" title="Xr">lua_Hook(3)</a>
-<div class="Pp"></div>
-<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
-  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
-  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
-  Manual</span>.</cite>
-<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
-The <code class="Fn" title="Fn">lua_getinfo</code>() manual page was written by
-  Sergey Bronnikov.</div>
+<p class="Pp"><a class="Xr">lua_Hook(3)</a></p>
+<p class="Pp"><cite class="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+    <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+    <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+    Manual</span>.</cite></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+<p class="Pp">The <code class="Fn">lua_getinfo</code>() manual page was written
+    by Sergey Bronnikov.</p>
+</section>
+</div>
 <table class="foot">
   <tr>
     <td class="foot-date">July 19, 2022</td>

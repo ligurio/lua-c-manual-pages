@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
   <title>LUA_WRITER(3)</title>
 </head>
@@ -14,42 +15,52 @@
   </tr>
 </table>
 <div class="manual-text">
-<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
-<code class="Nm" title="Nm">lua_Writer</code> &#x2014;
-<div class="Nd" title="Nd">type of the writer function used by
-  <a class="Xr" title="Xr">lua_dump(3)</a></div>
-<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
-<code class="In" title="In">#include
-  &lt;<a class="In" title="In">lua.h</a>&gt;</code>
-<div class="Pp"></div>
-<var class="Ft" title="Ft">typedef int *</var>
-<br/>
-<code class="Fn" title="Fn">lua_Writer</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
-  *L</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">const void*
-  p</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">size_t
-  sz</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">void*
-  ud</var>);
-<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
-<var class="Vt" title="Vt">lua_Writer</var> type of the writer function used by
-  <a class="Xr" title="Xr">lua_dump(3)</a>. Every time it produces another piece
-  of chunk, <a class="Xr" title="Xr">lua_dump(3)</a> calls the writer, passing
-  along the buffer to be written (<var class="Fa" title="Fa">p</var>), its size
-  (<var class="Fa" title="Fa">sz</var>), and the data parameter supplied to
-  <a class="Xr" title="Xr">lua_dump(3)</a>.
-<h1 class="Sh" title="Sh" id="RETURN_VALUES"><a class="permalink" href="#RETURN_VALUES">RETURN
+<section class="Sh">
+<h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<p class="Pp"><code class="Nm">lua_Writer</code> &#x2014; <span class="Nd">type
+    of the writer function used by <a class="Xr">lua_dump(3)</a></span></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<p class="Pp"><code class="In">#include
+  &lt;<a class="In">lua.h</a>&gt;</code></p>
+<p class="Pp"><var class="Ft">typedef int *</var>
+  <br/>
+  <code class="Fn">lua_Writer</code>(<var class="Fa" style="white-space: nowrap;">lua_State
+    *L</var>, <var class="Fa" style="white-space: nowrap;">const void* p</var>,
+    <var class="Fa" style="white-space: nowrap;">size_t sz</var>,
+    <var class="Fa" style="white-space: nowrap;">void* ud</var>);</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<p class="Pp"><var class="Vt">lua_Writer</var> type of the writer function used
+    by <a class="Xr">lua_dump(3)</a>. Every time it produces another piece of
+    chunk, <a class="Xr">lua_dump(3)</a> calls the writer, passing along the
+    buffer to be written (<var class="Fa">p</var>), its size
+    (<var class="Fa">sz</var>), and the data parameter supplied to
+    <a class="Xr">lua_dump(3)</a>.</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="RETURN_VALUES"><a class="permalink" href="#RETURN_VALUES">RETURN
   VALUES</a></h1>
-The writer returns an error code: 0 means no errors; any other value means an
-  error and stops <a class="Xr" title="Xr">lua_dump(3)</a> from calling the
-  writer again.
-<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+<p class="Pp">The writer returns an error code: 0 means no errors; any other
+    value means an error and stops <a class="Xr">lua_dump(3)</a> from calling
+    the writer again.</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
   ALSO</a></h1>
-<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
-  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
-  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
-  Manual</span>.</cite>
-<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
-The <var class="Vt" title="Vt">lua_Writer</var> manual page was written by
-  Sergey Bronnikov.</div>
+<p class="Pp"><cite class="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+    <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+    <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+    Manual</span>.</cite></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+<p class="Pp">The <var class="Vt">lua_Writer</var> manual page was written by
+    Sergey Bronnikov.</p>
+</section>
+</div>
 <table class="foot">
   <tr>
     <td class="foot-date">July 18, 2022</td>

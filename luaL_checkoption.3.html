@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
   <title>LUAL_CHECKOPTION(3)</title>
 </head>
@@ -14,45 +15,53 @@
   </tr>
 </table>
 <div class="manual-text">
-<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
-<code class="Nm" title="Nm">luaL_checkoption</code> &#x2014;
-<div class="Nd" title="Nd">checks whether the function argument is a
-  string</div>
-<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
-<code class="In" title="In">#include
-  &lt;<a class="In" title="In">lauxlib.h</a>&gt;</code>
-<div class="Pp"></div>
-<var class="Ft" title="Ft">int</var>
-<br/>
-<code class="Fn" title="Fn">luaL_checkoption</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
-  *L</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">int
-  narg</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">const char
-  *def</var>, <var class="Fa" title="Fa" style="white-space: nowrap;">const char
-  *const lst[]</var>);
-<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
-<code class="Fn" title="Fn">luaL_checkoption</code>() checks whether the
-  function argument <var class="Fa" title="Fa">narg</var> is a string and
-  searches for this string in the array <var class="Fa" title="Fa">lst</var>
-  (which must be <code class="Dv" title="Dv">NULL</code> -terminated). Returns
-  the index in the array where the string was found. Raises an error if the
-  argument is not a string or if the string cannot be found.
-<div class="Pp"></div>
-If <var class="Fa" title="Fa">def</var> is not
-  <code class="Dv" title="Dv">NULL</code>, the function uses def as a default
-  value when there is no argument <var class="Fa" title="Fa">narg</var> or if
-  this argument is <code class="Dv" title="Dv">nil</code>.
-<div class="Pp"></div>
-This is a useful function for mapping strings to C enums. (The usual convention
-  in Lua libraries is to use strings instead of numbers to select options.)
-<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+<section class="Sh">
+<h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<p class="Pp"><code class="Nm">luaL_checkoption</code> &#x2014;
+    <span class="Nd">checks whether the function argument is a string</span></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<p class="Pp"><code class="In">#include
+    &lt;<a class="In">lauxlib.h</a>&gt;</code></p>
+<p class="Pp"><var class="Ft">int</var>
+  <br/>
+  <code class="Fn">luaL_checkoption</code>(<var class="Fa" style="white-space: nowrap;">lua_State
+    *L</var>, <var class="Fa" style="white-space: nowrap;">int narg</var>,
+    <var class="Fa" style="white-space: nowrap;">const char *def</var>,
+    <var class="Fa" style="white-space: nowrap;">const char *const
+  lst[]</var>);</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<p class="Pp"><a class="permalink" href="#luaL_checkoption"><code class="Fn" id="luaL_checkoption">luaL_checkoption</code></a>()
+    checks whether the function argument <var class="Fa">narg</var> is a string
+    and searches for this string in the array <var class="Fa">lst</var> (which
+    must be <code class="Dv">NULL</code> -terminated). Returns the index in the
+    array where the string was found. Raises an error if the argument is not a
+    string or if the string cannot be found.</p>
+<p class="Pp">If <var class="Fa">def</var> is not <code class="Dv">NULL</code>,
+    the function uses def as a default value when there is no argument
+    <var class="Fa">narg</var> or if this argument is
+    <code class="Dv">nil</code>.</p>
+<p class="Pp">This is a useful function for mapping strings to C enums. (The
+    usual convention in Lua libraries is to use strings instead of numbers to
+    select options.)</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
   ALSO</a></h1>
-<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
-  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
-  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
-  Manual</span>.</cite>
-<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
-The <code class="Fn" title="Fn">luaL_checkoption</code>() manual page was
-  written by Sergey Bronnikov.</div>
+<p class="Pp"><cite class="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+    <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+    <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+    Manual</span>.</cite></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+<p class="Pp">The <code class="Fn">luaL_checkoption</code>() manual page was
+    written by Sergey Bronnikov.</p>
+</section>
+</div>
 <table class="foot">
   <tr>
     <td class="foot-date">July 24, 2022</td>

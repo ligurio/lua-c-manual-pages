@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
   <title>LUA_CFUNCTION(3)</title>
 </head>
@@ -14,63 +15,70 @@
   </tr>
 </table>
 <div class="manual-text">
-<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
-<code class="Nm" title="Nm">lua_CFunction</code> &#x2014;
-<div class="Nd" title="Nd">type for C functions</div>
-<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
-<code class="In" title="In">#include
-  &lt;<a class="In" title="In">lua.h</a>&gt;</code>
-<div class="Pp"></div>
-<var class="Ft" title="Ft">typedef int *</var>
-<br/>
-<code class="Fn" title="Fn">lua_CFunction</code>(<var class="Fa" title="Fa" style="white-space: nowrap;">lua_State
-  *L</var>);
-<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
-<code class="Fn" title="Fn">lua_CFunction</code>() type for C functions.
-<div class="Pp"></div>
-In order to communicate properly with Lua, a C function must use the following
-  protocol, which defines the way parameters and results are passed: a C
-  function receives its arguments from Lua in its stack in direct order (the
-  first argument is pushed first). So, when the function starts, lua_gettop(L)
-  returns the number of arguments received by the function. The first argument
-  (if any) is at index 1 and its last argument is at index lua_gettop(L). To
-  return values to Lua, a C function just pushes them onto the stack, in direct
-  order (the first result is pushed first), and returns the number of results.
-  Any other value in the stack below the results will be properly discarded by
-  Lua. Like a Lua function, a C function called by Lua can also return many
-  results.
-<div class="Pp"></div>
-As an example, the following function receives a variable number of numerical
-  arguments and returns their average and sum:
-<div class="Pp"></div>
-<div class="Bd Bd-indent">
-<pre class="Li">
-static int foo (lua_State *L) { 
-  int n = lua_gettop(L);    /* number of arguments */ 
-  lua_Number sum = 0; 
-  int i; 
-  for (i = 1; i &lt;= n; i++) { 
-    if (!lua_isnumber(L, i)) { 
-      lua_pushstring(L, &quot;incorrect argument&quot;); 
-      lua_error(L); 
-    } 
-    sum += lua_tonumber(L, i); 
-  } 
-  lua_pushnumber(L, sum/n);        /* first result */ 
-  lua_pushnumber(L, sum);         /* second result */ 
-  return 2;                   /* number of results */ 
-}
-</pre>
+<section class="Sh">
+<h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
+<p class="Pp"><code class="Nm">lua_CFunction</code> &#x2014;
+    <span class="Nd">type for C functions</span></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<p class="Pp"><code class="In">#include
+  &lt;<a class="In">lua.h</a>&gt;</code></p>
+<p class="Pp"><var class="Ft">typedef int *</var>
+  <br/>
+  <code class="Fn">lua_CFunction</code>(<var class="Fa" style="white-space: nowrap;">lua_State
+    *L</var>);</p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<p class="Pp"><a class="permalink" href="#lua_CFunction"><code class="Fn" id="lua_CFunction">lua_CFunction</code></a>()
+    type for C functions.</p>
+<p class="Pp">In order to communicate properly with Lua, a C function must use
+    the following protocol, which defines the way parameters and results are
+    passed: a C function receives its arguments from Lua in its stack in direct
+    order (the first argument is pushed first). So, when the function starts,
+    lua_gettop(L) returns the number of arguments received by the function. The
+    first argument (if any) is at index 1 and its last argument is at index
+    lua_gettop(L). To return values to Lua, a C function just pushes them onto
+    the stack, in direct order (the first result is pushed first), and returns
+    the number of results. Any other value in the stack below the results will
+    be properly discarded by Lua. Like a Lua function, a C function called by
+    Lua can also return many results.</p>
+<p class="Pp">As an example, the following function receives a variable number
+    of numerical arguments and returns their average and sum:</p>
+<p class="Pp"></p>
+<div class="Bd Bd-indent Li">
+<pre>static int foo (lua_State *L) {
+  int n = lua_gettop(L);    /* number of arguments */
+  lua_Number sum = 0;
+  int i;
+  for (i = 1; i &lt;= n; i++) {
+    if (!lua_isnumber(L, i)) {
+      lua_pushstring(L, &quot;incorrect argument&quot;);
+      lua_error(L);
+    }
+    sum += lua_tonumber(L, i);
+  }
+  lua_pushnumber(L, sum/n);        /* first result */
+  lua_pushnumber(L, sum);         /* second result */
+  return 2;                   /* number of results */
+}</pre>
 </div>
-<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+</section>
+<section class="Sh">
+<h1 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
   ALSO</a></h1>
-<cite class="Rs" title="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
-  <span class="RsA">Luiz Henrique de Figueiredo</span>, and
-  <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
-  Manual</span>.</cite>
-<h1 class="Sh" title="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
-The <code class="Fn" title="Fn">lua_CFunction</code>() manual page was written
-  by Sergey Bronnikov.</div>
+<p class="Pp"><cite class="Rs"><span class="RsA">Roberto Ierusalimschy</span>,
+    <span class="RsA">Luiz Henrique de Figueiredo</span>, and
+    <span class="RsA">Waldemar Celes</span>, <span class="RsT">Lua 5.1 Reference
+    Manual</span>.</cite></p>
+</section>
+<section class="Sh">
+<h1 class="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
+<p class="Pp">The <code class="Fn">lua_CFunction</code>() manual page was
+    written by Sergey Bronnikov.</p>
+</section>
+</div>
 <table class="foot">
   <tr>
     <td class="foot-date">July 19, 2022</td>
