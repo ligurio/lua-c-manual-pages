@@ -3,7 +3,10 @@
 .Os
 .Sh NAME
 .Nm lua_setupvalue
-.Nd sets the value of a closure's upvalue
+.Nd sets the value of a closure's upvalue, function indicator
+.Bo - Pq 0|1 ,
++0, -
+.Bc
 .Sh SYNOPSIS
 .In lua.h
 .Ft const char *

@@ -4,7 +4,10 @@
 .Sh NAME
 .Nm luaL_getmetafield
 .Nd pushes onto the stack the field from the metatable of the object at the
-specified index
+specified index, function indicator
+.Bo -0, + Pq 0|1 ,
+m
+.Bc
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft int

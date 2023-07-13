@@ -7,7 +7,8 @@
 .Sh SYNOPSIS
 .In lua.h
 .Ft int
-.Fn lua_toboolean "lua_State *L" "int index"
+.Fn lua_toboolean "lua_State *L" "int index", function indicator
+.Bq -0, +0, -
 .Sh DESCRIPTION
 .Fn lua_toboolean
 converts the Lua value at the given acceptable index to a C boolean value (0 or
