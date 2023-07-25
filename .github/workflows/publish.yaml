@@ -30,6 +30,9 @@ jobs:
       - name: Publish HTML table of contents
         run: cp index.html man3/
 
+      - name: Publish CSS
+        run: cp style.css man3/
+
       - name: Publish HTML pages to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.4.0
         with:
