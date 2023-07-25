@@ -3,7 +3,11 @@
 .Os
 .Sh NAME
 .Nm lua_pcall
-.Nd calls a function in protected mode
+.Nd calls a function in protected mode, function indicator
+.Bo - Pq nargs + 1 ,
++ Pq nresults|1 ,
+-
+.Bc
 .Sh SYNOPSIS
 .In lua.h
 .Ft int
