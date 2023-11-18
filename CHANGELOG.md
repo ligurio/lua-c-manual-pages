@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Typo in `lua_gethookcount(3)`.
+- Description in `lua_close(3)`.
 
 [Unreleased]: https://github.com/ligurio/luac-manual-pages/compare/0.1.2...master
 
