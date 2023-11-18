@@ -18,8 +18,8 @@
 <section class="Sh">
 <h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
 <p class="Pp"><code class="Nm">lua_close</code> &#x2014;
-    <span class="Nd">ensures that there are at least extra free stack slots in
-    the stack, function indicator [-0, +0, -]</span></p>
+    <span class="Nd">destroys all objects and frees all dynamic memory, function
+    indicator [-0, +0, -]</span></p>
 </section>
 <section class="Sh">
 <h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
@@ -33,10 +33,13 @@
 <section class="Sh">
 <h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
 <p class="Pp"><a class="permalink" href="#lua_close"><code class="Fn" id="lua_close">lua_close</code></a>()
-    ensures that there are at least extra free stack slots in the stack. It
-    returns false if it cannot grow the stack to that size. This function never
-    shrinks the stack; if the stack is already larger than the new size, it is
-    left unchanged.</p>
+    destroys all objects in the given Lua state (calling the corresponding
+    garbage-collection metamethods, if any) and frees all dynamic memory used by
+    this state. On several platforms, you may not need to call this function,
+    because all resources are naturally released when the host program ends. On
+    the other hand, long-running programs, such as a daemon or a web server,
+    might need to release states as soon as they are not needed, to avoid
+    growing too large.</p>
 </section>
 <section class="Sh">
 <h1 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
