@@ -3,7 +3,7 @@
 .Os
 .Sh NAME
 .Nm lua_close
-.Nd ensures that there are at least extra free stack slots in the stack, function indicator
+.Nd destroys all objects and frees all dynamic memory, function indicator
 .Bq -0, +0, -
 .Sh SYNOPSIS
 .In lua.h
@@ -11,10 +11,14 @@
 .Fn lua_close "lua_State *L"
 .Sh DESCRIPTION
 .Fn lua_close
-ensures that there are at least extra free stack slots in the stack.
-It returns false if it cannot grow the stack to that size.
-This function never shrinks the stack; if the stack is already larger than the
-new size, it is left unchanged.
+destroys all objects in the given Lua state (calling the corresponding
+garbage-collection metamethods, if any) and frees all dynamic memory used by
+this state.
+On several platforms, you may not need to call this function, because all
+resources are naturally released when the host program ends.
+On the other hand, long-running programs, such as a daemon or a web server,
+might need to release states as soon as they are not needed, to avoid growing
+too large.
 .Sh SEE ALSO
 .Rs
 .%A Roberto Ierusalimschy
