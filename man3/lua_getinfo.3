@@ -34,7 +34,7 @@ was defined, you can write the following code:
 lua_Debug ar;
 lua_getfield(L, LUA_GLOBALSINDEX, "f");  /* get global 'f' */
 lua_getinfo(L, ">S", &ar);
-printf("%d\n", ar.linedefined);
+printf("%d\&\\n", ar.linedefined);
 .Ed
 .Pp
 Each character in the string what selects some fields of the structure ar to be
