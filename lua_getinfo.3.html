@@ -50,7 +50,7 @@
 <pre>lua_Debug ar;
 lua_getfield(L, LUA_GLOBALSINDEX, &quot;f&quot;);  /* get global 'f' */
 lua_getinfo(L, &quot;&gt;S&quot;, &amp;ar);
-printf(&quot;%d0, ar.linedefined);</pre>
+printf(&quot;%d\n&quot;, ar.linedefined);</pre>
 </div>
 <p class="Pp">Each character in the string what selects some fields of the
     structure ar to be filled or a value to be pushed on the stack:</p>
