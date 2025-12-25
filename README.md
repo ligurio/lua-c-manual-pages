@@ -21,3 +21,4 @@ $ makewhatis
 - [C++ 98/11/14 manual pages for Linux/MacOS](https://github.com/aitjcize/cppman)
 - [Formatted C++20 stdlib man pages (cppreference)](https://github.com/jeaye/stdman)
 - [x86 and amd64 instruction reference manual pages](https://github.com/ttmo-O/x86-manpages)
+- [lua-manpage](https://github.com/ziyao233/lua-manpage)
