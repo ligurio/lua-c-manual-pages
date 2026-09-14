@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_addstring
-.Nd adds the zero-terminated string to the buffer, function indicator
-.Bq -0, +0, m
+.Nd adds the zero-terminated string to the buffer
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft void
 .Fn luaL_addstring "luaL_Buffer *B" "const char *s"
+.Pp
+Function indicator: [-0, +0, m].
 .Sh DESCRIPTION
 .Fn luaL_addstring
 adds the zero-terminated string pointed to by

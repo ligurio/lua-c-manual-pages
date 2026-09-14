@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_unref
-.Nd releases reference from the table, function indicator
-.Bq -0, +0, -
+.Nd releases reference from the table
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft void
 .Fn luaL_unref "lua_State *L" "int t" "int ref"
+.Pp
+Function indicator: [-0, +0, -].
 .Sh DESCRIPTION
 .Fn luaL_unref
 releases reference

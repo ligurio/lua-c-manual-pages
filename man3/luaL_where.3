@@ -4,12 +4,13 @@
 .Sh NAME
 .Nm luaL_where
 .Nd pushes onto the stack a string identifying the current position of the
-control, function indicator
-.Bq -0, +1, m
+control
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft void
 .Fn luaL_where "lua_State *L" "int lvl"
+.Pp
+Function indicator: [-0, +1, m].
 .Sh DESCRIPTION
 .Fn luaL_where
 pushes onto the stack a string identifying the current position of the control

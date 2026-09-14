@@ -3,13 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_getmetatable
-.Nd pushes onto the stack the metatable associated with name in the registry,
-function indicator
-.Bq -0, +1, -
+.Nd pushes onto the stack the metatable associated with name in the registry
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft void
 .Fn luaL_getmetatable "lua_State *L" "const char *tname"
+.Pp
+Function indicator: [-0, +1, -].
 .Sh DESCRIPTION
 .Fn luaL_getmetatable
 pushes onto the stack the metatable associated with name

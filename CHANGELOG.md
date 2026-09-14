@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Function indicators moved from the NAME section to the SYNOPSIS
+  section in all manual pages that document functions.
+
 ### Fixed
 
 - Header in `lua_sethook(3)`.

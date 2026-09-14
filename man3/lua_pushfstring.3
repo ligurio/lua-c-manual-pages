@@ -3,12 +3,14 @@
 .Os
 .Sh NAME
 .Nm lua_pushfstring
-.Nd pushes onto the stack a formatted string and returns a pointer to this string, function indicator
-.Bq -0, +1, m
+.Nd pushes onto the stack a formatted string and returns a pointer to this
+string
 .Sh SYNOPSIS
 .In lua.h
 .Ft const char *
 .Fn lua_pushfstring "lua_State *L" "const char *fmt" "..."
+.Pp
+Function indicator: [-0, +1, m].
 .Sh DESCRIPTION
 .Fn lua_pushfstring
 pushes onto the stack a formatted string and returns a pointer to this string.

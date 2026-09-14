@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm lua_rawseti
-.Nd pops the value from the stack, function indicator
-.Bq -1, +0, m
+.Nd pops the value from the stack
 .Sh SYNOPSIS
 .In lua.h
 .Ft void
 .Fn lua_rawseti "lua_State *L" "int index" "int n"
+.Pp
+Function indicator: [-1, +0, m].
 .Sh DESCRIPTION
 .Fn lua_rawseti
 does the equivalent of t[n] = v, where t is the value at the given valid index

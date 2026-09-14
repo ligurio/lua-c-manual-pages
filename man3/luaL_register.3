@@ -3,14 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_register
-.Nd opens a library, function indicator
-.Bo - Pq 0|1 ,
-+1, m
-.Bc
+.Nd opens a library
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft void
 .Fn luaL_register "lua_State *L" "const char *libname" "const luaL_Reg *l"
+.Pp
+Function indicator: [- (0|1), +1, m].
 .Sh DESCRIPTION
 .Fn luaL_register
 opens a library.

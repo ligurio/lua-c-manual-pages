@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm lua_getstack
-.Nd get information about the interpreter runtime stack, function indicator
-.Bq -0, +0, -
+.Nd get information about the interpreter runtime stack
 .Sh SYNOPSIS
 .In lua.h
 .Ft int
 .Fn lua_getstack "lua_State *L" "int level" "lua_Debug *ar"
+.Pp
+Function indicator: [-0, +0, -].
 .Sh DESCRIPTION
 .Fn lua_getstack
 get information about the interpreter runtime stack.

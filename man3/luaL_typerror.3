@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_typerror
-.Nd generates an error with a message, function indicator
-.Bq -0, +0, v
+.Nd generates an error with a message
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft int
 .Fn luaL_typerror "lua_State *L" "int narg" "const char *tname"
+.Pp
+Function indicator: [-0, +0, v].
 .Sh DESCRIPTION
 .Fn luaL_typerror
 generates an error with a message like the following:

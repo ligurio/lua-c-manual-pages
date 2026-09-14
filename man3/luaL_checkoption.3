@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_checkoption
-.Nd checks whether the function argument is a string, function indicator
-.Bq -0, +0, v
+.Nd checks whether the function argument is a string
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft int
 .Fn luaL_checkoption "lua_State *L" "int narg" "const char *def" "const char *const lst[]"
+.Pp
+Function indicator: [-0, +0, v].
 .Sh DESCRIPTION
 .Fn luaL_checkoption
 checks whether the function argument

@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_dostring
-.Nd loads and runs the given string, function indicator
-.Bq -0, +?, m
+.Nd loads and runs the given string
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft int
 .Fn luaL_dostring "lua_State *L" "const char *str"
+.Pp
+Function indicator: [-0, +?, m].
 .Sh DESCRIPTION
 .Fn luaL_dostring
 loads and runs the given string.

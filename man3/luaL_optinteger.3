@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_optinteger
-.Nd casts a number to a lua_Integer, function indicator
-.Bq -0, +0, v
+.Nd casts a number to a lua_Integer
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft lua_Integer
 .Fn luaL_optinteger "lua_State *L" "int narg" "lua_Integer d"
+.Pp
+Function indicator: [-0, +0, v].
 .Sh DESCRIPTION
 .Fn luaL_optinteger
 if the function argument

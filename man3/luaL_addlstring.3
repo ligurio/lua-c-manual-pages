@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_addlstring
-.Nd adds the string to the buffer, function indicator
-.Bq -0, +0, m
+.Nd adds the string to the buffer
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft void
 .Fn luaL_addlstring "luaL_Buffer *B" "const char *s" "size_t l"
+.Pp
+Function indicator: [-0, +0, m].
 .Sh DESCRIPTION
 .Fn luaL_addlstring
 adds the string pointed to by

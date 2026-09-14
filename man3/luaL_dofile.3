@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_dofile
-.Nd loads and runs the given file, function indicator
-.Bq -0, +?, m
+.Nd loads and runs the given file
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft int
 .Fn luaL_dofile "lua_State *L" "const char *filename"
+.Pp
+Function indicator: [-0, +?, m].
 .Sh DESCRIPTION
 .Fn luaL_dofile
 loads and runs the given file.
