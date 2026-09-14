@@ -9,7 +9,7 @@
 .Ft typedef void
 .Fn (*lua_Hook) "lua_State *L" "lua_Debug *ar"
 .Sh DESCRIPTION
-.Fn lua_Hook
+.Vt lua_Hook
 type for debugging hook functions.
 .Pp
 Whenever a hook is called, its ar argument has its field event set to the
@@ -45,6 +45,6 @@ execution occurs without any calls to hooks.
 .Re
 .Sh HISTORY
 The
-.Fn lua_Hook
+.Vt lua_Hook
 manual page is based on Lua Reference Manual 5.1
 and was created by Sergey Bronnikov.
