@@ -35,7 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Typo in the description of `luaL_Reg(3)`.
 - Excessive space in the SYNOPSIS of `lua_setlocal(3)`.
 - SYNOPSIS macro used in the DESCRIPTION of `lua_type(3)`.
-- Non-portable inline markup in the DESCRIPTION of `luaL_Buffer(3)`.
+- Non-portable inline markup and punctuation in the DESCRIPTION of `luaL_Buffer(3)`.
 
 [Unreleased]: https://github.com/ligurio/luac-manual-pages/compare/0.1.3...master
 
