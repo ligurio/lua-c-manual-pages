@@ -16,6 +16,12 @@ pushes onto the stack the metatable associated with name
 .Fa tname
 in the registry
 .Pq see Xr luaL_newmetatable 3 .
+.Pp
+It is defined as the following macro:
+.Pp
+.Bd -literal -offset indent -compact
+(lua_getfield(L, LUA_REGISTRYINDEX, (tname)))
+.Ed
 .Sh SEE ALSO
 .Xr luaL_newmetatable 3
 .Rs
