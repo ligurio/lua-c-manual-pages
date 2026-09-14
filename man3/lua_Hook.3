@@ -6,8 +6,8 @@
 .Nd type for debugging hook functions
 .Sh SYNOPSIS
 .In lua.h
-.Ft typedef void *
-.Fn lua_Hook "lua_State *L" "lua_Debug *ar"
+.Ft typedef void
+.Fn (*lua_Hook) "lua_State *L" "lua_Debug *ar"
 .Sh DESCRIPTION
 .Fn lua_Hook
 type for debugging hook functions.
