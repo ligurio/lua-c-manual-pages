@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `.gitignore` for the Nix build output and generated HTML pages.
+- `make index` target that regenerates `index.html` from the manual pages.
 
 ### Changed
 
