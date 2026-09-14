@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Wrong C type in the SYNOPSIS of `lua_Writer(3)`.
 - Broken function indicator in `lua_getinfo(3)`.
 - Misplaced note about error handling in `lua_getinfo(3)`.
+- Broken function indicator in `lua_pcall(3)`.
 
 [Unreleased]: https://github.com/ligurio/luac-manual-pages/compare/0.1.3...master
 
