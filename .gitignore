@@ -1,0 +1,10 @@
+# Nix build output
+/result
+/result-*
+
+# Generated HTML pages
+man3/*.3.html
+
+# Editor and OS files
+*~
+.DS_Store
