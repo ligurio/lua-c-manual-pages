@@ -3,14 +3,13 @@
 .Os
 .Sh NAME
 .Nm lua_cpcall
-.Nd calls the C function in protected mode, function indicator
-.Bo -0, + Pq 0|1 ,
--
-.Bc
+.Nd calls the C function in protected mode
 .Sh SYNOPSIS
 .In lua.h
 .Ft int
 .Fn lua_cpcall "lua_State *L" "lua_CFunction func" "void *ud"
+.Pp
+Function indicator: [-0, + (0|1), -].
 .Sh DESCRIPTION
 .Fn lua_cpcall
 calls the C function
@@ -40,4 +39,5 @@ are discarded.
 .Sh HISTORY
 The
 .Fn lua_cpcall
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

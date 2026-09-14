@@ -3,14 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_callmeta
-.Nd calls a metamethod, function indicator
-.Bo -0, + Pq 0|1 ,
-e
-.Bc
+.Nd calls a metamethod
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft int
 .Fn luaL_callmeta "lua_State *L" "int obj" "const char *e"
+.Pp
+Function indicator: [-0, + (0|1), e].
 .Sh DESCRIPTION
 .Fn luaL_callmeta
 calls a metamethod.
@@ -32,4 +31,5 @@ pushing any value on the stack).
 .Sh HISTORY
 The
 .Fn luaL_callmeta
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

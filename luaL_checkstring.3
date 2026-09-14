@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_checkstring
-.Nd checks whether the function argument is a string and returns this string, function indicator
-.Bq -0, +0, v
+.Nd checks whether the function argument is a string and returns this string
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft const char *
 .Fn luaL_checkstring "lua_State *L" "int narg"
+.Pp
+Function indicator: [-0, +0, v].
 .Sh DESCRIPTION
 .Fn luaL_checkstring
 checks whether the function argument
@@ -29,4 +30,5 @@ to get its result, so all conversions and caveats of that function apply here.
 .Sh HISTORY
 The
 .Fn luaL_checkstring
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

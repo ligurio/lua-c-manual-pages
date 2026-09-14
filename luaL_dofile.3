@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_dofile
-.Nd loads and runs the given file, function indicator
-.Bq -0, +?, m
+.Nd loads and runs the given file
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft int
 .Fn luaL_dofile "lua_State *L" "const char *filename"
+.Pp
+Function indicator: [-0, +?, m].
 .Sh DESCRIPTION
 .Fn luaL_dofile
 loads and runs the given file.
@@ -29,4 +30,5 @@ It returns 0 if there are no errors or 1 in case of errors.
 .Sh HISTORY
 The
 .Fn luaL_dofile
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

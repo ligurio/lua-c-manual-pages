@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm lua_getstack
-.Nd get information about the interpreter runtime stack, function indicator
-.Bq -0, +0, -
+.Nd get information about the interpreter runtime stack
 .Sh SYNOPSIS
 .In lua.h
 .Ft int
 .Fn lua_getstack "lua_State *L" "int level" "lua_Debug *ar"
+.Pp
+Function indicator: [-0, +0, -].
 .Sh DESCRIPTION
 .Fn lua_getstack
 get information about the interpreter runtime stack.
@@ -35,4 +36,5 @@ returns 1; when called with a level greater than the stack depth, it returns 0.
 .Sh HISTORY
 The
 .Fn lua_getstack
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm lua_tointeger
-.Nd converts the Lua value to the signed integral type, function indicator
-.Bq -0, +0, -
+.Nd converts the Lua value to the signed integral type
 .Sh SYNOPSIS
 .In lua.h
 .Ft lua_Integer
 .Fn lua_tointeger "lua_State *L" "int index"
+.Pp
+Function indicator: [-0, +0, -].
 .Sh DESCRIPTION
 .Fn lua_tointeger
 converts the Lua value at the given acceptable index to the signed integral
@@ -31,4 +32,5 @@ If the number is not an integer, it is truncated in some non-specified way.
 .Sh HISTORY
 The
 .Fn lua_tointeger
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

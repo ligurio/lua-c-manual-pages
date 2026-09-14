@@ -33,10 +33,9 @@
 </section>
 <section class="Sh">
 <h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
-<p class="Pp">The reader function
-    <a class="permalink" href="#lua_Reader"><code class="Fn" id="lua_Reader">lua_Reader</code></a>()
-    used by <a class="Xr">lua_load(3)</a>. Every time it needs another piece of
-    the chunk, <a class="Xr">lua_load(3)</a> calls the reader, passing along its
+<p class="Pp">The reader function <var class="Vt">lua_Reader</var> used by
+    <a class="Xr">lua_load(3)</a>. Every time it needs another piece of the
+    chunk, <a class="Xr">lua_load(3)</a> calls the reader, passing along its
     data parameter. The reader must return a pointer to a block of memory with a
     new piece of the chunk and set size to the block size. The block must exist
     until the reader function is called again. To signal the end of the chunk,
@@ -54,8 +53,8 @@
 </section>
 <section class="Sh">
 <h1 class="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
-<p class="Pp">The <code class="Fn">lua_Reader</code>() manual page is based on
-    Lua Reference Manual 5.1 and was created by Sergey Bronnikov.</p>
+<p class="Pp">The <var class="Vt">lua_Reader</var> manual page is based on Lua
+    Reference Manual 5.1 and was created by Sergey Bronnikov.</p>
 </section>
 </div>
 <table class="foot">

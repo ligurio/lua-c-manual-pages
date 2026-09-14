@@ -24,15 +24,14 @@
 <h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
 <p class="Pp"><code class="In">#include
   &lt;<a class="In">lua.h</a>&gt;</code></p>
-<p class="Pp"><var class="Ft">typedef int *</var>
+<p class="Pp"><var class="Ft">typedef int</var>
   <br/>
-  <code class="Fn">lua_CFunction</code>(<var class="Fa" style="white-space: nowrap;">lua_State
+  <code class="Fn">(*lua_CFunction)</code>(<var class="Fa" style="white-space: nowrap;">lua_State
     *L</var>);</p>
 </section>
 <section class="Sh">
 <h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
-<p class="Pp"><a class="permalink" href="#lua_CFunction"><code class="Fn" id="lua_CFunction">lua_CFunction</code></a>()
-    type for C functions.</p>
+<p class="Pp"><var class="Vt">lua_CFunction</var> type for C functions.</p>
 <p class="Pp">In order to communicate properly with Lua, a C function must use
     the following protocol, which defines the way parameters and results are
     passed: a C function receives its arguments from Lua in its stack in direct
@@ -75,8 +74,8 @@
 </section>
 <section class="Sh">
 <h1 class="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
-<p class="Pp">The <code class="Fn">lua_CFunction</code>() manual page is based
-    on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.</p>
+<p class="Pp">The <var class="Vt">lua_CFunction</var> manual page is based on
+    Lua Reference Manual 5.1 and was created by Sergey Bronnikov.</p>
 </section>
 </div>
 <table class="foot">

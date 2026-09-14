@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_optlong
-.Nd casts a number to a long, function indicator
-.Bq -0, +0, v
+.Nd casts a number to a long
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft long
 .Fn luaL_optlong "lua_State *L" "int narg" "long d"
+.Pp
+Function indicator: [-0, +0, v].
 .Sh DESCRIPTION
 .Fn luaL_optlong
 if the function argument narg is a number, returns this number cast to a long.
@@ -27,4 +28,5 @@ Otherwise, raises an error.
 .Sh HISTORY
 The
 .Fn luaL_optlong
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

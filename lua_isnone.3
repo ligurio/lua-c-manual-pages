@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm lua_isnone
-.Nd check whether a value is not valid, function indicator
-.Bq -0, +0, -
+.Nd check whether a value is not valid
 .Sh SYNOPSIS
 .In lua.h
 .Ft int
 .Fn lua_isnone "lua_State *L" "int index"
+.Pp
+Function indicator: [-0, +0, -].
 .Sh DESCRIPTION
 .Fn lua_isnone
 returns 1 if the given acceptable index is not valid, and 0 otherwise.
@@ -25,4 +26,5 @@ element outside the current stack), and 0 otherwise.
 .Sh HISTORY
 The
 .Fn lua_isnone
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_optnumber
-.Nd if the function argument is a number, returns this number, function indicator
-.Bq -0, +0, v
+.Nd if the function argument is a number, returns this number
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft lua_Number
 .Fn luaL_optnumber "lua_State *L" "int narg" "lua_Number d"
+.Pp
+Function indicator: [-0, +0, v].
 .Sh DESCRIPTION
 .Fn luaL_optnumber
 if the function argument
@@ -29,4 +30,5 @@ Otherwise, raises an error.
 .Sh HISTORY
 The
 .Fn luaL_optnumber
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

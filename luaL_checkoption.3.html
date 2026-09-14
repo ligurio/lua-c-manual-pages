@@ -18,8 +18,7 @@
 <section class="Sh">
 <h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
 <p class="Pp"><code class="Nm">luaL_checkoption</code> &#x2014;
-    <span class="Nd">checks whether the function argument is a string, function
-    indicator [-0, +0, v]</span></p>
+    <span class="Nd">checks whether the function argument is a string</span></p>
 </section>
 <section class="Sh">
 <h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
@@ -32,13 +31,14 @@
     <var class="Fa" style="white-space: nowrap;">const char *def</var>,
     <var class="Fa" style="white-space: nowrap;">const char *const
   lst[]</var>);</p>
+<p class="Pp">Function indicator: [-0, +0, v].</p>
 </section>
 <section class="Sh">
 <h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
 <p class="Pp"><a class="permalink" href="#luaL_checkoption"><code class="Fn" id="luaL_checkoption">luaL_checkoption</code></a>()
     checks whether the function argument <var class="Fa">narg</var> is a string
     and searches for this string in the array <var class="Fa">lst</var> (which
-    must be <code class="Dv">NULL</code> -terminated). Returns the index in the
+    must be <code class="Dv">NULL</code>-terminated). Returns the index in the
     array where the string was found. Raises an error if the argument is not a
     string or if the string cannot be found.</p>
 <p class="Pp">If <var class="Fa">def</var> is not <code class="Dv">NULL</code>,

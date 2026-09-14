@@ -3,14 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_register
-.Nd opens a library, function indicator
-.Bo - Pq 0|1 ,
-+1, m
-.Bc
+.Nd opens a library
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft void
 .Fn luaL_register "lua_State *L" "const char *libname" "const luaL_Reg *l"
+.Pp
+Function indicator: [- (0|1), +1, m].
 .Sh DESCRIPTION
 .Fn luaL_register
 opens a library.
@@ -27,7 +26,7 @@ into the table on the top of the stack.
 .Pp
 When called with a non-null
 .Fa libname ,
-.Nm luaL_register 3
+.Nm luaL_register
 creates a new table t, sets it as the value of the global variable
 .Fa libname ,
 sets it as the value of
@@ -52,4 +51,5 @@ In any case the function leaves the table on the top of the stack.
 .Sh HISTORY
 The
 .Fn luaL_register
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_loadstring
-.Nd loads a string as a Lua chunk, function indicator
-.Bq -0, +1, m
+.Nd loads a string as a Lua chunk
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft int
 .Fn luaL_loadstring "lua_State *L" "const char *s"
+.Pp
+Function indicator: [-0, +1, m].
 .Sh DESCRIPTION
 .Fn luaL_loadstring
 loads a string as a Lua chunk.
@@ -34,4 +35,5 @@ this function only loads the chunk; it does not run it.
 .Sh HISTORY
 The
 .Fn luaL_loadstring
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

@@ -3,12 +3,14 @@
 .Os
 .Sh NAME
 .Nm lua_pushvfstring
-.Nd pushes onto the stack a formatted string and returns a pointer to this string, function indicator
-.Bq -0, +1, m
+.Nd pushes onto the stack a formatted string and returns a pointer to this
+string
 .Sh SYNOPSIS
 .In lua.h
 .Ft const char *
 .Fn lua_pushvfstring "lua_State *L" "const char *fmt" "va_list argp"
+.Pp
+Function indicator: [-0, +1, m].
 .Sh DESCRIPTION
 .Fn lua_pushvfstring
 pushes onto the stack a formatted string and returns a pointer to this string.
@@ -28,4 +30,5 @@ instead of a variable number of arguments.
 .Sh HISTORY
 The
 .Fn lua_pushvfstring
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

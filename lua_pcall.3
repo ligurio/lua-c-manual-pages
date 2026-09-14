@@ -3,15 +3,13 @@
 .Os
 .Sh NAME
 .Nm lua_pcall
-.Nd calls a function in protected mode, function indicator
-.Bo - Pq nargs + 1 ,
-+ Pq nresults|1 ,
--
-.Bc
+.Nd calls a function in protected mode
 .Sh SYNOPSIS
 .In lua.h
 .Ft int
 .Fn lua_pcall "lua_State *L" "int nargs" "int nresults" "int errfunc"
+.Pp
+Function indicator: [- (nargs + 1), + (nresults|1), -].
 .Sh DESCRIPTION
 .Fn lua_pcall
 calls a function in protected mode.
@@ -79,4 +77,5 @@ error while running the error handler function.
 .Sh HISTORY
 The
 .Fn lua_pcall
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

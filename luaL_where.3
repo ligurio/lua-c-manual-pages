@@ -4,12 +4,13 @@
 .Sh NAME
 .Nm luaL_where
 .Nd pushes onto the stack a string identifying the current position of the
-control, function indicator
-.Bq -0, +1, m
+control
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft void
 .Fn luaL_where "lua_State *L" "int lvl"
+.Pp
+Function indicator: [-0, +1, m].
 .Sh DESCRIPTION
 .Fn luaL_where
 pushes onto the stack a string identifying the current position of the control
@@ -34,4 +35,5 @@ This function is used to build a prefix for error messages.
 .Sh HISTORY
 The
 .Fn luaL_where
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

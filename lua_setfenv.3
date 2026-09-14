@@ -3,13 +3,13 @@
 .Os
 .Sh NAME
 .Nm lua_setfenv
-.Nd pops a table from the stack and sets it as the new environment for the
-value, function indicator
-.Bq -1, +0, -
+.Nd pops a table from the stack and sets it as the new environment for the value
 .Sh SYNOPSIS
 .In lua.h
 .Ft int
 .Fn lua_setfenv "lua_State *L" "int index"
+.Pp
+Function indicator: [-1, +0, -].
 .Sh DESCRIPTION
 .Fn lua_setfenv
 pops a table from the stack and sets it as the new environment for the value at
@@ -30,4 +30,5 @@ Otherwise it returns 1.
 .Sh HISTORY
 The
 .Fn lua_setfenv
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

@@ -8,7 +8,7 @@
 .In lauxlib.h
 .Vt typedef struct luaL_Buffer luaL_Buffer ;
 .Sh DESCRIPTION
-.Fn luaL_Buffer
+.Vt luaL_Buffer
 type for a
 .Em string buffer .
 .Pp
@@ -39,7 +39,8 @@ of the stack is.
 You can use the stack between successive calls to buffer operations as long as
 that use is balanced; that is, when you call a buffer operation, the stack is
 at the same level it was immediately after the previous buffer operation.
-.Pq The only exception to this rule is Em luaL_addvalue .
+(The only exception to this rule is
+.Em luaL_addvalue Ns .)
 After calling
 .Xr luaL_pushresult 3
 the stack is back to its level when the buffer was initialized, plus the final
@@ -54,5 +55,6 @@ string on its top.
 .Re
 .Sh HISTORY
 The
-.Fn luaL_Buffer
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+.Vt luaL_Buffer
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

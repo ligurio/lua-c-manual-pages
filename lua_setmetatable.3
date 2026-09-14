@@ -3,13 +3,13 @@
 .Os
 .Sh NAME
 .Nm lua_setmetatable
-.Nd pops a table from the stack and sets it as the new metatable for the value,
-function indicator
-.Bq -1, +0, -
+.Nd pops a table from the stack and sets it as the new metatable for the value
 .Sh SYNOPSIS
 .In lua.h
 .Ft int
 .Fn lua_setmetatable "lua_State *L" "int index"
+.Pp
+Function indicator: [-1, +0, -].
 .Sh DESCRIPTION
 .Fn lua_setmetatable
 pops a table from the stack and sets it as the new metatable for the value at
@@ -24,4 +24,5 @@ the given acceptable index.
 .Sh HISTORY
 The
 .Fn lua_setmetatable
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

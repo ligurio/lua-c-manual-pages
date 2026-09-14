@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_optlstring
-.Nd if the function argument is a string, returns this string, function indicator
-.Bq -0, +0, v
+.Nd if the function argument is a string, returns this string
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft const char *
 .Fn luaL_optlstring "lua_State *L" "int narg" "const char *d" "size_t *l"
+.Pp
+Function indicator: [-0, +0, v].
 .Sh DESCRIPTION
 .Fn luaL_optlstring
 if the function argument
@@ -37,4 +38,5 @@ with the results's length.
 .Sh HISTORY
 The
 .Fn luaL_optlstring
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

@@ -3,18 +3,19 @@
 .Os
 .Sh NAME
 .Nm luaL_checkint
-.Nd checks whether the function argument is a number, function indicator
-.Bq -0, +0, v
+.Nd checks whether the function argument is a number
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft int
 .Fn luaL_checkint "lua_State *L" "int narg"
+.Pp
+Function indicator: [-0, +0, v].
 .Sh DESCRIPTION
 .Fn luaL_checkint
 checks whether the function argument
 .Fa narg
 is a number and returns this number cast to an
-.Em int         .
+.Em int .
 .Sh SEE ALSO
 .Rs
 .%A Roberto Ierusalimschy
@@ -25,4 +26,5 @@ is a number and returns this number cast to an
 .Sh HISTORY
 The
 .Fn luaL_checkint
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

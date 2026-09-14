@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_argcheck
-.Nd checks whether cond is true, function indicator
-.Bq -0, +0, v
+.Nd checks whether cond is true
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft void
 .Fn luaL_argcheck "lua_State *L" "int cond" "int narg" "const char *extramsg"
+.Pp
+Function indicator: [-0, +0, v].
 .Sh DESCRIPTION
 .Fn luaL_argcheck
 checks whether cond is true.
@@ -28,4 +29,5 @@ bad argument #<narg> to <func> (<extramsg>)
 .Sh HISTORY
 The
 .Fn luaL_argcheck
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

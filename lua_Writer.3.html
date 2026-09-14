@@ -24,9 +24,9 @@
 <h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
 <p class="Pp"><code class="In">#include
   &lt;<a class="In">lua.h</a>&gt;</code></p>
-<p class="Pp"><var class="Ft">typedef int *</var>
+<p class="Pp"><var class="Ft">typedef int</var>
   <br/>
-  <code class="Fn">lua_Writer</code>(<var class="Fa" style="white-space: nowrap;">lua_State
+  <code class="Fn">(*lua_Writer)</code>(<var class="Fa" style="white-space: nowrap;">lua_State
     *L</var>, <var class="Fa" style="white-space: nowrap;">const void* p</var>,
     <var class="Fa" style="white-space: nowrap;">size_t sz</var>,
     <var class="Fa" style="white-space: nowrap;">void* ud</var>);</p>

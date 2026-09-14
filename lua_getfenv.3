@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm lua_getfenv
-.Nd pushes onto the stack the environment table of the value at the given index, function indicator
-.Bq -0, +1, -
+.Nd pushes onto the stack the environment table of the value at the given index
 .Sh SYNOPSIS
 .In lua.h
 .Ft void
 .Fn lua_getfenv "lua_State *L" "int index"
+.Pp
+Function indicator: [-0, +1, -].
 .Sh DESCRIPTION
 .Fn lua_getfenv
 pushes onto the stack the environment table of the value at the given index.
@@ -22,4 +23,5 @@ pushes onto the stack the environment table of the value at the given index.
 .Sh HISTORY
 The
 .Fn lua_getfenv
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

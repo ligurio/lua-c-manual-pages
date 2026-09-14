@@ -28,10 +28,9 @@
 </section>
 <section class="Sh">
 <h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
-<p class="Pp"><a class="permalink" href="#luaL_Reg"><code class="Fn" id="luaL_Reg">luaL_Reg</code></a>()
-    type for arrays of functions to be registered by
-    <a class="Xr">luaL_register(3)</a>. <var class="Vt">luaL_Reg</var> is
-    defined as:</p>
+<p class="Pp"><var class="Vt">luaL_Reg</var> type for arrays of functions to be
+    registered by <a class="Xr">luaL_register(3)</a>.
+    <var class="Vt">luaL_Reg</var> is defined as:</p>
 <div class="Bd Pp Li">
 <pre>typedef struct luaL_Reg {
         const char *name;
@@ -40,7 +39,7 @@
 </div>
 <p class="Pp"><var class="Fa">name</var> is the function name and
     <var class="Fa">func</var> is a pointer to the function. Any array of
-    <code class="Nm">luaL_Reg</code> must end with an sentinel entry in which
+    <code class="Nm">luaL_Reg</code> must end with a sentinel entry in which
     both <var class="Fa">name</var> and <var class="Fa">func</var> are
     <code class="Dv">NULL</code>.</p>
 </section>
@@ -55,7 +54,7 @@
 </section>
 <section class="Sh">
 <h1 class="Sh" id="HISTORY"><a class="permalink" href="#HISTORY">HISTORY</a></h1>
-<p class="Pp">The <code class="Fn">luaL_Reg</code>() manual page is based on Lua
+<p class="Pp">The <var class="Vt">luaL_Reg</var> manual page is based on Lua
     Reference Manual 5.1 and was created by Sergey Bronnikov.</p>
 </section>
 </div>

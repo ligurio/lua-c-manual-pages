@@ -18,8 +18,7 @@
 <section class="Sh">
 <h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
 <p class="Pp"><code class="Nm">luaL_register</code> &#x2014;
-    <span class="Nd">opens a library, function indicator [- (0|1), +1,
-  m]</span></p>
+    <span class="Nd">opens a library</span></p>
 </section>
 <section class="Sh">
 <h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
@@ -31,6 +30,7 @@
     *L</var>, <var class="Fa" style="white-space: nowrap;">const char
     *libname</var>, <var class="Fa" style="white-space: nowrap;">const luaL_Reg
     *l</var>);</p>
+<p class="Pp">Function indicator: [- (0|1), +1, m].</p>
 </section>
 <section class="Sh">
 <h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
@@ -41,10 +41,10 @@
     <var class="Fa">l</var> (see <a class="Xr">luaL_Reg(3)</a>) into the table
     on the top of the stack.</p>
 <p class="Pp">When called with a non-null <var class="Fa">libname</var>,
-    <code class="Nm">luaL_register 3</code> creates a new table t, sets it as
-    the value of the global variable <var class="Fa">libname</var>, sets it as
-    the value of <i class="Em">package.loaded[libname]</i>, and registers on it
-    all functions in the list <var class="Fa">l</var>. If there is a table in
+    <code class="Nm">luaL_register</code> creates a new table t, sets it as the
+    value of the global variable <var class="Fa">libname</var>, sets it as the
+    value of <i class="Em">package.loaded[libname]</i>, and registers on it all
+    functions in the list <var class="Fa">l</var>. If there is a table in
     <i class="Em">package.loaded[libname]</i> or in variable
     <var class="Fa">libname</var>, reuses this table instead of creating a new
     one.</p>

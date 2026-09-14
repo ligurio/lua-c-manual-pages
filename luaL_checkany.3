@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_checkany
-.Nd checks whether the function has an argument of any type, function indicator
-.Bq -0, +0, v
+.Nd checks whether the function has an argument of any type
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft void
 .Fn luaL_checkany "lua_State *L" "int narg"
+.Pp
+Function indicator: [-0, +0, v].
 .Sh DESCRIPTION
 .Fn luaL_checkany
 checks whether the function has an argument of any type
@@ -26,4 +27,5 @@ position
 .Sh HISTORY
 The
 .Fn luaL_checkany
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

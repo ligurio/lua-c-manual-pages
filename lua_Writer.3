@@ -7,8 +7,8 @@
 .Xr lua_dump 3
 .Sh SYNOPSIS
 .In lua.h
-.Ft typedef int *
-.Fn lua_Writer "lua_State *L" "const void* p" "size_t sz" "void* ud"
+.Ft typedef int
+.Fn (*lua_Writer) "lua_State *L" "const void* p" "size_t sz" "void* ud"
 .Sh DESCRIPTION
 .Vt lua_Writer
 type of the writer function used by
@@ -36,4 +36,5 @@ from calling the writer again.
 .Sh HISTORY
 The
 .Vt lua_Writer
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

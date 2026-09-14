@@ -3,14 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_prepbuffer
-.Nd prepares a buffer
-.Xr luaL_Buffer 3 ,
-function indicator
-.Bq -0, +0, -
+.Nd prepares a buffer .Xr luaL_Buffer 3
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft char *
 .Fn luaL_prepbuffer "luaL_Buffer *B"
+.Pp
+Function indicator: [-0, +0, -].
 .Sh DESCRIPTION
 .Fn luaL_prepbuffer
 returns an address to a space of size
@@ -34,4 +33,5 @@ with the size of the string to actually add it to the buffer.
 .Sh HISTORY
 The
 .Fn luaL_prepbuffer
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

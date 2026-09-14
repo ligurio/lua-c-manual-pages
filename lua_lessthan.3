@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm lua_lessthan
-.Nd compares two values, function indicator
-.Bq -0, +0, e
+.Nd compares two values
 .Sh SYNOPSIS
 .In lua.h
 .Ft int
 .Fn lua_lessthan "lua_State *L" "int index1" "int index2"
+.Pp
+Function indicator: [-0, +0, e].
 .Sh DESCRIPTION
 .Fn lua_lessthan
 .Sh RETURN VALUES
@@ -30,4 +31,5 @@ Also returns 0 if any of the indices is non valid.
 .Sh HISTORY
 The
 .Fn lua_lessthan
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

@@ -19,7 +19,7 @@
 <h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
 <p class="Pp"><code class="Nm">lua_getinfo</code> &#x2014;
     <span class="Nd">returns information about a specific function or function
-    invocation, function indicator [- (0|1), + Pq 0|1|2 , m]</span></p>
+    invocation</span></p>
 </section>
 <section class="Sh">
 <h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
@@ -31,6 +31,7 @@
     *L</var>, <var class="Fa" style="white-space: nowrap;">const char
     *what</var>, <var class="Fa" style="white-space: nowrap;">lua_Debug
     *ar</var>);</p>
+<p class="Pp">Function indicator: [- (0|1), + (0|1|2), m].</p>
 </section>
 <section class="Sh">
 <h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
@@ -72,9 +73,10 @@ printf(&quot;%d\n&quot;, ar.linedefined);</pre>
   <dd>pushes onto the stack a table whose indices are the numbers of the lines
       that are valid on the function. (A valid line is a line with some
       associated code, that is, a line where you can put a break point.
-      Non-valid lines include empty lines and comments.) This function returns 0
-      on error (for instance, an invalid option in what).</dd>
+      Non-valid lines include empty lines and comments.)</dd>
 </dl>
+<p class="Pp">This function returns 0 on error (for instance, an invalid option
+    in what).</p>
 </section>
 <section class="Sh">
 <h1 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE

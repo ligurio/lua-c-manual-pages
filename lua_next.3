@@ -3,14 +3,13 @@
 .Os
 .Sh NAME
 .Nm lua_next
-.Nd pops a key from the stack, and pushes a key-value pair from the table, function indicator
-.Bo -1, + Pq 2|0 ,
-e
-.Bc
+.Nd pops a key from the stack, and pushes a key-value pair from the table
 .Sh SYNOPSIS
 .In lua.h
 .Ft int
 .Fn lua_next "lua_State *L" "int index"
+.Pp
+Function indicator: [-1, + (2|0), e].
 .Sh DESCRIPTION
 .Fn lua_next
 pops a key from the stack, and pushes a key-value pair from the table at the
@@ -26,7 +25,7 @@ A typical traversal looks like this:
 lua_pushnil(L);  /* first key */
 while (lua_next(L, t) != 0) {
   /* uses 'key' (at index -2) and 'value' (at index -1) */
-  printf("%s - %s\n",
+  printf("%s - %s\&\\n",
          lua_typename(L, lua_type(L, -2)),
          lua_typename(L, lua_type(L, -1)));
   /* removes 'value'; keeps 'key' for next iteration */
@@ -52,4 +51,5 @@ changes the value at the given index; this confuses the next call to
 .Sh HISTORY
 The
 .Fn lua_next
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

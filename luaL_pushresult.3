@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_pushresult
-.Nd finishes the use of buffer, function indicator
-.Bq -?, +1, m
+.Nd finishes the use of buffer
 .Sh SYNOPSIS
-.In luaxlib.h
+.In lauxlib.h
 .Ft void
 .Fn luaL_pushresult "luaL_Buffer *B"
+.Pp
+Function indicator: [-?, +1, m].
 .Sh DESCRIPTION
 .Fn luaL_pushresult
 finishes the use of buffer
@@ -24,4 +25,5 @@ leaving the final string on the top of the stack.
 .Sh HISTORY
 The
 .Fn luaL_pushresult
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

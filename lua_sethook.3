@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm lua_sethook
-.Nd sets the debugging hook function, function indicator
-.Bq -0, +0, -
+.Nd sets the debugging hook function
 .Sh SYNOPSIS
 .In lua.h
 .Ft int
 .Fn lua_sethook "lua_State *L" "lua_Hook f" "int mask" "int count"
+.Pp
+Function indicator: [-0, +0, -].
 .Sh DESCRIPTION
 .Fn lua_sethook
 sets the debugging hook function.
@@ -52,4 +53,5 @@ A hook is disabled by setting mask to zero.
 .Sh HISTORY
 The
 .Fn lua_sethook
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

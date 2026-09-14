@@ -19,7 +19,7 @@
 <h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
 <p class="Pp"><code class="Nm">luaL_getmetatable</code> &#x2014;
     <span class="Nd">pushes onto the stack the metatable associated with name in
-    the registry, function indicator [-0, +1, -]</span></p>
+    the registry</span></p>
 </section>
 <section class="Sh">
 <h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
@@ -30,6 +30,7 @@
   <code class="Fn">luaL_getmetatable</code>(<var class="Fa" style="white-space: nowrap;">lua_State
     *L</var>, <var class="Fa" style="white-space: nowrap;">const char
     *tname</var>);</p>
+<p class="Pp">Function indicator: [-0, +1, -].</p>
 </section>
 <section class="Sh">
 <h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
@@ -37,6 +38,11 @@
     pushes onto the stack the metatable associated with name
     <var class="Fa">tname</var> in the registry (see
     <a class="Xr">luaL_newmetatable(3)</a>).</p>
+<p class="Pp">It is defined as the following macro:</p>
+<p class="Pp"></p>
+<div class="Bd Bd-indent Li">
+<pre>(lua_getfield(L, LUA_REGISTRYINDEX, (tname)))</pre>
+</div>
 </section>
 <section class="Sh">
 <h1 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE

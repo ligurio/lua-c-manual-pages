@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_argerror
-.Nd raises an error with the message, function indicator
-.Bq -0, +0, v
+.Nd raises an error with the message
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft int
 .Fn luaL_argerror "lua_State *L" "int narg" "const char *extramsg"
+.Pp
+Function indicator: [-0, +0, v].
 .Sh DESCRIPTION
 .Fn luaL_argerror
 raises an error with the following message, where func is retrieved from the
@@ -31,4 +32,5 @@ return
 .Sh HISTORY
 The
 .Fn luaL_argerror
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

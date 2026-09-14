@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm lua_tocfunction
-.Nd converts a value to a C function, function indicator
-.Bq -0, +0, -
+.Nd converts a value to a C function
 .Sh SYNOPSIS
 .In lua.h
 .Ft lua_CFunction
 .Fn lua_tocfunction "lua_State *L" "int index"
+.Pp
+Function indicator: [-0, +0, -].
 .Sh DESCRIPTION
 .Fn lua_tocfunction
 converts a value at the given acceptable index to a C function.
@@ -25,4 +26,5 @@ That value must be a C function; otherwise, returns
 .Sh HISTORY
 The
 .Fn lua_tocfunction
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

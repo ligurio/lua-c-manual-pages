@@ -3,14 +3,14 @@
 .Os
 .Sh NAME
 .Nm lua_getmetatable
-.Nd pushes onto the stack the metatable of the value at the given acceptable index, function indicator
-.Bo -0, + Pq 0|1 ,
--
-.Bc
+.Nd pushes onto the stack the metatable of the value at the given acceptable
+index
 .Sh SYNOPSIS
 .In lua.h
 .Ft int
 .Fn lua_getmetatable "lua_State *L" "int index"
+.Pp
+Function indicator: [-0, + (0|1), -].
 .Sh DESCRIPTION
 .Fn lua_getmetatable
 pushes onto the stack the metatable of the value at the given acceptable index.
@@ -29,4 +29,5 @@ and pushes nothing on the stack.
 .Sh HISTORY
 The
 .Fn lua_getmetatable
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

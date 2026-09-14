@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_buffinit
-.Nd initializes a buffer, function indicator
-.Bq -0, +0, -
+.Nd initializes a buffer
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft void
 .Fn luaL_buffinit "lua_State *L" "luaL_Buffer *B"
+.Pp
+Function indicator: [-0, +0, -].
 .Sh DESCRIPTION
 .Fn luaL_buffinit
 initializes a buffer
@@ -27,4 +28,5 @@ variable
 .Sh HISTORY
 The
 .Fn luaL_buffinit
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

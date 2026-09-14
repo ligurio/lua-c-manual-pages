@@ -4,12 +4,13 @@
 .Sh NAME
 .Nm luaL_ref
 .Nd creates and returns a reference for the object at the top of the stack and
-pops the object, function indicator
-.Bq -1, +0, m
+pops the object
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft int
 .Fn luaL_ref "lua_State *L" "int t"
+.Pp
+Function indicator: [-1, +0, m].
 .Sh DESCRIPTION
 .Fn luaL_ref
 creates and returns a
@@ -48,4 +49,5 @@ is guaranteed to be different from any reference returned by
 .Sh HISTORY
 The
 .Fn luaL_ref
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

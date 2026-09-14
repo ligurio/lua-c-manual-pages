@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_addsize
-.Nd adds to the buffer a string, function indicator
-.Bq -0, +0, m
+.Nd adds to the buffer a string
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft void
 .Fn luaL_addsize "luaL_Buffer *B" "size_t n"
+.Pp
+Function indicator: [-0, +0, m].
 .Sh DESCRIPTION
 .Fn luaL_addsize
 adds to the buffer
@@ -30,4 +31,5 @@ previously copied to the buffer area
 .Sh HISTORY
 The
 .Fn luaL_addsize
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

@@ -18,8 +18,7 @@
 <section class="Sh">
 <h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
 <p class="Pp"><code class="Nm">lua_next</code> &#x2014; <span class="Nd">pops a
-    key from the stack, and pushes a key-value pair from the table, function
-    indicator [-1, + (2|0), e]</span></p>
+    key from the stack, and pushes a key-value pair from the table</span></p>
 </section>
 <section class="Sh">
 <h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
@@ -29,6 +28,7 @@
   <br/>
   <code class="Fn">lua_next</code>(<var class="Fa" style="white-space: nowrap;">lua_State
     *L</var>, <var class="Fa" style="white-space: nowrap;">int index</var>);</p>
+<p class="Pp">Function indicator: [-1, + (2|0), e].</p>
 </section>
 <section class="Sh">
 <h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
@@ -44,7 +44,7 @@
 lua_pushnil(L);  /* first key */
 while (lua_next(L, t) != 0) {
   /* uses 'key' (at index -2) and 'value' (at index -1) */
-  printf(&quot;%s - %s0,
+  printf(&quot;%s - %s\n&quot;,
          lua_typename(L, lua_type(L, -2)),
          lua_typename(L, lua_type(L, -1)));
   /* removes 'value'; keeps 'key' for next iteration */

@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_openlibs
-.Nd opens all standard Lua libraries into the given state, function indicator
-.Bq -0, +0, m
+.Nd opens all standard Lua libraries into the given state
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft void
 .Fn luaL_openlibs "lua_State *L"
+.Pp
+Function indicator: [-0, +0, m].
 .Sh DESCRIPTION
 .Fn luaL_openlibs
 opens all standard Lua libraries into the given state.
@@ -22,4 +23,5 @@ opens all standard Lua libraries into the given state.
 .Sh HISTORY
 The
 .Fn luaL_openlibs
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

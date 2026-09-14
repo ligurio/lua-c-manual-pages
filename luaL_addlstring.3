@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_addlstring
-.Nd adds the string to the buffer, function indicator
-.Bq -0, +0, m
+.Nd adds the string to the buffer
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft void
 .Fn luaL_addlstring "luaL_Buffer *B" "const char *s" "size_t l"
+.Pp
+Function indicator: [-0, +0, m].
 .Sh DESCRIPTION
 .Fn luaL_addlstring
 adds the string pointed to by
@@ -30,4 +31,5 @@ The string may contain embedded zeros.
 .Sh HISTORY
 The
 .Fn luaL_addlstring
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.

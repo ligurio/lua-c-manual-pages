@@ -19,7 +19,7 @@
 <h1 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
 <p class="Pp"><code class="Nm">lua_getfield</code> &#x2014;
     <span class="Nd">pushes onto the stack the value t[k], where t is the value
-    at the given valid index, function indicator [-0, +1, e]</span></p>
+    at the given valid index</span></p>
 </section>
 <section class="Sh">
 <h1 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
@@ -30,6 +30,7 @@
   <code class="Fn">lua_getfield</code>(<var class="Fa" style="white-space: nowrap;">lua_State
     *L</var>, <var class="Fa" style="white-space: nowrap;">int index</var>,
     <var class="Fa" style="white-space: nowrap;">const char *k</var>);</p>
+<p class="Pp">Function indicator: [-0, +1, e].</p>
 </section>
 <section class="Sh">
 <h1 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>

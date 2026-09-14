@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_typename
-.Nd returns the name of the type of the value, function indicator
-.Bq -0, +0, -
+.Nd returns the name of the type of the value
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft const char *
 .Fn luaL_typename "lua_State *L" "int index"
+.Pp
+Function indicator: [-0, +0, -].
 .Sh DESCRIPTION
 .Fn luaL_typename
 returns the name of the type of the value at the given index.
@@ -22,4 +23,5 @@ returns the name of the type of the value at the given index.
 .Sh HISTORY
 The
 .Fn luaL_typename
-manual page is based on Lua Reference Manual 5.1 and was created by Sergey Bronnikov.
+manual page is based on Lua Reference Manual 5.1
+and was created by Sergey Bronnikov.
