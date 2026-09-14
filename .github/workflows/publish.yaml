@@ -24,7 +24,7 @@ jobs:
       - name: Setup mandoc
         run: sudo apt install -y mandoc
 
-      - name: Build HTML pages
+      - name: Build HTML pages and table of contents
         run: make html
 
       - name: Publish HTML table of contents
