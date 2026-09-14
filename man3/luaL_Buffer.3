@@ -39,7 +39,8 @@ of the stack is.
 You can use the stack between successive calls to buffer operations as long as
 that use is balanced; that is, when you call a buffer operation, the stack is
 at the same level it was immediately after the previous buffer operation.
-.Pq The only exception to this rule is Em luaL_addvalue .
+(The only exception to this rule is
+.Em luaL_addvalue .)
 After calling
 .Xr luaL_pushresult 3
 the stack is back to its level when the buffer was initialized, plus the final
