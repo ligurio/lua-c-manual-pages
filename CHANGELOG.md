@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Malformed SYNOPSIS in `lua_toboolean(3)`.
 - Wrong C type in the SYNOPSIS of `lua_CFunction(3)`.
 - Wrong C type in the SYNOPSIS of `lua_Hook(3)`.
+- Wrong C type in the SYNOPSIS of `lua_Writer(3)`.
 
 [Unreleased]: https://github.com/ligurio/luac-manual-pages/compare/0.1.3...master
 
