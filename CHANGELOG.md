@@ -33,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Overlong lines in the HISTORY section of all manual pages that made `make check` fail.
 - Type names in the DESCRIPTION and HISTORY sections were marked up as functions.
 - Typo in the description of `luaL_Reg(3)`.
+- Excessive space in the SYNOPSIS of `lua_setlocal(3)`.
 
 [Unreleased]: https://github.com/ligurio/luac-manual-pages/compare/0.1.3...master
 
