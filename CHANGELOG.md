@@ -37,6 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - SYNOPSIS macro used in the DESCRIPTION of `lua_type(3)`.
 - Non-portable inline markup and punctuation in the DESCRIPTION of `luaL_Buffer(3)`.
 - Broken line break in the DESCRIPTION of `luaL_checkoption(3)`.
+- Excessive whitespace in the DESCRIPTION of `luaL_checkint(3)`.
 
 [Unreleased]: https://github.com/ligurio/luac-manual-pages/compare/0.1.3...master
 
