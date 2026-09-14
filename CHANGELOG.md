@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Function indicators moved from the NAME section to the SYNOPSIS
   section in all manual pages that document functions.
+- HTML table of contents now links the project stylesheet.
 
 ### Fixed
 
