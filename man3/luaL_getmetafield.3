@@ -4,14 +4,13 @@
 .Sh NAME
 .Nm luaL_getmetafield
 .Nd pushes onto the stack the field from the metatable of the object at the
-specified index, function indicator
-.Bo -0, + Pq 0|1 ,
-m
-.Bc
+specified index
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft int
 .Fn luaL_getmetafield "lua_State *L" "int obj" "const char *e"
+.Pp
+Function indicator: [-0, + (0|1), m].
 .Sh DESCRIPTION
 .Fn luaL_getmetafield
 pushes onto the stack the field

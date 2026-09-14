@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_error
-.Nd raises an error, function indicator
-.Bq -0, +0, v
+.Nd raises an error
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft int
 .Fn luaL_error "lua_State *L" "const char *fmt" "..."
+.Pp
+Function indicator: [-0, +0, v].
 .Sh DESCRIPTION
 .Fn luaL_error
 raises an error.

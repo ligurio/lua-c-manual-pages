@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_loadfile
-.Nd loads a file as a Lua chunk, function indicator
-.Bq -0, +1, m
+.Nd loads a file as a Lua chunk
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft int
 .Fn luaL_loadfile "lua_State *L" "const char *filename"
+.Pp
+Function indicator: [-0, +1, m].
 .Sh DESCRIPTION
 .Fn luaL_loadfile
 loads a file as a Lua chunk.

@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_optint
-.Nd casts a number to an int, function indicator
-.Bq -0, +0, v
+.Nd casts a number to an int
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft int
 .Fn luaL_optint "lua_State *L" "int narg" "int d"
+.Pp
+Function indicator: [-0, +0, v].
 .Sh DESCRIPTION
 .Fn luaL_optint
 if the function argument

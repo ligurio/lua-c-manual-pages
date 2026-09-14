@@ -3,13 +3,13 @@
 .Os
 .Sh NAME
 .Nm lua_pcall
-.Nd calls a function in protected mode, function indicator
-.Bo - (nargs + 1), + (nresults|1), -
-.Bc
+.Nd calls a function in protected mode
 .Sh SYNOPSIS
 .In lua.h
 .Ft int
 .Fn lua_pcall "lua_State *L" "int nargs" "int nresults" "int errfunc"
+.Pp
+Function indicator: [- (nargs + 1), + (nresults|1), -].
 .Sh DESCRIPTION
 .Fn lua_pcall
 calls a function in protected mode.

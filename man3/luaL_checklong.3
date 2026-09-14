@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_checklong
-.Nd checks whether the function argument is a number, function indicator
-.Bq -0, +0, v
+.Nd checks whether the function argument is a number
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft long
 .Fn luaL_checklong "lua_State *L" "int narg"
+.Pp
+Function indicator: [-0, +0, v].
 .Sh DESCRIPTION
 .Fn luaL_checklong
 checks whether the function argument

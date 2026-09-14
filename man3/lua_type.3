@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm lua_type
-.Nd returns the type of the value, function indicator
-.Bq -0, +0, -
+.Nd returns the type of the value
 .Sh SYNOPSIS
 .In lua.h
 .Ft int
 .Fn lua_type "lua_State *L" "int index"
+.Pp
+Function indicator: [-0, +0, -].
 .Sh DESCRIPTION
 .Fn lua_type
 returns the type of the value in the given acceptable index, or

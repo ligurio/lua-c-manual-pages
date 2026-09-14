@@ -3,14 +3,13 @@
 .Os
 .Sh NAME
 .Nm lua_getupvalue
-.Nd gets information about a closure's upvalue, function indicator
-.Bo -0, + Pq 0|1 ,
--
-.Bc
+.Nd gets information about a closure's upvalue
 .Sh SYNOPSIS
 .In lua.h
 .Ft const char *
 .Fn lua_getupvalue "lua_State *L" "int funcindex" "int n"
+.Pp
+Function indicator: [-0, + (0|1), -].
 .Sh DESCRIPTION
 .Fn lua_getupvalue
 gets information about a closure's upvalue.

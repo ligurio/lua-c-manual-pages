@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_buffinit
-.Nd initializes a buffer, function indicator
-.Bq -0, +0, -
+.Nd initializes a buffer
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft void
 .Fn luaL_buffinit "lua_State *L" "luaL_Buffer *B"
+.Pp
+Function indicator: [-0, +0, -].
 .Sh DESCRIPTION
 .Fn luaL_buffinit
 initializes a buffer

@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm lua_close
-.Nd destroys all objects and frees all dynamic memory, function indicator
-.Bq -0, +0, -
+.Nd destroys all objects and frees all dynamic memory
 .Sh SYNOPSIS
 .In lua.h
 .Ft void
 .Fn lua_close "lua_State *L"
+.Pp
+Function indicator: [-0, +0, -].
 .Sh DESCRIPTION
 .Fn lua_close
 destroys all objects in the given Lua state (calling the corresponding

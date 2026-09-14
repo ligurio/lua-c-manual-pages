@@ -4,12 +4,13 @@
 .Sh NAME
 .Nm luaL_checknumber
 .Nd checks whether the function argument narg is a number and returns this
-number, function indicator
-.Bq -0, +0, v
+number
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft lua_Number
 .Fn luaL_checknumber "lua_State *L" "int narg"
+.Pp
+Function indicator: [-0, +0, v].
 .Sh DESCRIPTION
 .Fn luaL_checknumber
 checks whether the function argument

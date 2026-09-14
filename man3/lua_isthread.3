@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm lua_isthread
-.Nd check whether a value is a thread, function indicator
-.Bq -0, +0, -
+.Nd check whether a value is a thread
 .Sh SYNOPSIS
 .In lua.h
 .Ft int
 .Fn lua_isthread "lua_State *L" "int index"
+.Pp
+Function indicator: [-0, +0, -].
 .Sh DESCRIPTION
 .Fn lua_isthread
 returns 1 if the value at the given acceptable index is a thread, and 0

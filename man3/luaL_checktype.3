@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_checktype
-.Nd checks whether the function argument has a certain type, function indicator
-.Bq -0, +0, v
+.Nd checks whether the function argument has a certain type
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft void
 .Fn luaL_checktype "lua_State *L" "int narg" "int t"
+.Pp
+Function indicator: [-0, +0, v].
 .Sh DESCRIPTION
 .Fn luaL_checktype
 checks whether the function argument

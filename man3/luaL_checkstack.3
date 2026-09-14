@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_checkstack
-.Nd grows the stack size to specified size of elements, function indicator
-.Bq -0, +0, v
+.Nd grows the stack size to specified size of elements
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft void
 .Fn luaL_checkstack "lua_State *L" "int sz" "const char *msg"
+.Pp
+Function indicator: [-0, +0, v].
 .Sh DESCRIPTION
 .Fn luaL_checkstack
 grows the stack size to

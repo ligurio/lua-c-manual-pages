@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_addchar
-.Nd adds the character to the buffer, function indicator
-.Bq -0, +0, m
+.Nd adds the character to the buffer
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft void
 .Fn luaL_addchar "luaL_Buffer *B" "char c"
+.Pp
+Function indicator: [-0, +0, m].
 .Sh DESCRIPTION
 .Fn luaL_addchar
 adds the character

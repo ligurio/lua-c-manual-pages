@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_addvalue
-.Nd adds the value at the top of the stack to the buffer, function indicator
-.Bq -1, +0, m
+.Nd adds the value at the top of the stack to the buffer
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft void
 .Fn luaL_addvalue "luaL_Buffer *B"
+.Pp
+Function indicator: [-1, +0, m].
 .Sh DESCRIPTION
 .Fn luaL_addvalue
 adds the value at the top of the stack to the buffer

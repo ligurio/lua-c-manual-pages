@@ -3,12 +3,13 @@
 .Os
 .Sh NAME
 .Nm luaL_checkudata
-.Nd checks whether the function argument is a userdata of a certain type, function indicator
-.Bq -0, +0, v
+.Nd checks whether the function argument is a userdata of a certain type
 .Sh SYNOPSIS
 .In lauxlib.h
 .Ft void *
 .Fn luaL_checkudata "lua_State *L" "int narg" "const char *tname"
+.Pp
+Function indicator: [-0, +0, v].
 .Sh DESCRIPTION
 .Fn luaL_checkudata
 checks whether the function argument

@@ -4,12 +4,13 @@
 .Sh NAME
 .Nm lua_rawgeti
 .Nd pushes onto the stack the value t[n], where t is the value at the given
-valid index, function indicator
-.Bq -0, +1, -
+valid index
 .Sh SYNOPSIS
 .In lua.h
 .Ft void
 .Fn lua_rawgeti "lua_State *L" "int index" "int n"
+.Pp
+Function indicator: [-0, +1, -].
 .Sh DESCRIPTION
 .Fn lua_rawgeti
 pushes onto the stack the value t[n], where t is the value at the given valid
