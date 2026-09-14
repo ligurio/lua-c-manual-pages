@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Header in `lua_sethook(3)`.
 - Wrong header name in `luaL_pushresult(3)`.
+- Broken link to `luaL_pushresult(3)` in the HTML table of contents.
 
 [Unreleased]: https://github.com/ligurio/luac-manual-pages/compare/0.1.3...master
 
