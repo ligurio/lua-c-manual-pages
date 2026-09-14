@@ -9,7 +9,7 @@
 .Ft typedef int
 .Fn (*lua_CFunction) "lua_State *L"
 .Sh DESCRIPTION
-.Fn lua_CFunction
+.Vt lua_CFunction
 type for C functions.
 .Pp
 In order to communicate properly with Lua, a C function must use the following
@@ -58,6 +58,6 @@ static int foo (lua_State *L) {
 .Re
 .Sh HISTORY
 The
-.Fn lua_CFunction
+.Vt lua_CFunction
 manual page is based on Lua Reference Manual 5.1
 and was created by Sergey Bronnikov.
