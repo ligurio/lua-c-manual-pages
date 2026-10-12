@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+### Changed
+
+### Fixed
+
+[Unreleased]: https://github.com/ligurio/luac-manual-pages/compare/0.1.4...master
+
+## [0.1.4]
+
+### Added
+
 - `.gitignore` for the Nix build output and generated HTML pages.
 - `make index` target that regenerates `index.html` from the manual pages.
 
@@ -44,7 +54,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Excessive whitespace in the DESCRIPTION of `luaL_checkint(3)`.
 - Missing note that `luaL_getmetatable(3)` is defined as a macro.
 
-[Unreleased]: https://github.com/ligurio/luac-manual-pages/compare/0.1.3...master
+[0.1.4]: https://github.com/ligurio/luac-manual-pages/compare/0.1.3...0.1.4
 
 ## [0.1.3]
 
