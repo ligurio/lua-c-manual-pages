@@ -19,7 +19,7 @@
       in {
         default = pkgs.stdenv.mkDerivation {
           pname = "lua-c-manual-pages";
-          version = "0.1.3";
+          version = "0.1.4";
 
           src = ./.;
 
